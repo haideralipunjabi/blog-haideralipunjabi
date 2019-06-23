@@ -6,6 +6,7 @@ title = "Haider Ali Punjabi"
 author = "Haider Ali Punjabi"
 avatar = "profile.jpg"
 description = "Student | Developer | Photographer"
+googleanalytics = "UA-111349580-2"
 [[params.social]]
 name = "mail"
 url = "mailto:me@haideralipunjabi.com"
