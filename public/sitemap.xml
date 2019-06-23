@@ -3,29 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/first-post/</loc>
-    <lastmod>2019-06-22T20:49:25+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-06-22T20:49:25+05:30</lastmod>
+    <loc>https://blog.haideralipunjabi.com/</loc>
+    <lastmod>2019-06-22T18:30:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/posts/</loc>
-    <lastmod>2019-06-22T20:49:25+05:30</lastmod>
+    <loc>https://blog.haideralipunjabi.com/posts/</loc>
+    <lastmod>2019-06-22T18:30:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://blog.haideralipunjabi.com/posts/title-1/</loc>
+    <lastmod>2019-06-22T18:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.haideralipunjabi.com/posts/first-post/</loc>
+    <lastmod>2019-06-22T15:19:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.haideralipunjabi.com/posts/test/123213/</loc>
+    <lastmod>2019-05-31T18:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.haideralipunjabi.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://blog.haideralipunjabi.com/tags/</loc>
     <priority>0</priority>
   </url>
   

@@ -2,3 +2,19 @@ baseURL = "https://blog.haideralipunjabi.com/"
 languageCode = "en-us"
 title = "Haider Ali Punjabi"
 theme = "m10c"
+
+[params]
+  author = "Haider Ali Punjabi"
+  description = "Student | Developer | Photographer"
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/haideralipunjabi"
+  [[params.social]]
+    name = "instagram"
+    url = "https://instagram.com/haideralipunjabi"
+  [[params.social]]
+    name = "facebook"
+    url = "https://facebook.com/haiderali176"
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/HAliPunjabi"
