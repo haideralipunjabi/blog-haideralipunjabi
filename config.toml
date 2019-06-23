@@ -1,4 +1,7 @@
-baseURL = "https://blog.haideralipunjabi.com/"
+
 languageCode = "en-us"
 title = "Haider Ali Punjabi"
 theme = "m10c"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.55"

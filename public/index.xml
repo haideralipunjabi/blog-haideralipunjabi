@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Haider Ali Punjabi</title>
+    <link>/</link>
+    <description>Recent content on Haider Ali Punjabi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Jun 2019 20:49:25 +0530</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Post</title>
+      <link>/posts/first-post/</link>
+      <pubDate>Sat, 22 Jun 2019 20:49:25 +0530</pubDate>
+      
+      <guid>/posts/first-post/</guid>
+      <description> Hello TEST </description>
+    </item>
+    
+  </channel>
+</rss>
