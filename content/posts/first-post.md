@@ -1,6 +1,9 @@
 ---
 title: First Post
 date: 2019-06-22T15:19:25.000+00:00
+tags:
+- tag1
+- tag2
 
 ---
 # Hello
