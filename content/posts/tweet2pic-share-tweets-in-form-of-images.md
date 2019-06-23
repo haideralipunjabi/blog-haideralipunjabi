@@ -1,6 +1,6 @@
 +++
 date = "2019-06-23T06:30:00+00:00"
-images = "/uploads/banner.png"
+images = ["/uploads/banner.png"]
 tags = ["android"]
 title = "Tweet2Pic - Share Tweets in the form of Images"
 
