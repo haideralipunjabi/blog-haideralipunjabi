@@ -1,21 +1,26 @@
 baseURL = "https://blog.haideralipunjabi.com/"
 languageCode = "en-us"
-title = "Haider Ali Punjabi"
 theme = "m10c"
-
+title = "Haider Ali Punjabi"
 [params]
-  author = "Haider Ali Punjabi"
-  description = "Student | Developer | Photographer"
-  avatar = "profile.jpg"
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/haideralipunjabi"
-  [[params.social]]
-    name = "instagram"
-    url = "https://instagram.com/haideralipunjabi"
-  [[params.social]]
-    name = "facebook"
-    url = "https://facebook.com/haiderali176"
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/HAliPunjabi"
+author = "Haider Ali Punjabi"
+avatar = "profile.jpg"
+description = "Student | Developer | Photographer"
+[[params.social]]
+name = "mail"
+url = "mailto:me@haideralipunjabi.com"
+[[params.social]]
+name = "website"
+url = "https://haideralipunjabi.com"
+[[params.social]]
+name = "github"
+url = "https://github.com/haideralipunjabi"
+[[params.social]]
+name = "instagram"
+url = "https://instagram.com/haideralipunjabi"
+[[params.social]]
+name = "facebook"
+url = "https://facebook.com/haiderali176"
+[[params.social]]
+name = "twitter"
+url = "https://twitter.com/HAliPunjabi"
