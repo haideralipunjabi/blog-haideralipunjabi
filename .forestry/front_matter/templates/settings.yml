@@ -37,3 +37,8 @@ fields:
     - type: text
       name: url
       label: url
+  - name: googleanalytics
+    type: text
+    config:
+      required: false
+    label: Google Analytics
