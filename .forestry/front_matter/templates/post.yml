@@ -13,10 +13,9 @@ fields:
   default: []
   label: Tags
 - name: images
-  type: file
-  config:
-    maxSize: 250
-  label: Post Image
-  description: Image for Open Graph
+  type: image_gallery
+  config: {}
+  label: Post Images
+  description: Images for Open Graph
 pages:
 - content/posts/tweet2pic-share-tweets-in-form-of-images.md
