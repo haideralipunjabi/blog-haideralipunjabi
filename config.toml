@@ -6,6 +6,7 @@ theme = "m10c"
 [params]
   author = "Haider Ali Punjabi"
   description = "Student | Developer | Photographer"
+  avatar = "profile.jpg"
   [[params.social]]
     name = "github"
     url = "https://github.com/haideralipunjabi"
