@@ -12,3 +12,5 @@ fields:
   type: tag_list
   default: []
   label: Tags
+pages:
+- content/posts/tweet2pic-share-tweets-in-form-of-images.md
