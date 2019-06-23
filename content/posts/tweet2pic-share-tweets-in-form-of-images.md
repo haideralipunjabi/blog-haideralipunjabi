@@ -26,8 +26,4 @@ I used [Twitter's oEmbed API](https://developer.twitter.com/en/docs/tweets/post-
 
 You should give my app a try if you are an Android user.
 
-{{ $image **:=** $resource.Resize "100x" }}
-
-[![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png "Google Play Badge")](https://play.google.com/store/apps/details?id=org.hackesta.tweet2pic&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
-
-{{ end }}
+{{< figure src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Google Play Badge" width="100px" >}}
