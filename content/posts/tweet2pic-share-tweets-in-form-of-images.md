@@ -14,7 +14,12 @@ After some googling, I came across Cameron Adams' experiment [Screenshot a Tweet
 I used [Twitter's oEmbed API](https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/get-statuses-oembed.html) to generate a better looking tweet, which I could convert to an image. The API also had some additional features like _dark theme, including parent thread, hiding media_ which I included in the app. In v1.2, as an additional feature, I added a **Square Image** feature, which generated a square image (for Instagram).
 
 {{<images>}}
-"/uploads/1142461325588566017_light_nomedia.png","/uploads/1142461325588566017_light.png","/uploads/1142461325588566017_dark.png"
+
+"/uploads/1142461325588566017_light_nomedia.png"
+
+{{</images>}}
+
+{{<images>}} "/uploads/1142461325588566017_light.png_","/uploads/1142461325588566017_dark.png_"
 {{</images>}}
 
 3 weeks after the initial release, I released v1.4 (current release) which had some additional requested features and fixed some bugs. I won't go into the complete details of every bug, but write a summarised description / fix for the developers reading this blog.
