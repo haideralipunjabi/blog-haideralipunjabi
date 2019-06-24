@@ -20,26 +20,30 @@ fields:
 - name: links_elsewhere
   type: field_group_list
   fields:
-  - name: read_elsewhere_item
+  - name: read_elsewhere_link
     type: field_group
     config: {}
     fields:
-    - name: blog_title
-      type: text
-      config:
-        required: false
-      label: Blog Title
-    - name: fa_icon
-      type: text
-      config:
-        required: false
-      label: FA Icon
     - name: link
       type: text
       config:
         required: false
       label: Link
-    label: Read Elsewhere Item
+    - name: provider
+      type: select
+      default: []
+      config:
+        required: false
+        options:
+        - Medium
+        - Dev
+        source:
+          type: simple
+          section: 
+          file: 
+          path: 
+      label: Provider
+    label: Link
   config:
     min: 
     max: 
