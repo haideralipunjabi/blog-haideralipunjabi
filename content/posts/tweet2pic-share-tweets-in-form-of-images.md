@@ -19,7 +19,11 @@ I used [Twitter's oEmbed API](https://developer.twitter.com/en/docs/tweets/post-
 
 {{</images>}}
 
-{{<images>}} "/uploads/1142461325588566017_light.png_","/uploads/1142461325588566017_dark.png_"
+{{<images>}} 
+
+"/uploads/1142461325588566017_light.png",
+
+"/uploads/1142461325588566017_dark.png"
 {{</images>}}
 
 3 weeks after the initial release, I released v1.4 (current release) which had some additional requested features and fixed some bugs. I won't go into the complete details of every bug, but write a summarised description / fix for the developers reading this blog.
