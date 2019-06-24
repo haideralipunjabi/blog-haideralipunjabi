@@ -17,5 +17,34 @@ fields:
   config: {}
   label: Post Images
   description: Images for Open Graph
+- name: links_elsewhere
+  type: field_group_list
+  fields:
+  - name: read_elsewhere_item
+    type: field_group
+    config: {}
+    fields:
+    - name: blog_title
+      type: text
+      config:
+        required: false
+      label: Blog Title
+    - name: fa_icon
+      type: text
+      config:
+        required: false
+      label: FA Icon
+    - name: link
+      type: text
+      config:
+        required: false
+      label: Link
+    label: Read Elsewhere Item
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Read Elsewhere
+  description: Links to the post on other blogs
 pages:
 - content/posts/tweet2pic-share-tweets-in-form-of-images.md
