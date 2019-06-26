@@ -42,7 +42,7 @@ fields:
   config:
     min: 
     max: 
-    labelField: 
+    labelField: provider
   label: Other Blogs
   description: Links to the same post on other blogs
 pages:
