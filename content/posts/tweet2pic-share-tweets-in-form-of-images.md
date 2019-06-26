@@ -3,6 +3,12 @@ date = "2019-06-23T06:30:00+00:00"
 images = ["/uploads/banner.png"]
 tags = ["android"]
 title = "Tweet2Pic - Share Tweets in the form of Images"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/tweet2pic-share-tweets-in-the-form-of-images-3b9n"
+provider = "Dev"
+[[other_blogs]]
+link = "https://medium.com/hackesta/tweet2pic-share-tweets-in-form-of-images-2da0dcb99e8b"
+provider = "Medium"
 
 +++
 _My first post on this blog and I thought it was best if I wrote about the best app (code wise) I have made._
