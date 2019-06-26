@@ -17,38 +17,33 @@ fields:
   config: {}
   label: Post Images
   description: Images for Open Graph
-- name: links_elsewhere
+- name: other_blogs
   type: field_group_list
   fields:
-  - name: read_elsewhere_link
-    type: field_group
-    config: {}
-    fields:
-    - name: link
-      type: text
-      config:
-        required: false
-      label: Link
-    - name: provider
-      type: select
-      default: []
-      config:
-        required: false
-        options:
-        - Medium
-        - Dev
-        source:
-          type: simple
-          section: 
-          file: 
-          path: 
-      label: Provider
+  - name: link
+    type: text
+    config:
+      required: false
     label: Link
+  - name: provider
+    type: select
+    default: ''
+    config:
+      required: false
+      options:
+      - Medium
+      - Dev
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Provider
   config:
     min: 
     max: 
     labelField: 
-  label: Read Elsewhere
-  description: Links to the post on other blogs
+  label: Other Blogs
+  description: Links to the same post on other blogs
 pages:
 - content/posts/tweet2pic-share-tweets-in-form-of-images.md
