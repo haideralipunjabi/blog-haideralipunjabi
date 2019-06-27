@@ -1,9 +1,14 @@
 +++
 date = "2019-06-27T13:30:00+00:00"
 images = ["/uploads/banner-2.png"]
-other_blogs = []
 tags = ["polybar", "linux", "python", "shell"]
 title = "Making modules for Polybar (Shell + Python)"
+[[other_blogs]]
+link = "https://medium.com/hackesta/making-modules-for-polybar-shell-python-7f3fcfac32d5"
+provider = "Medium"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/making-modules-for-polybar-shell-python-3991"
+provider = "Dev"
 
 +++
 ### Background
