@@ -1,6 +1,6 @@
 +++
 date = "2019-06-27T13:30:00+00:00"
-images = ["/uploads/banner-2.png"]
+images = ["/uploads/ogbanner.png"]
 tags = ["polybar", "linux", "python", "shell"]
 title = "Making modules for Polybar (Shell + Python)"
 [[other_blogs]]
