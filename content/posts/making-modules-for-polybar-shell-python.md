@@ -53,3 +53,38 @@ Here's the appending to output part
     devices+="%{A1:. $DIR/polybar-kdeconnect.sh; show_pmenu $devicename $deviceid $:}$icon%{A}$SEPERATOR"
 
 _Note that this isn't what my final code looks like_ 
+
+Since I am not much experienced with shell scripting, many contributors did some overhauling of my code (adding removing quotes etc).
+
+Some issues were also opened, some were resolved some are still open. 
+
+To fix problems with the code, and follow some conventions, I added [getopts]() to the module. I always wondered about the ability of commands to use parameters (-f, -x etc). If you, like me don't know how to implement them, [getopts]() is the answer.
+
+To prevent bugs, I wrote my other module in Python. I am better at Python than at Shell. I thought about rewriting this in Python, but its heavy reliance on 'rofi' dissuaded me.
+
+[Check out the latest polybar-kdeconnect on Github](https://github.com/HackeSta/polybar-kdeconnect)
+
+### polybar-browsermediacontrol
+
+I usually use [mpd](https://www.musicpd.org/) for my music, and the [mpd module for polybar](https://github.com/polybar/polybar/wiki/Module:-mpd) works great. While thinking about using Python to write polybar modules, I thought about making a media control for browsers. It would be very similar to the mpd module.
+
+The first issue was to send commands to any browser. AFAIK, one needs to host some sort of server on the machine which sends command to an installable browser extension. Since I had no experience of it, nor the desire to write too much code for a simple task, I decided to use [Plasma Browser Integration](https://community.kde.org/Plasma/Browser_Integration) which is a great addition to kdeconnect.
+
+[Plasma Browser Integration](https://community.kde.org/Plasma/Browser_Integration) enables a user to send links from browser to an android device using KDEConnect and also allows to control browser media from an android device. Technically, it exposes some DBus endpoints which KDEConnect can use to control media of the browser like it controls other media players.
+
+I also use the same endpoints in my module.
+
+The module is very simple compared to the kdeconnect one. I use [pydbus](https://github.com/LEW21/pydbus) to connect to the DBus endpoints, and [argparse](https://docs.python.org/3/library/argparse.html) (python equivalent of earlier mentions getopts) to add couple of arguments to the scripts.
+
+Earlier mentioned  [action format tags]() were again used for making the play/pause button.
+
+[Check out the latest polybar-browsermediacontrol on Github](https://github.com/HackeSta/polybar-browsermediacontrol)
+
+#### Important Resources
+
+* [Main Polybar Wiki](https://github.com/polybar/polybar/wiki)
+* [Formatting Polybar Wiki Page](https://github.com/polybar/polybar/wiki/Formatting)
+* [User contributed polybar-scripts](https://github.com/polybar/polybar-scripts)
+* [rofi - A window switcher, application launcher and dmenu replacement -- Can be used as dropdown menu for polybar](https://github.com/davatorium/rofi)
+* [getopts](https://www.mkssoftware.com/docs/man1/getopts.1.asp)  (Shell)
+* [argparse](https://docs.python.org/3/library/argparse.html) (Python)
