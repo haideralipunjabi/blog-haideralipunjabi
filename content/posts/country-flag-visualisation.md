@@ -1,7 +1,7 @@
 +++
 date = "2019-07-03T13:30:00+00:00"
 draft = true
-images = ["/uploads/map_og-1.png"]
+images = ["/uploads/map_og.png", "/uploads/map_og-1.png"]
 other_blogs = []
 tags = ["data visualisation", "data", "datviz", "python", "geopandas"]
 title = "Flag Colours Visualisation - From Geopandas to Leaflet and back"
@@ -114,6 +114,8 @@ After failing to use LeafletJS, I came back to GeoPandas with another idea. Expo
 
 I added code from the blog to my code from Attempt 1, and modified it to suit my needs.
 
+    
+    # SOURCE: http://kuanbutts.com/2018/08/30/geodataframe-to-svg/
     def process_to_svg_group(row,dis=False):
         orig_svg = row.geometry.svg()
         doc = minidom.parseString(orig_svg)
@@ -121,48 +123,56 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
         pathssvg = []
         for path in paths:
             path.setAttribute('fill', 'url(#%s)'%(row['ISO_A2'].lower()))
-            if dis:
-                path.setAttribute('fill', '#ffffff')        
-            path.setAttribute('stroke','none')
+            path.setAttribute('stroke-width','0.1')
+            path.setAttribute('stroke','#000000')
             path.setAttribute('opacity','1')
-            path.setAttribute('transform','scale(10,-10)') # The SVG produced is vertically inverted by default, this fixes it
+            path.setAttribute('transform','scale(10,-10)')
             pathssvg.append(path.toxml())
         return ''.join(pathssvg)
-        
-        processed_rows = []
+    
+    
+    processed_rows = []
     def_rows = []
-    for index,row in gismap.iterrows():
-        country_code = gismap.loc[index,'ISO_A2'].lower()
+    
+    
+    res_symdiff = gpd.overlay(gismap, dismap, how='difference')
+    
+    for index,row in res_symdiff.iterrows():
         country_data=[]
+        dominant_pixels = []
+        stops = []    
+        country_code = row['ISO_A2'].lower()
         try:
             flag_image = Image.open(FLAGS_DIR+country_code+".png")
         except FileNotFoundError:
             continue
+        
         flag_image = flag_image.convert("RGB")
+        # SOURCE: https://stackoverflow.com/a/52879133/4698800
         pixels = flag_image.getcolors(flag_image.width * flag_image.height)
         sorted_pixels = sorted(pixels, key=lambda t: t[0])
-        dominant_pixels = []
+        
         for pixel in pixels:
             if pixel[0]*100/(flag_image.width * flag_image.height) > 5:
                 dominant_pixels.append(pixel)
-        stops = []    
+        
         for pixel in dominant_pixels:
             percentage = pixel[0]*100/(flag_image.width * flag_image.height)
             color = "#%02x%02x%02x" % pixel[1]
+            perc = reduce(lambda x,y: math.floor(x+y), {x['percentage'] for x in country_data}) if len(country_data) > 0 else 0
+            stops.append('<stop offset="%s%%" stop-color="%s" stop-opacity="1"/><stop offset="%s%%" stop-color="%s" stop-opacity="1"/>'%(perc,color,perc+percentage,color))
             country_data.append({"color":color,"percentage":percentage})
-            stops.append('<stop offset="%s%%" stop-color="%s" />'%(reduce(lambda x,y: math.floor(x+y), {x['percentage'] for x in country_data}),color))
-        p = process_to_svg_group(row)
         grad = '''<defs>
-                <linearGradient id="%s" gradientTransform="rotate(90)">
+                <linearGradient x1="0" x2="0" y1="1" y2="0" id="%s">
                     %s           
                 </linearGradient>
                 </defs>
                 '''%(country_code,''.join(stops))
-        processed_rows.append(p)
         def_rows.append(grad)
-    for index,row in dismap.iterrows(): # The disputed territories map
-        p = process_to_svg_group(row,True)
+    
+        p = process_to_svg_group(row)
         processed_rows.append(p)
+    
     
     props = {
         'version': '1.1',
@@ -184,12 +194,12 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
         {grads:s}
         </svg>
     ''').format(attrs=attrs, data=''.join(processed_rows),grads=''.join(def_rows)).strip()
-    with open('test.svg', 'w') as f:
+    with open('out/map.svg', 'w') as f:
         f.write(raw_svg_str)
 
 This was able to produce this map
 
-![](/uploads/map_small.jpg)
+![](/uploads/map_og.png)
 
 _I added the text and background using Inkscape_
 
