@@ -22,7 +22,7 @@ In my previous visualisations (simple choropleth maps), I have always used Geopa
 
 The first thing I worked on was to calculate the colour ratios for each country present in the map. I modified the code from the following [StackOverflow Post](https://stackoverflow.com/a/52879133/4698800) to suit my needs.
 
-{{< highlight python >}} 
+{{< highlight python >}}
 
     for index,row in map.iterrows(): # map is the GeoPandas variable
         country_code = map.loc[index,'ISO_A2'].lower()
@@ -65,7 +65,7 @@ I had to create <linearGradient> elements for each gradient and link it to each 
 
 I added the country code to each path using the following code
 
-{{< highlight js >}} 
+{{< highlight js >}}
 
     onEachFeature(feature,layer){
                 layer.options.className = "country " + feature.properties.ISO_A2.toLowerCase()
@@ -75,7 +75,7 @@ I added the country code to each path using the following code
 
 and then on the \`add\` event of leaflet map, added the following code
 
-{{< highlight js >}} 
+{{< highlight js >}}
 
     .on("add",function(){
             for(let pathElm of $(".country")){
@@ -108,7 +108,7 @@ To avoid issues later, I decided to add the disputed areas map and fill them wit
 
 It took a bit of refactoring, but I was able to easily merge the two maps with the following code.
 
-{{< highlight js >}} 
+{{< highlight js >}}
 
     L.map('mapid',{
         center: [39.73, -104.99],
@@ -130,9 +130,8 @@ After failing to use LeafletJS, I came back to GeoPandas with another idea. Expo
 
 I added code from the blog to my code from Attempt 1, and modified it to suit my needs.
 
-{{< highlight python >}} 
+{{< highlight python >}}
 
-    
     # SOURCE: http://kuanbutts.com/2018/08/30/geodataframe-to-svg/
     def process_to_svg_group(row,dis=False):
         orig_svg = row.geometry.svg()
@@ -228,3 +227,5 @@ _I added the text and background using Inkscape_
 * [GeoPandas](http://geopandas.org/)
 * [LeafletJS](https://leafletjs.com/)
 * [linearGradient](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)
+
+[Github  Repository](https://github.com/haideralipunjabi/country-flag-visualisation)
