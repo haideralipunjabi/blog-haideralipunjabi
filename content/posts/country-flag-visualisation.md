@@ -1,6 +1,5 @@
 +++
 date = "2019-07-03T13:30:00+00:00"
-draft = true
 images = ["/uploads/map_og.png", "/uploads/map_og-1.png"]
 other_blogs = []
 tags = ["data visualisation", "data", "datviz", "python", "geopandas"]
