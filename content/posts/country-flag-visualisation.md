@@ -1,23 +1,22 @@
 +++
 date = "2019-07-03T13:30:00+00:00"
 draft = true
-images = []
+images = ["/uploads/map_og-1.png"]
 other_blogs = []
 tags = ["data visualisation", "data", "datviz", "python", "geopandas"]
 title = "Country Flag Visualisation -"
 
 +++
-Data Visualisation has always interested me, and I am a long time lurker of [r/dataisbeautiful](https://reddit.com/r/dataisbeautiful). On 1st July 2019, [a post about Frequency of Flag Colors by Continent](https://www.reddit.com/r/dataisbeautiful/comments/c7lpmw/frequency_of_flag_colors_by_continent_imaginary/) caught the interest of many people.  It's from that post that I got the idea to make this visualisation. 
+Data Visualisation has always interested me, and I am a long time lurker of [r/dataisbeautiful](https://reddit.com/r/dataisbeautiful). On 1st July 2019, [a post about Frequency of Flag Colors by Continent](https://www.reddit.com/r/dataisbeautiful/comments/c7lpmw/frequency_of_flag_colors_by_continent_imaginary/) caught the interest of many people.  It's from that post that I got the idea to make this visualisation.
 
 The idea was simple (execution was not), calculate the ratio of colours of each flag and colour each country on a map using those colours. I had a [previous project which used flag colour ratios to make Atom Icons](https://github.com/HackeSta/atom-icons),  so I knew I should be able to do this. Unfortunately, I was wrong, and it took me three attempts to visualise it properly.
 
 Before going into the details of each attempt, here are the sources of data I used.
 
-\-> Map Source: [https://naturalearthdata.com/downloads/](https://naturalearthdata.com/downloads/ "https://naturalearthdata.com/downloads/")
+* Map Source: [https://naturalearthdata.com/downloads/](https://naturalearthdata.com/downloads/ "https://naturalearthdata.com/downloads/")
+* Flags: [https://github.com/hjnilsson/country-flags](https://github.com/hjnilsson/country-flags "https://github.com/hjnilsson/country-flags")
 
-\-> Flags: [https://github.com/hjnilsson/country-flags](https://github.com/hjnilsson/country-flags "https://github.com/hjnilsson/country-flags")
-
-###  Attempt 1 (Python + Geopandas):
+### Attempt 1 (Python + Geopandas):
 
 In my previous visualisations (simple choropleth maps), I have always used Geopandas. It can export high-quality images very easily.
 
@@ -44,7 +43,7 @@ The first thing I worked on was to calculate the colour ratios for each country 
             country_data.append({"color":color,"percentage":percentage})
         data[country_code] = country_data
 
-The problem in this attempt came when trying to colour the countries. Geopandas can't fill a polygon using multiple colours. For a while, I thought about compromising and fill with the most dominant colour only. Achieving that was also difficult, the nearest possible solution I found was this [Github Issue](https://github.com/geopandas/geopandas/issues/387). 
+The problem in this attempt came when trying to colour the countries. Geopandas can't fill a polygon using multiple colours. For a while, I thought about compromising and fill with the most dominant colour only. Achieving that was also difficult, the nearest possible solution I found was this [Github Issue](https://github.com/geopandas/geopandas/issues/387).
 
 I wasn't able to fill the most dominant colour, so I gave up on using Geopandas.
 
@@ -54,7 +53,7 @@ After sitting on it for a while, I remembered that LeafletJS uses CSS to style t
 
 I had high hopes from LeafletJS, and it was successful, to some extent. I was almost right about Leaflet supporting gradients using CSS.
 
-Leaflet makes SVG elements which don't support CSS gradients but their own gradient elements. 
+Leaflet makes SVG elements which don't support CSS gradients but their own gradient elements.
 
 I was easily able to colour the most dominant colour but making a gradient proved to be difficult.
 
@@ -190,8 +189,12 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
 
 This was able to produce this map
 
-![](/uploads/map.png)
+![](/uploads/map_small.jpg)
 
 _I added the text and background using Inkscape_
 
-Related Material
+#### Related Material
+
+* [GeoPandas](http://geopandas.org/)
+* [LeafletJS](https://leafletjs.com/)
+* [<linearGradient>](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)
