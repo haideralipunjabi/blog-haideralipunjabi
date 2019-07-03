@@ -7,9 +7,9 @@ tags = ["data visualisation", "data", "datviz", "python", "geopandas"]
 title = "Country Flag Visualisation -"
 
 +++
-Data Visualisation has always interested me, and I am a long time lurker of r/dataisbeautiful. On 1st July 2019, a post about Frequency of Flag Colors by Continent caught the interest of many people.  It's from that post that I got the idea to make this visualisation. 
+Data Visualisation has always interested me, and I am a long time lurker of [r/dataisbeautiful](https://reddit.com/r/dataisbeautiful). On 1st July 2019, [a post about Frequency of Flag Colors by Continent](https://www.reddit.com/r/dataisbeautiful/comments/c7lpmw/frequency_of_flag_colors_by_continent_imaginary/) caught the interest of many people.  It's from that post that I got the idea to make this visualisation. 
 
-The idea was simple (execution was not), calculate the ratio of colours of each flag and colour each country on a map using those colours. I had a previous project which used flag colour ratios to make Atom Icons,  so I knew I should be able to do this. Unfortunately, I was wrong, and it took me three attempts to visualise it properly.
+The idea was simple (execution was not), calculate the ratio of colours of each flag and colour each country on a map using those colours. I had a [previous project which used flag colour ratios to make Atom Icons](https://github.com/HackeSta/atom-icons),  so I knew I should be able to do this. Unfortunately, I was wrong, and it took me three attempts to visualise it properly.
 
 Before going into the details of each attempt, here are the sources of data I used.
 
@@ -17,16 +17,96 @@ Before going into the details of each attempt, here are the sources of data I us
 
 \-> Flags: [https://github.com/hjnilsson/country-flags](https://github.com/hjnilsson/country-flags "https://github.com/hjnilsson/country-flags")
 
- Attempt 1 (Python + Geopandas):
+###  Attempt 1 (Python + Geopandas):
 
 In my previous visualisations (simple choropleth maps), I have always used Geopandas. It can export high-quality images very easily.
 
-The first thing I worked on was to calculate the colour ratios for each country present in the map. I modified the code from the following StackOverflow Post ([https://stackoverflow.com/a/52879133/4698800](https://stackoverflow.com/a/52879133/4698800 "https://stackoverflow.com/a/52879133/4698800")) to suit my needs.
+The first thing I worked on was to calculate the colour ratios for each country present in the map. I modified the code from the following [StackOverflow Post](https://stackoverflow.com/a/52879133/4698800) to suit my needs.
 
-\`\`\` CODE
+    for index,row in map.iterrows(): # map is the GeoPandas variable
+        country_code = map.loc[index,'ISO_A2'].lower()
+        country_data=[]
+        try:
+            flag_image = Image.open(FLAGS_DIR+country_code+".png")
+        except FileNotFoundError:
+            continue
+        flag_image = flag_image.convert("RGB")
+        pixels = flag_image.getcolors(flag_image.width * flag_image.height)
+        sorted_pixels = sorted(pixels, key=lambda t: t[0])
+        dominant_pixels = []
+        for pixel in pixels:
+            if pixel[0]*100/(flag_image.width * flag_image.height) > 5: #Top 5 colours only
+                dominant_pixels.append(pixel)
+                
+        for pixel in dominant_pixels:
+            percentage = pixel[0]*100/(flag_image.width * flag_image.height)
+            color = "#%02x%02x%02x" % pixel[1]  # HEX Conversion
+            country_data.append({"color":color,"percentage":percentage})
+        data[country_code] = country_data
 
-The problem in this attempt came when trying to colour the countries. Geopandas can't fill a polygon using multiple colours. For a while, I thought about compromising and fill with the most dominant colour only. Achieving that was also difficult, the nearest possible solution I found was this Github Issue.([https://github.com/geopandas/geopandas/issues/387](https://github.com/geopandas/geopandas/issues/387 "https://github.com/geopandas/geopandas/issues/387"))
+The problem in this attempt came when trying to colour the countries. Geopandas can't fill a polygon using multiple colours. For a while, I thought about compromising and fill with the most dominant colour only. Achieving that was also difficult, the nearest possible solution I found was this [Github Issue](https://github.com/geopandas/geopandas/issues/387). 
 
 I wasn't able to fill the most dominant colour, so I gave up on using Geopandas.
 
 After sitting on it for a while, I remembered that LeafletJS uses CSS to style the maps. So, after saving the flag colours data to a JSON file, I started my second attempt at visualising it, now with LeafletJS.
+
+### Attempt 2: LeafletJS
+
+I had high hopes from LeafletJS, and it was successful, to some extent. I was almost right about Leaflet supporting gradients using CSS.
+
+Leaflet makes SVG elements which don't support CSS gradients but their own gradient elements. 
+
+I was easily able to colour the most dominant colour but making a gradient proved to be difficult.
+
+I had to create <linearGradient> elements for each gradient and link it to each SVG path.
+
+I added the country code to each path using the following code
+
+    onEachFeature(feature,layer){
+                layer.options.className = "country " + feature.properties.ISO_A2.toLowerCase()
+            },
+
+and then on the \`add\` event of leaflet map, added the following code
+
+    .on("add",function(){
+            for(let pathElm of $(".country")){
+                classes = Array.from(pathElm.classList);
+                country = classes[classes.indexOf("country") + 1];
+                flag = flagData[country]
+                console.log(flag)
+                $("body").append(`<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                <linearGradient id="${country}" gradientTransform="rotate(90)">
+                ${flag.map((entry,index) =>{
+                    return `<stop offset="${flag.slice(0,index+1).reduce((a,b)=>{return {percentage: a.percentage + b.percentage}}).percentage}%" stop-color="${entry.color}" />`
+                })}
+                </linearGradient>
+                </defs>
+                </svg>`);
+                $(pathElm).attr('fill',`url(#${country})`);
+            }
+
+This was able to produce the gradient map like I wanted, but after looking to add attributions, I came across the following disclaimer on the [Natural Earth Data Site](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/)
+
+> Disclaimer
+>
+> Natural Earth Vector draws boundaries of countries according to defacto status. We show who actually controls the situation on the ground. Please feel free to mashup our disputed area themes to match your particular political outlook.
+
+To avoid issues later, I decided to add the disputed areas map and fill them with white colour.
+
+It took a bit of refactoring, but I was able to easily merge the two maps with the following code.
+
+\`\`\`code
+
+I thought I was done but exporting the map to a good image proved impossible. I tried many plugins, but none produced a good enough image. A thought came to my mind about copying the SVGs from the developer tools and using Inkscape to produce a good image but Leaflet renders different paths for different zoom levels. Less detailed paths when the map is completely zoomed out and detailed but only the zoomed in portion is rendered otherwise.
+
+This attempt also failed but gave me another idea. Converting Geopandas DataFrames to SVGs.
+
+Attempt 3: Python + GeoPandas (exporting to SVG)
+
+After failing to use LeafletJS, I came back to GeoPandas with another idea. Exporting GeoPandas as SVG and then applying a gradient to it. My initial idea was to add gradients from the Leaflet generated maps but didn't need to.
+
+This blog post helped me a lot in this attempt ([http://kuanbutts.com/2018/08/30/geodataframe-to-svg/](http://kuanbutts.com/2018/08/30/geodataframe-to-svg/ "http://kuanbutts.com/2018/08/30/geodataframe-to-svg/"))
+
+I added code from the blog to my code from Attempt 1, and modified it to suit my needs.
