@@ -4,7 +4,7 @@ draft = true
 images = ["/uploads/map_og-1.png"]
 other_blogs = []
 tags = ["data visualisation", "data", "datviz", "python", "geopandas"]
-title = "Country Flag Visualisation -"
+title = "Flag Colours Visualisation - From Geopandas to Leaflet and back"
 
 +++
 Data Visualisation has always interested me, and I am a long time lurker of [r/dataisbeautiful](https://reddit.com/r/dataisbeautiful). On 1st July 2019, [a post about Frequency of Flag Colors by Continent](https://www.reddit.com/r/dataisbeautiful/comments/c7lpmw/frequency_of_flag_colors_by_continent_imaginary/) caught the interest of many people.  It's from that post that I got the idea to make this visualisation.
