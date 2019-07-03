@@ -84,7 +84,7 @@ and then on the \`add\` event of leaflet map, added the following code
                 </linearGradient>
                 </defs>
                 </svg>`);
-                $(pathElm).attr('fill',`url(#${country})`);
+                $(pathElm)f.attr('fill',`url(#${country})`);
             }
 
 This was able to produce the gradient map like I wanted, but after looking to add attributions, I came across the following disclaimer on the [Natural Earth Data Site](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/)
@@ -97,16 +97,101 @@ To avoid issues later, I decided to add the disputed areas map and fill them wit
 
 It took a bit of refactoring, but I was able to easily merge the two maps with the following code.
 
-\`\`\`code
+    L.map('mapid',{
+        center: [39.73, -104.99],
+        zoom: 5,
+        layers: [mapLayer,disLayer]
+    });
 
 I thought I was done but exporting the map to a good image proved impossible. I tried many plugins, but none produced a good enough image. A thought came to my mind about copying the SVGs from the developer tools and using Inkscape to produce a good image but Leaflet renders different paths for different zoom levels. Less detailed paths when the map is completely zoomed out and detailed but only the zoomed in portion is rendered otherwise.
 
 This attempt also failed but gave me another idea. Converting Geopandas DataFrames to SVGs.
 
-Attempt 3: Python + GeoPandas (exporting to SVG)
+### Attempt 3: Python + GeoPandas (exporting to SVG)
 
 After failing to use LeafletJS, I came back to GeoPandas with another idea. Exporting GeoPandas as SVG and then applying a gradient to it. My initial idea was to add gradients from the Leaflet generated maps but didn't need to.
 
-This blog post helped me a lot in this attempt ([http://kuanbutts.com/2018/08/30/geodataframe-to-svg/](http://kuanbutts.com/2018/08/30/geodataframe-to-svg/ "http://kuanbutts.com/2018/08/30/geodataframe-to-svg/"))
+[This blog post helped me a lot in this attempt ](http://kuanbutts.com/2018/08/30/geodataframe-to-svg/)
 
 I added code from the blog to my code from Attempt 1, and modified it to suit my needs.
+
+    def process_to_svg_group(row,dis=False):
+        orig_svg = row.geometry.svg()
+        doc = minidom.parseString(orig_svg)
+        paths = doc.getElementsByTagName('path')
+        pathssvg = []
+        for path in paths:
+            path.setAttribute('fill', 'url(#%s)'%(row['ISO_A2'].lower()))
+            if dis:
+                path.setAttribute('fill', '#ffffff')        
+            path.setAttribute('stroke','none')
+            path.setAttribute('opacity','1')
+            path.setAttribute('transform','scale(10,-10)') # The SVG produced is vertically inverted by default, this fixes it
+            pathssvg.append(path.toxml())
+        return ''.join(pathssvg)
+        
+        processed_rows = []
+    def_rows = []
+    for index,row in gismap.iterrows():
+        country_code = gismap.loc[index,'ISO_A2'].lower()
+        country_data=[]
+        try:
+            flag_image = Image.open(FLAGS_DIR+country_code+".png")
+        except FileNotFoundError:
+            continue
+        flag_image = flag_image.convert("RGB")
+        pixels = flag_image.getcolors(flag_image.width * flag_image.height)
+        sorted_pixels = sorted(pixels, key=lambda t: t[0])
+        dominant_pixels = []
+        for pixel in pixels:
+            if pixel[0]*100/(flag_image.width * flag_image.height) > 5:
+                dominant_pixels.append(pixel)
+        stops = []    
+        for pixel in dominant_pixels:
+            percentage = pixel[0]*100/(flag_image.width * flag_image.height)
+            color = "#%02x%02x%02x" % pixel[1]
+            country_data.append({"color":color,"percentage":percentage})
+            stops.append('<stop offset="%s%%" stop-color="%s" />'%(reduce(lambda x,y: math.floor(x+y), {x['percentage'] for x in country_data}),color))
+        p = process_to_svg_group(row)
+        grad = '''<defs>
+                <linearGradient id="%s" gradientTransform="rotate(90)">
+                    %s           
+                </linearGradient>
+                </defs>
+                '''%(country_code,''.join(stops))
+        processed_rows.append(p)
+        def_rows.append(grad)
+    for index,row in dismap.iterrows(): # The disputed territories map
+        p = process_to_svg_group(row,True)
+        processed_rows.append(p)
+    
+    props = {
+        'version': '1.1',
+        'baseProfile': 'full',
+        'width': '100%',
+        'height': '100%',
+        'viewBox': '{}'.format(','.join(map(str, gismap.total_bounds))),
+        'xmlns': 'http://www.w3.org/2000/svg',
+        'xmlns:ev': 'http://www.w3.org/2001/xml-events',
+        'xmlns:xlink': 'http://www.w3.org/1999/xlink'
+    }
+    template = '{key:s}="{val:s}"'
+    attrs = ' '.join([template.format(key=key, val=props[key]) for key in props])
+    
+    raw_svg_str = textwrap.dedent(r'''
+        <?xml version="1.0" encoding="utf-8" ?>
+        <svg {attrs:s}>
+        <g>{data:s}</g>
+        {grads:s}
+        </svg>
+    ''').format(attrs=attrs, data=''.join(processed_rows),grads=''.join(def_rows)).strip()
+    with open('test.svg', 'w') as f:
+        f.write(raw_svg_str)
+
+This was able to produce this map
+
+![](/uploads/map.png)
+
+_I added the text and background using Inkscape_
+
+Related Material
