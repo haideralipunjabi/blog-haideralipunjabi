@@ -22,6 +22,8 @@ In my previous visualisations (simple choropleth maps), I have always used Geopa
 
 The first thing I worked on was to calculate the colour ratios for each country present in the map. I modified the code from the following [StackOverflow Post](https://stackoverflow.com/a/52879133/4698800) to suit my needs.
 
+{{< highlight python >}} 
+
     for index,row in map.iterrows(): # map is the GeoPandas variable
         country_code = map.loc[index,'ISO_A2'].lower()
         country_data=[]
@@ -43,6 +45,8 @@ The first thing I worked on was to calculate the colour ratios for each country 
             country_data.append({"color":color,"percentage":percentage})
         data[country_code] = country_data
 
+{{< / highlight >}}
+
 The problem in this attempt came when trying to colour the countries. Geopandas can't fill a polygon using multiple colours. For a while, I thought about compromising and fill with the most dominant colour only. Achieving that was also difficult, the nearest possible solution I found was this [Github Issue](https://github.com/geopandas/geopandas/issues/387).
 
 I wasn't able to fill the most dominant colour, so I gave up on using Geopandas.
@@ -61,11 +65,17 @@ I had to create <linearGradient> elements for each gradient and link it to each 
 
 I added the country code to each path using the following code
 
+{{< highlight js >}} 
+
     onEachFeature(feature,layer){
                 layer.options.className = "country " + feature.properties.ISO_A2.toLowerCase()
             },
 
+{{< / highlight >}}
+
 and then on the \`add\` event of leaflet map, added the following code
+
+{{< highlight js >}} 
 
     .on("add",function(){
             for(let pathElm of $(".country")){
@@ -86,6 +96,8 @@ and then on the \`add\` event of leaflet map, added the following code
                 $(pathElm)f.attr('fill',`url(#${country})`);
             }
 
+{{< / highlight >}}
+
 This was able to produce the gradient map like I wanted, but after looking to add attributions, I came across the following disclaimer on the [Natural Earth Data Site](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/)
 
 > Disclaimer
@@ -96,11 +108,15 @@ To avoid issues later, I decided to add the disputed areas map and fill them wit
 
 It took a bit of refactoring, but I was able to easily merge the two maps with the following code.
 
+{{< highlight js >}} 
+
     L.map('mapid',{
         center: [39.73, -104.99],
         zoom: 5,
         layers: [mapLayer,disLayer]
     });
+
+{{< / highlight >}}
 
 I thought I was done but exporting the map to a good image proved impossible. I tried many plugins, but none produced a good enough image. A thought came to my mind about copying the SVGs from the developer tools and using Inkscape to produce a good image but Leaflet renders different paths for different zoom levels. Less detailed paths when the map is completely zoomed out and detailed but only the zoomed in portion is rendered otherwise.
 
@@ -113,6 +129,8 @@ After failing to use LeafletJS, I came back to GeoPandas with another idea. Expo
 [This blog post helped me a lot in this attempt ](http://kuanbutts.com/2018/08/30/geodataframe-to-svg/)
 
 I added code from the blog to my code from Attempt 1, and modified it to suit my needs.
+
+{{< highlight python >}} 
 
     
     # SOURCE: http://kuanbutts.com/2018/08/30/geodataframe-to-svg/
@@ -196,6 +214,8 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
     ''').format(attrs=attrs, data=''.join(processed_rows),grads=''.join(def_rows)).strip()
     with open('out/map.svg', 'w') as f:
         f.write(raw_svg_str)
+
+{{< / highlight >}}
 
 This was able to produce this map
 
