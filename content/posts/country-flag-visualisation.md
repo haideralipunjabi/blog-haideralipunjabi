@@ -4,6 +4,9 @@ images = ["/uploads/map_og.png", "/uploads/map_og-1.png"]
 tags = ["data visualisation", "data", "datviz", "python", "geopandas"]
 title = "Flag Colours Visualisation - From Geopandas to Leaflet and back"
 [[other_blogs]]
+link = "https://dev.to/haideralipunjabi/flag-colours-visualisation-from-geopandas-to-leaflet-and-back-4ohk"
+provider = "Dev"
+[[other_blogs]]
 link = "https://link.medium.com/JYTq7U0t1X"
 provider = "Medium"
 
