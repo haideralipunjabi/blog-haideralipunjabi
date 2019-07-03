@@ -197,4 +197,4 @@ _I added the text and background using Inkscape_
 
 * [GeoPandas](http://geopandas.org/)
 * [LeafletJS](https://leafletjs.com/)
-* [<linearGradient>](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)
+* [linearGradient](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)
