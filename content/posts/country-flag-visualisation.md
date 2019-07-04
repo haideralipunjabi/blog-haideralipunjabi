@@ -185,11 +185,20 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
         for pixel in sorted_pixels:
             if pixel[0]*100/(flag_image.width * flag_image.height) > 1:
                 dominant_pixels.append(pixel)
-        sum = reduce(lambda x,y: x+y, {x[0] for x in dominant_pixels})
+        print(dominant_pixels)
+        sum = 0
+        for x in dominant_pixels:
+            sum += x[0]
+        print(sum)
         for pixel in dominant_pixels:
             percentage = pixel[0]*100/sum
+            print(percentage)
             color = "#%02x%02x%02x" % pixel[1]
-            perc = reduce(lambda x,y: x+y, {x['percentage'] for x in country_data}) if len(country_data) > 0 else 0
+            perc = 0
+            if len(country_data) > 0:
+                for x in country_data:
+                    perc += x['percentage']
+    
             stops.append('<stop offset="%s%%" stop-color="%s" stop-opacity="1"/><stop offset="%s%%" stop-color="%s" stop-opacity="1"/>'%(perc,color,perc+percentage,color))
             country_data.append({"color":color,"percentage":percentage})
         grad = '''<defs>
