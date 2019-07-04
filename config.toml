@@ -2,6 +2,7 @@ baseURL = "https://blog.haideralipunjabi.com/"
 languageCode = "en-us"
 theme = "m10c"
 title = "Haider Ali Punjabi"
+disqusShortname = "blog-haideralipunjabi"
 [params]
 author = "Haider Ali Punjabi"
 avatar = "profile.jpg"
