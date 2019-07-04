@@ -143,8 +143,13 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
         doc = minidom.parseString(orig_svg)
         paths = doc.getElementsByTagName('path')
         pathssvg = []
+        country_code = row['ISO_A2'].lower()
+        if row['NAME'] == 'France':
+            country_code = 'fr'
+        if row['NAME'] == 'Norway':
+            country_code = 'no'
         for path in paths:
-            path.setAttribute('fill', 'url(#%s)'%(row['ISO_A2'].lower()))
+            path.setAttribute('fill', 'url(#%s)'%(country_code))
             path.setAttribute('stroke-width','0.1')
             path.setAttribute('stroke','#000000')
             path.setAttribute('opacity','1')
@@ -156,7 +161,6 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
     processed_rows = []
     def_rows = []
     
-    
     res_symdiff = gpd.overlay(gismap, dismap, how='difference')
     
     for index,row in res_symdiff.iterrows():
@@ -164,6 +168,10 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
         dominant_pixels = []
         stops = []    
         country_code = row['ISO_A2'].lower()
+        if row['NAME'] == 'France':
+            country_code = 'fr'
+        if row['NAME'] == 'Norway':
+            country_code = 'no' 
         try:
             flag_image = Image.open(FLAGS_DIR+country_code+".png")
         except FileNotFoundError:
@@ -218,6 +226,7 @@ I added code from the blog to my code from Attempt 1, and modified it to suit my
     ''').format(attrs=attrs, data=''.join(processed_rows),grads=''.join(def_rows)).strip()
     with open('out/map.svg', 'w') as f:
         f.write(raw_svg_str)
+    
 
 {{< / highlight >}}
 
@@ -226,6 +235,10 @@ This was able to produce this map
 ![](/uploads/map_og.png)
 
 _I added the text and background using Inkscape_
+
+#### The curious case of France and Norway
+
+After sharing the map on various sites, many asked about the missing France. I am not good at geography but trusted my code to make sure it didn't miss a country. So I did some debugging and research and came to know that the shapefile I was using didn't have ISOA2 data stored for France and Norway. My code uses the ISO A2 data to match flag files with the map  so the missing data resulted in missing countries. I hard coded a couple of if statements to include both the countries and the code above is updated for that.
 
 #### Related Material
 
