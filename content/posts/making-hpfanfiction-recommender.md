@@ -33,4 +33,22 @@ After browsing the internet for a while, I came across [pushshift.io](https://pu
 
 ## Initial Scraping
 
-The first step was to make a base database on my own computer before using a server to do it for small amounts of data regularly. I don't have the worlds most stable internet, and  I am also aware that the script could crash while scraping such a huge amount of data. I made  another small script that downloaded all of the data, so that I could work on local files. My initial download was 46 json files, around 120 megabytes of data. It took me a while to code a scraping algorithm that could work with all the template changes [u/FanfictionBot](https://www.reddit.com/user/FanfictionBot/) has done over the years. I only focused on Story Title, Story URL, Author Name and Author Link initially. It took my computer around 3 hours to scrape 70k+ stories. 
+The first step was to make a base database on my own computer before using a server to do it for small amounts of data regularly. I don't have the worlds most stable internet, and  I am also aware that the script could crash while scraping such a huge amount of data. I made  another small script that downloaded all of the data, so that I could work on local files. My initial download was 46 json files, around 120 megabytes of data. It took me a while to code a scraping algorithm that could work with all the template changes [u/FanfictionBot](https://www.reddit.com/user/FanfictionBot/) has done over the years. I only focused on Story Title, Story URL, Author Name and Author Link initially. It took my computer around 3 hours to scrape 70k+ stories. After the database was made, I wrote some code which executed a given SQL command and exported its result to a JSON file. These JSON files would be used by the frontend.
+
+Initially I made the following JSON files:
+
+* Latest 1000 stories
+* Top 100 Stories (Past 7 days, Past 30 days, Past 365 days and all time)
+* Top 100 Authors (Past 7 days, Past 30 days, Past 365 days and all time)
+
+## Making the front-end
+
+Choosing the right way to make the front-end was a rather difficult choice. I tried a lot of stuff (React, Vue, Hugo, to name a few) before settling on the simplest of all, HTML/CSS + JS/jQuery. I knew I didn't need many elements, but a good amount of code. I am more comfortable in using jQuery than React. So, after the choice was made (4-5 hours), I started working on the front-end. It took me around 1.5 hour to make the website with [Bulma CSS Framework](http://bulma.io). All the [front-end code is available on Github](https://github.com/HackeSta/hpffrec-website). 
+
+## Linking the back-end & front-end
+
+This is probably where many people face problems. My own approach is somewhat unorthodox, as I haven't seen anyone else doing this. I myself have been doing this since past 4-5 years. It's kind of like a pseudo-JAMStack thing. 
+
+### Backend:
+
+I hosted my script on [PythonAnywhere](). I am using its free plan, and it has been sufficient for all my projects. I have set-up a CRON job (1 per day on the free plan) that updates the database.
