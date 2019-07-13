@@ -49,6 +49,25 @@ Choosing the right way to make the front-end was a rather difficult choice. I tr
 
 This is probably where many people face problems. My own approach is somewhat unorthodox, as I haven't seen anyone else doing this. I myself have been doing this since past 4-5 years. It's kind of like a pseudo-JAMStack thing. 
 
-### Back-end:
+I hosted my script on [PythonAnywhere](). I am using its free plan, and it has been sufficient for all my projects. I have set-up a CRON job (1 per day on the free plan) that updates the database. It produces the set of JSON files I mentioned earlier, and also triggers a Travis CI build of the front-end.
 
-I hosted my script on [PythonAnywhere](). I am using its free plan, and it has been sufficient for all my projects. I have set-up a CRON job (1 per day on the free plan) that updates the database.
+The TRAVIS CI build downloads the JSON files from the server and commits them to the repo. This way, the back-end is accessed only a couple of times a day (well within the limits of free plan) and the front-end (Netlify hosted) handles all the traffic (the largest on any of my projects yet).
+
+In future, I am planning on increasing the CRON jobs each day, either by asking PA for them, or by another trick I use on my other projects.
+
+## Updates after the first release
+
+The [initial release post on Reddit](https://www.reddit.com/r/HPfanfiction/comments/camzsb/hpfanfiction_recommender_tool_website/) got a good number of views, and lots of suggestions for improvements.
+
+Adding metadata (story length, chapters,genre,rating,etc) was the biggest of them all. Writing a scraping algorithm for metadata proved to be extremely difficult due to the template changing over the years. I finally decided on scraping only the newer templates, and scraped metadata for around 56% of the stories. It was a good solution as all the stories which didn't get metadata were not linked by [u/FanfictionBot](https://www.reddit.com/user/FanfictionBot/) for a long time.
+
+After adding metadata, the next obvious update was to add filters based on it. Initially, I planned on making separate JSON files for every filter combination but the size of them was too large. I was forced to filter the data that the front-end was already using but I increase the number of stories & authors from 100 to 1000 to compensate. It worked perfectly.
+
+Smaller updates were also made, which included:
+
+* Adding options to change number of entries displayed in a page
+* Adding a progress bar & message when No Data is found
+
+## Random problems I faced
+
+1. **Too many requests for older versions of Font Awesome:** I added Font Awesome to my pro
