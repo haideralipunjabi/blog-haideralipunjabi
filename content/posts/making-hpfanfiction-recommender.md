@@ -49,6 +49,6 @@ Choosing the right way to make the front-end was a rather difficult choice. I tr
 
 This is probably where many people face problems. My own approach is somewhat unorthodox, as I haven't seen anyone else doing this. I myself have been doing this since past 4-5 years. It's kind of like a pseudo-JAMStack thing. 
 
-### Backend:
+### Back-end:
 
 I hosted my script on [PythonAnywhere](). I am using its free plan, and it has been sufficient for all my projects. I have set-up a CRON job (1 per day on the free plan) that updates the database.
