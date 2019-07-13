@@ -70,4 +70,14 @@ Smaller updates were also made, which included:
 
 ## Random problems I faced
 
-1. **Too many requests for older versions of Font Awesome:** I added Font Awesome to my pro
+1. **Too many requests for older versions of Font Awesome:** I added Font Awesome to my project to add icons for metadata, but it slowed down the site by a huge margin. [This Github Issue](https://github.com/FortAwesome/Font-Awesome/issues/15167) informed me that it's a problem from their side, one I hope they resolve soon.
+2. **Paired Characters not appearing:** The  [u/FanfictionBot](https://www.reddit.com/user/FanfictionBot/) template is such that paired characters are listed in '<' & '>'. This made the front-end HTML treat them as a tag name and created an element. To solve it, I used the following way:
+
+       .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+## References
+
+* [ElusiveGuy's Tool](https://ficrecs.elusiveguy.com/)
+* [Reddit post of original data](https://www.reddit.com/r/HPfanfiction/comments/9nc0cw/ever_thought_i_wish_i_could_find_more_fics_like_x/)
+* [Fanfiction, Graphs, and PageRank](http://colah.github.io/posts/2014-07-FFN-Graphs-Vis/)
+* 
