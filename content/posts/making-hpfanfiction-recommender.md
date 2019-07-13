@@ -1,9 +1,14 @@
 +++
 date = "2019-07-13T19:30:00+05:30"
 images = ["/uploads/og_image.png"]
-other_blogs = []
 tags = ["data", "hpfanfiction", "webapp", "javascript", "python"]
 title = "Making HPFanfiction Recommender"
+[[other_blogs]]
+link = "https://medium.com/hackesta/making-hpfanfiction-recommender-a91de00d965a"
+provider = "Medium"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/making-hpfanfiction-recommender-35dg"
+provider = "Dev"
 
 +++
 ## Background
