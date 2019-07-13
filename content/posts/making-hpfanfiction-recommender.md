@@ -68,6 +68,14 @@ Smaller updates were also made, which included:
 * Adding options to change number of entries displayed in a page
 * Adding a progress bar & message when No Data is found
 
+## Deciding upon the best time for CRON job
+
+To decide the best time for CRON job to start, I did some analysis and produced the following charts.
+
+[IMGUR Album of Charts](https://imgur.com/a/QSzBR8w)
+
+As you may see, 17:00 UTC is the best time for the CRON job, which I am currently using. I am plannin
+
 ## Random problems I faced
 
 1. **Too many requests for older versions of Font Awesome:** I added Font Awesome to my project to add icons for metadata, but it slowed down the site by a huge margin. [This Github Issue](https://github.com/FortAwesome/Font-Awesome/issues/15167) informed me that it's a problem from their side, one I hope they resolve soon.
@@ -80,4 +88,3 @@ Smaller updates were also made, which included:
 * [ElusiveGuy's Tool](https://ficrecs.elusiveguy.com/)
 * [Reddit post of original data](https://www.reddit.com/r/HPfanfiction/comments/9nc0cw/ever_thought_i_wish_i_could_find_more_fics_like_x/)
 * [Fanfiction, Graphs, and PageRank](http://colah.github.io/posts/2014-07-FFN-Graphs-Vis/)
-* 
