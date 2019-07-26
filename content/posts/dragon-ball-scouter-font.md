@@ -7,6 +7,8 @@ tags = ["font", "design", "dragon-ball", "dbz"]
 title = "Making Dragon Ball Scouter Font"
 
 +++
+![](/uploads/og_dbsfontpost.png)
+
 ### Background
 
 I have been a huge Dragon Ball fan since I was a kid. After Dragon Ball Super's release in 2015, I joined the [r/dbz](https://www.reddit.com/r/dbz/) subreddit to keep in touch with everything DBZ.
