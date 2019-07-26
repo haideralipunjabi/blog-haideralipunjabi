@@ -1,15 +1,15 @@
 +++
 date = "2019-07-26T19:00:00+05:30"
 draft = true
-images = []
+images = ["/uploads/og_dbsfontpost.png"]
 other_blogs = []
 tags = ["font", "design", "dragon-ball", "dbz"]
-title = "Dragon Ball Scouter Font -"
+title = "Making Dragon Ball Scouter Font"
 
 +++
 ### Background
 
-I have been a huge Dragon Ball fan since I was a kid. After Dragon Ball Super's release in 2015, I joined the [r/dbz](https://www.reddit.com/r/dbz/) subreddit to keep in touch with everything DBZ. 
+I have been a huge Dragon Ball fan since I was a kid. After Dragon Ball Super's release in 2015, I joined the [r/dbz](https://www.reddit.com/r/dbz/) subreddit to keep in touch with everything DBZ.
 
 Dragon Ball Super: Broly, the latest movie in the franchise, expanded upon the Saiyan History and as a result, it was the first time in Dragon Ball history that Scouters were seen in such high quality. Kudos to the people who worked on making Scouter Language decipherable instead of some random gibberish.
 
@@ -17,13 +17,12 @@ In April 2019, a Redditor [u/SummerFlux](https://www.reddit.com/user/SummerFlux/
 
 ### Day 1 (19th April 2019)
 
-The [first post](https://www.reddit.com/r/dbz/comments/beh38x/i_figured_out_what_the_scouters_say_dbs_broly/) was made on 18th April 2019 around 9:30 (IST) in the morning. After I noticed it (it had already been some 10-12 hours), I spent a few hours preparing and learning about font making. I decided upon making the glyphs using [Inkscape](https://inkscape.org/) and then using [FontForge](https://fontforge.github.io/) to make the font files. Among the various ideas I had, two seemed viable. 
+The [first post](https://www.reddit.com/r/dbz/comments/beh38x/i_figured_out_what_the_scouters_say_dbs_broly/) was made on 18th April 2019 around 9:30 (IST) in the morning. After I noticed it (it had already been some 10-12 hours), I spent a few hours preparing and learning about font making. I decided upon making the glyphs using [Inkscape](https://inkscape.org/) and then using [FontForge](https://fontforge.github.io/) to make the font files. Among the various ideas I had, two seemed viable.
 
-1) Trace the font from the images of text used in DBS: Broly
+1. Trace the font from the images of text used in DBS: Broly
+2. Make the glyphs on a 3x3 grid like [u/SummerFlux](https://www.reddit.com/user/SummerFlux/) [roughly did on paper](https://i.redd.it/dpmvcy8r79t21.png)
 
-2) Make the glyphs on a 3x3 grid like [u/SummerFlux](https://www.reddit.com/user/SummerFlux/) [roughly did on paper](https://i.redd.it/dpmvcy8r79t21.png)
-
-I decided I will do both, starting with tracing. First I downloaded all the images in [this post](https://www.reddit.com/r/dbz/comments/beh38x/i_figured_out_what_the_scouters_say_dbs_broly) that were used by [u/SummerFlux](https://www.reddit.com/user/SummerFlux/) . Then, I opened them one by one in Inkscape, cropped the text part and used its Trace Bitmap feature on it. _(Note: Most Vector Image Editors (Illustrator, Corel Draw, etc) come with a feature similar to Trace Bitmap. You will need to try different settings that come with it to get the best result)_. I made separate SVG files for each glyph (unknown ones as well). 
+I decided I will do both, starting with tracing. First I downloaded all the images in [this post](https://www.reddit.com/r/dbz/comments/beh38x/i_figured_out_what_the_scouters_say_dbs_broly) that were used by [u/SummerFlux](https://www.reddit.com/user/SummerFlux/) . Then, I opened them one by one in Inkscape, cropped the text part and used its Trace Bitmap feature on it. _(Note: Most Vector Image Editors (Illustrator, Corel Draw, etc) come with a feature similar to Trace Bitmap. You will need to try different settings that come with it to get the best result)_. I made separate SVG files for each glyph (unknown ones as well).
 
 By using FontForge, generating font files was easy. I had seen other font repositories to figure out the files I needed to generate. I generated True Type Font (.ttf), OpenType Font(.otf), SVG Font (.svg) & Web Open Font Format (.woff).
 
@@ -44,3 +43,11 @@ After finishing the tracing based fonts, I started working on the 3x3 grid-based
 [u/SummerFlux](https://www.reddit.com/user/SummerFlux/) 's work was [featured on an online news website Newsweek](https://www.newsweek.com/dragon-ball-super-brolys-mysterious-scouter-language-deciphered-redditor-1401012). I believe it received much less attention than it deserved and hopefully, someone notices it again in the future.
 
 ### References:
+
+* [u/SummerFlux](https://www.reddit.com/user/SummerFlux/) 's [Post 1](https://www.reddit.com/r/dbz/comments/beh38x/i_figured_out_what_the_scouters_say_dbs_broly) & [Post 2](https://www.reddit.com/r/dbz/comments/bf6ndk/the_completed_scouter_alphabet_follow_up/)
+* [Github Repository of my font](https://github.com/HackeSta/DBSScouterFont)
+* [SaiyanScouter-Regular](https://www.dropbox.com/s/428kdonzcxgra6a/SaiyanScouter-Regular%284%29.ttf?dl=0) - Another Scouter Font, made from scratch on a 3x3 grid by [u/TopHoJo](https://www.reddit.com/user/TopHoJo)
+* [InkScape](https://inkscape.org/)
+* [FontForge](https://fontforge.github.io/)
+* [Newsweek Article](https://www.newsweek.com/dragon-ball-super-brolys-mysterious-scouter-language-deciphered-redditor-1401012)
+* [Trace Bitmap Tutorial](https://www.youtube.com/watch?v=i-xxhphybnE)
