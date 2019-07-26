@@ -1,10 +1,14 @@
 +++
-date = "2019-07-26T19:00:00+05:30"
-draft = true
+date = "2019-07-26T18:30:00+05:30"
 images = ["/uploads/og_dbsfontpost.png"]
-other_blogs = []
 tags = ["font", "design", "dragon-ball", "dbz"]
 title = "Making Dragon Ball Scouter Font"
+[[other_blogs]]
+link = "https://medium.com/hackesta/making-dragon-ball-scouter-font-b1c7e7926918"
+provider = "Medium"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/making-dragon-ball-scouter-font-ebh"
+provider = "Dev"
 
 +++
 ![](/uploads/og_dbsfontpost.png)
