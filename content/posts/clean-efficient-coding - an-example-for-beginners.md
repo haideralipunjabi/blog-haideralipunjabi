@@ -1,9 +1,11 @@
 +++
 date = 2020-02-10T12:30:00Z
 images = ["/uploads/Untitled 1.png"]
-other_blogs = []
 tags = ["coding", "clean-code", "general", "beginner", "tips"]
 title = "Clean/Efficient Coding - An Example for Beginners"
+[[other_blogs]]
+link = ""
+provider = ""
 
 +++
 ***
@@ -24,7 +26,9 @@ I would recommend all beginners to read his book and watch [his tutorials on you
 
 ***
 
-![Random Walker Output (from Nature of Code Book)](https://cdn-images-1.medium.com/max/720/1*57Y3S0NzYeumtr9BsvszEg.jpeg)Random Walker Output (from Nature of Code Book)
+![Random Walker Output (from Nature of Code Book)](https://cdn-images-1.medium.com/max/720/1*57Y3S0NzYeumtr9BsvszEg.jpeg)
+
+Random Walker Output (from Nature of Code Book)
 
 To start, we will first make a Random Walker, an object that moves a step in a random direction after every interval of time.
 
@@ -44,6 +48,8 @@ I won’t be writing the entire code, just the part which I need to demonstrate.
             y = height/2;    
         }
     }
+
+{{< / highlight >}}
 
 I will start with a Walker that can move only in 4 directions (up, down, left, right). To make a random choice from the mentioned 4 choices, I will use a `random(n)` function which returns a random float number between 0 & 4 (0 to 3.9999999….) and use `int(n)` function to remove the decimal part, thus giving us the numbers 0 to 3. Then using simple if-else, I will decide on the direction.
 
