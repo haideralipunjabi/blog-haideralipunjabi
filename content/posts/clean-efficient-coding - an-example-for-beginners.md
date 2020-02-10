@@ -1,8 +1,8 @@
 +++
-date = 2020-02-10T13:30:00Z
-images = ["/uploads/f0005-02.jpg"]
+date = 2020-02-10T12:30:00Z
+images = ["/uploads/Untitled 1.png"]
 other_blogs = []
-tags = ["coding", "clean-code", "general"]
+tags = ["coding", "clean-code", "general", "beginner", "tips"]
 title = "Clean/Efficient Coding - An Example for Beginners"
 
 +++
