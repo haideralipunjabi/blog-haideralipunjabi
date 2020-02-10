@@ -4,8 +4,11 @@ images = ["/uploads/Untitled 1.png"]
 tags = ["coding", "clean-code", "general", "beginner", "tips"]
 title = "Clean/Efficient Coding - An Example for Beginners"
 [[other_blogs]]
-link = ""
-provider = ""
+link = "https://medium.com/hackesta/clean-efficient-coding-an-example-for-beginners-2aa79ed0d7b3"
+provider = "Medium"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/clean-efficient-coding-an-example-for-beginners-p6b"
+provider = "Dev"
 
 +++
 ***
