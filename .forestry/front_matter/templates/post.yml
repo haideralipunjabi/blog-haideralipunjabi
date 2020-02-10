@@ -46,6 +46,7 @@ fields:
   label: Other Blogs
   description: Links to the same post on other blogs
 pages:
+- content/posts/clean-efficient-coding - an-example-for-beginners.md
 - content/posts/country-flag-visualisation.md
 - content/posts/dragon-ball-scouter-font.md
 - content/posts/making-hpfanfiction-recommender.md
