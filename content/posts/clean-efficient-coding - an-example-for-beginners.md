@@ -78,7 +78,7 @@ I will start with a Walker that can move only in 4 directions (up, down, left, r
 
 This way is probably the most common way to do this, the most you can do is remove the curly brackets from the if-else tree to shorten the code.
 
-![Possible Steps Illustration (From Nature of Code Book)](https://cdn-images-1.medium.com/max/720/1*4Rap81a1hMstF7NN7MlkFg.jpeg "Possible Steps Illustration (From Nature of Code Book)")
+![](https://cdn-images-1.medium.com/max/2000/1%2A4Rap81a1hMstF7NN7MlkFg.jpeg)
 
 Now, let’s expand the logic to 9 possible choices, 8 directions (up, up-left, left, down-left, down, down-right, right, up-right) and going nowhere/staying in the same place.
 
