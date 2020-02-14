@@ -37,5 +37,10 @@ fields:
     - type: text
       name: url
       label: url
+  - name: fbappid
+    type: text
+    config:
+      required: false
+    label: fbAppId
 pages:
 - config.toml
