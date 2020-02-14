@@ -3,6 +3,7 @@ languageCode = "en-us"
 theme = "m10c"
 title = "Haider Ali Punjabi"
 disqusShortname = "blog-haideralipunjabi"
+fbAppId = "213871356404751"
 [params]
 author = "Haider Ali Punjabi"
 avatar = "profile.jpg"
