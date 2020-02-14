@@ -1,11 +1,15 @@
 +++
-date = 2020-02-18T12:30:00Z
+date = 2020-02-14T12:30:00Z
 draft = true
-images = []
-other_blogs = []
+images = ["/uploads/og_7.jpg"]
 tags = ["javascript", "hugo", "JAMstack", "web"]
 title = "Adding View Count to your JAMstack Website with JavaScript and Google Analytics"
-
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/flag-colours-visualisation-from-geopandas-to-leaflet-and-back-4ohk"
+provider = "Dev"
+[[other_blogs]]
+link = "https://medium.com/hackesta/adding-view-count-to-your-jamstack-website-with-javascript-and-google-analytics-6df837abab4d"
+provider = "Medium"
 +++
 ## Introduction
 
@@ -42,17 +46,11 @@ The following tutorial would only cover getting the data from [Analytics](https:
 4. Under configuration options, choose Pageviews (ga:pageviews) as your metric.
 
 5. The Dimensions will depend on the structure of your website. Page Path Level 1 will only return the data for Pages and Folders in the root of your website. Page Path Level 2 will return data for Pages and Folders in some folder in your root. Use the following table to decide your dimension.
+<script src="https://gist.github.com/haideralipunjabi/5ed449fd6de2f066e6814afa8fba9481.js"></script>
 
-    **URL Pattern**                                     | Page Path Level
-    --------------------------------------------------- | -----------------
-    https://example.com/blog-post-example               | Page Path Level 1
-    https://example.com/posts/blog-post-example         | Page Path Level 2
-    https://example.com/posts/2020/blog-post-example    | Page Path Level 3
-    https://example.com/posts/2020/02/blog-post-example | Page Path Level 4
+    My blog posts are present in the posts/  directory, so I decided to use both  Page Path Level 1 &  Page Path Level 2 dimensions.  By using both 1 & 2, I get both posts/ & my blog post URL.
 
-     My blog posts are present in the posts/  directory, so I decided to use both  Page Path Level 1 &  Page Path Level 2 dimensions.  By using both 1 & 2, I get both posts/ & my blog post URL.
-
-     If you use the Page dimension instead of Page Path n, your data will also include Query Strings and the data would be divided for every unique URL.
+    If you use the Page dimension instead of Page Path n, your data will also include Query Strings and the data would be divided for every unique URL.
 
 6. Under Segments, I selected All Users. but you could also use New Users to get unique views only.
 {{<image title="Create Report Final" src="/uploads/2020-02-14-211551_302x702_scrot.png" width="30%" align="center">}}
