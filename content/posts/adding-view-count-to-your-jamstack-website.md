@@ -1,7 +1,7 @@
 +++
 date = 2020-02-14T13:30:00Z
 images = ["/uploads/og_7.jpg"]
-other_blogs = [""]
+other_blogs = []
 tags = ["JAMstack", "javascript", "hugo", "web"]
 title = "Adding View Count to your JAMstack Website with JavaScript and Google Analytics"
 
