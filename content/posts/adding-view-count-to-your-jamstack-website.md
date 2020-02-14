@@ -67,29 +67,26 @@ The following tutorial would only cover getting the data from [Analytics](https:
 
 {{< highlight js >}}
 
- url = "The link you copied in Step 18 of Part a"
+url  = "URL which you copied in Step 18. of part A" 
 
- fetch(url).then((response)=>{
+fetch(url).then((response)=>{     
 
- return response.text()
+    return response.text() 
 
- }).then((text)=>{
+}).then((text)=>{ 
 
- data = CSVToArray(text)
+    data = CSVToArray(text) 
 
- viewMap = {}
+    viewMap = {} 
 
- for(let i = 15; i < data.length; i++){
+    for(let i = 15; i < data.length; i++){
 
- viewMap\[window.location.href + data\[i\]\[0\].slice(1,-1) + data\[i\]\[1\]\] = parseInt(data\[i\]\[2\])
+         viewMap\[window.location.href + data\[i\]\[0\].slice(1,-1) + data\[i\]\[1\]\] = parseInt(data\[i\]\[2\])     
 
- }
+    } 
 
- }
+})
 
- })
-
-  
 {{< / highlight >}}
 _You might need to adjust the code according to your needs_
 

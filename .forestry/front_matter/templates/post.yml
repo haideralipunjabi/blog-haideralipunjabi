@@ -46,11 +46,9 @@ fields:
   label: Other Blogs
   description: Links to the same post on other blogs
 pages:
-- content/posts/adding-view-count-to-your-jamstack-website-with-javascript-and-google-analytics.md
 - content/posts/clean-efficient-coding - an-example-for-beginners.md
 - content/posts/country-flag-visualisation.md
 - content/posts/dragon-ball-scouter-font.md
 - content/posts/making-hpfanfiction-recommender.md
 - content/posts/making-modules-for-polybar-shell-python.md
-- content/posts/test.md
 - content/posts/tweet2pic-share-tweets-in-form-of-images.md

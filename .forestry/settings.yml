@@ -22,7 +22,7 @@ public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: 
 file_template: ":filename:"
-instant_preview:
+instant_preview: 
 build:
   preview_env:
   - HUGO_ENV=staging
