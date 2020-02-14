@@ -81,7 +81,7 @@ fetch(url).then((response)=>{
 
     for(let i = 15; i < data.length; i++){
 
-         viewMap\[window.location.href + data\[i\]\[0\].slice(1,-1) + data\[i\]\[1\]\] = parseInt(data\[i\]\[2\])     
+         viewMap[window.location.href + data[i][0].slice(1,-1) + data[i][1]] = parseInt(data[i][2])     
 
     } 
 
