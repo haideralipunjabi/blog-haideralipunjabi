@@ -33,8 +33,6 @@ The following tutorial would only cover getting the data from [Analytics](https:
 
 ### Part a) Setting Up Google Sheets + Analytics Add-On
 
-
-
 1. Follow [this guide]( https://developers.google.com/analytics/solutions/google-analytics-spreadsheet-add-on) to install the add-on to your Google Sheets.
 
 2. Select "Add-ons" > "Google Analytics" > "Create a New Report" from the menu bar.
@@ -45,17 +43,17 @@ The following tutorial would only cover getting the data from [Analytics](https:
 
 5. The Dimensions will depend on the structure of your website. Page Path Level 1 will only return the data for Pages and Folders in the root of your website. Page Path Level 2 will return data for Pages and Folders in some folder in your root. Use the following table to decide your dimension.
 
-   | **URL Pattern**                                     | Page Path Level   |
-| --------------------------------------------------- | ----------------- |
-   | https://example.com/blog-post-example               | Page Path Level 1 |
-   | https://example.com/posts/blog-post-example         | Page Path Level 2 |
-   | https://example.com/posts/2020/blog-post-example    | Page Path Level 3 |
-   | https://example.com/posts/2020/02/blog-post-example | Page Path Level 4 |
-   
-   My blog posts are present in the posts/  directory, so I decided to use both  Page Path Level 1 &  Page Path Level 2 dimensions.  By using both 1 & 2, I get both posts/ & my blog post URL.
-   
-   If you use the Page dimension instead of Page Path n, your data will also include Query Strings and the data would be divided for every unique URL.
-   
+    **URL Pattern**                                     | Page Path Level
+    --------------------------------------------------- | -----------------
+    https://example.com/blog-post-example               | Page Path Level 1
+    https://example.com/posts/blog-post-example         | Page Path Level 2
+    https://example.com/posts/2020/blog-post-example    | Page Path Level 3
+    https://example.com/posts/2020/02/blog-post-example | Page Path Level 4
+
+     My blog posts are present in the posts/  directory, so I decided to use both  Page Path Level 1 &  Page Path Level 2 dimensions.  By using both 1 & 2, I get both posts/ & my blog post URL.
+
+     If you use the Page dimension instead of Page Path n, your data will also include Query Strings and the data would be divided for every unique URL.
+
 6. Under Segments, I selected All Users. but you could also use New Users to get unique views only.
 
 7. Create the Report and you will see your Configuration Sheet will be generated.
@@ -90,8 +88,8 @@ The following tutorial would only cover getting the data from [Analytics](https:
 
 2. Use Fetch API to get the CSV data and parse it using CSVToArray function from this [StackOverflow Answer](https://stackoverflow.com/questions/1293147/javascript-code-to-parse-csv-data/1293163#1293163)
 
-  {{< highlight js >}}
-  ```
+{{< highlight js >}}
+  
    url  = "The link you copied in Step 18 of Part a"
    fetch(url).then((response)=>{
        return response.text()
@@ -103,8 +101,8 @@ The following tutorial would only cover getting the data from [Analytics](https:
        }
      }
    })
-   ```
-	{{ </ hightlight >}}
+
+{{< / highlight >}}
 *You might need to adjust the code according to your needs*
 
 3. You will have a dictionary with your Post URLs as Key and their Views as values.
