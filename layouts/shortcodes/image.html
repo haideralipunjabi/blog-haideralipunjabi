@@ -1,10 +1,6 @@
-<style>
-  img {
-    width: 100%;
-  }
-</style>
-<div>
+<div style='text-align: {{.Get "align"}};'>
 
-  <img src='{{urlize .Inner}}'>
-
+  <img src='{{urlize (.Get "src")}}' width='{{.Get "width"}}'>
+  <br>
+  <span style="font-style: italic;">{{.Get "title"}}</span>
 </div>

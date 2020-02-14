@@ -55,9 +55,9 @@ The following tutorial would only cover getting the data from [Analytics](https:
      If you use the Page dimension instead of Page Path n, your data will also include Query Strings and the data would be divided for every unique URL.
 
 6. Under Segments, I selected All Users. but you could also use New Users to get unique views only.
-
+{{<image title="Create Report Final" src="/uploads/2020-02-14-211551_302x702_scrot.png" width="30%" align="center">}}
 7. Create the Report and you will see your Configuration Sheet will be generated.
-
+{{<image title="Generated Report Configuration" src="/uploads/2020-02-14-203533_510x470_scrot.png" width="40%" align="center">}}
 8. Change the Start Date to a date before your first blog post (in YYYY/MM/DD format), and change the End Date to 'today'
 
 9. You should remove the 1000 limit if you want to get the data for more than 1000 posts.
@@ -73,14 +73,12 @@ The following tutorial would only cover getting the data from [Analytics](https:
 14. Select "Add-ons" > "Google Analytics" > "Schedule Reports" from the menu bar.
 
 15. Select "Enable Reports to run automatically" and run it "every hour", and save it.
-
+{{<image title="Generated Report Output" src="/uploads/2020-02-14-203404_647x699_scrot.png" width="40%" align="center">}}
 16. Go back to your output sheet and go to "File" > "Publish to Web"
 
 17. Under "Published content & settings", select you Sheet Name and check "Automatically republish when changes are made". Then click "Start Publishing".
 
 18. Choose "Comma-separated values (.csv) as output format and copy the given link"
-
-
 
 ### Part b) Getting the data on your blog
 

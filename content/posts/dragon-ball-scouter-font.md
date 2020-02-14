@@ -11,9 +11,8 @@ link = "https://dev.to/haideralipunjabi/making-dragon-ball-scouter-font-ebh"
 provider = "Dev"
 
 +++
-{{<image>}}
-![](/uploads/og_dbsfontpost.png)
-{{</image>}}
+{{<image src="/uploads/og_dbsfontpost.png" width="100%" align="center">}}
+
 
 ### Background
 
