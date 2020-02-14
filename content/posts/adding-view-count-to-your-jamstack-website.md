@@ -1,8 +1,7 @@
 +++
 date = 2020-02-14T13:30:00Z
-draft = true
 images = ["/uploads/og_7.jpg"]
-other_blogs = []
+other_blogs = [""]
 tags = ["JAMstack", "javascript", "hugo", "web"]
 title = "Adding View Count to your JAMstack Website with JavaScript and Google Analytics"
 
@@ -67,22 +66,22 @@ The following tutorial would only cover getting the data from [Analytics](https:
 
 {{< highlight js >}}
 
-url  = "URL which you copied in Step 18. of part A" 
+url  = "URL which you copied in Step 18. of part A"
 
-fetch(url).then((response)=>{     
+fetch(url).then((response)=>{
 
     return response.text() 
 
-}).then((text)=>{ 
+}).then((text)=>{
 
     data = CSVToArray(text) 
-
+    
     viewMap = {} 
-
+    
     for(let i = 15; i < data.length; i++){
-
+    
          viewMap[window.location.href + data[i][0].slice(1,-1) + data[i][1]] = parseInt(data[i][2])     
-
+    
     } 
 
 })
@@ -105,6 +104,5 @@ _You might need to adjust the code according to your needs_
 
 ### Read This On
 
-* Haider Ali Punjabi's Blog
-* Medium
-* Dev.to
+* [Medium](https://dev.to/haideralipunjabi/adding-view-count-to-your-jamstack-website-with-javascript-and-google-analytics-109l)
+* [Dev.to](https://dev.to/haideralipunjabi/adding-view-count-to-your-jamstack-website-with-javascript-and-google-analytics-109l)
