@@ -1,9 +1,14 @@
 +++
-title = "Adding View Count to your JAMstack Website with JavaScript and Google Analytics"
-tags = ["JAMstack", "javascript", "hugo", "web"]
 date = 2020-02-14T13:30:00Z
 images = ["/uploads/og_7.jpg"]
-other_blogs = []
+tags = ["JAMstack", "javascript", "hugo", "web"]
+title = "Adding View Count to your JAMstack Website with JavaScript and Google Analytics"
+[[other_blogs]]
+link = "https://medium.com/hackesta/adding-view-count-to-your-jamstack-website-with-javascript-and-google-analytics-6df837abab4d"
+provider = "Medium"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/adding-view-count-to-your-jamstack-website-with-javascript-and-google-analytics-109l"
+provider = "Dev"
 
 +++
 ## Introduction
