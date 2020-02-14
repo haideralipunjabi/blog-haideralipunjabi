@@ -99,7 +99,9 @@ fetch(url).then((response)=>{
     posts = document.getElementsByClassName("posts-list-item");
     for(let post of posts){
         href = post.getElementsByClassName("posts-list-item-title")[0].getAttribute("href");
-        post.getElementsByClassName("posts-list-item-description")[0].innerText += ` - ${viewMap[href]} views`
+        if(Object.keys(viewMap).includes(href)){
+            post.getElementsByClassName("posts-list-item-description")[0].innerText += ` - ${viewMap[href]} views`
+        }
     }
 })
  })();
