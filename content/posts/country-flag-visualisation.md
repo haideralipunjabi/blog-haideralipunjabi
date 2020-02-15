@@ -1,5 +1,6 @@
 +++
-date = "2019-07-03T13:30:00+00:00"
+date = 2019-07-03T13:30:00Z
+description = "Visualising Colors of diffeent countries on the map. Using Geopandas and some nifty tricks."
 images = ["/uploads/map_og.png", "/uploads/map_og-1.png"]
 tags = ["data visualisation", "data", "datviz", "python", "geopandas"]
 title = "Flag Colours Visualisation - From Geopandas to Leaflet and back"
