@@ -1,5 +1,6 @@
 +++
-date = "2019-06-23T06:30:00+00:00"
+date = 2019-06-23T06:30:00Z
+description = "Story behind the popular Android App - Tweet2Pic, lets you share Tweets in the form of images."
 images = ["/uploads/banner.png"]
 tags = ["android"]
 title = "Tweet2Pic - Share Tweets in the form of Images"
