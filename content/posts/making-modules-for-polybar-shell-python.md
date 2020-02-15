@@ -1,5 +1,6 @@
 +++
-date = "2019-06-27T13:30:00+00:00"
+date = 2019-06-27T13:30:00Z
+description = "How to make modules for popular Linux Status Bar using Python & Shell"
 images = ["/uploads/ogbanner.png"]
 tags = ["polybar", "linux", "python", "shell"]
 title = "Making modules for Polybar (Shell + Python)"
