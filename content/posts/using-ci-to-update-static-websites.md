@@ -2,9 +2,11 @@
 date = 2020-04-28T09:30:00Z
 description = "How to use Continuous Integration with Static Sites to update their data regularly"
 images = ["/uploads/blog_banner_og.png"]
-other_blogs = []
 tags = ["travis", "jamstack", "netlify"]
 title = "Using CI to update Static Websites."
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/using-ci-to-update-static-websites-3ikh"
+provider = "Dev"
 
 +++
 ### Background
