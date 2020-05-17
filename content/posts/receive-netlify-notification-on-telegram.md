@@ -19,9 +19,8 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
 1. Follow [this tutorial to create the Telegram Bot](https://core.telegram.org/bots/#3-how-do-i-create-a-bot). Note the API Token you receive. In the following steps, it will be referred to by **<token>**
 2. The bot will need to know your chat id. To find that, we need to set up a temporary webhook. [Webhook.site](https://webhook.site) is a great service to test webhooks online. Go to [Webhook.site](https://webhook.site) and copy the unique URL. (Referred by **<unique_url>**)
 3. Open the following URL in your browser
-       ```
   		https://api.telegram.org/bot<token>/setWebhook?url=<unique_url>
-  		```
+  	
   
 4. Now,  send a message to your bot from your Telegram account. In the [Webhook.site](https://webhook.site) window, you will receive a new request which looks like:
 
