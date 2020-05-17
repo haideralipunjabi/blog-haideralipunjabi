@@ -10,7 +10,7 @@ title = "Receive Netlify Notification on Telegram"
 +++
 ### Introduction
 
-Netlify is one of the worlds largest hosting providers for JAMStack Websites. All of my websites are hosted on it. Some of them use manual deploys as they are deployed via CI. I have disabled auto-publishing for some of the websites because I like to preview them before publishing.  Since a CI is used during deploy, the time taken for the website to deploy on Netlify is random. I wanted to be notified whenever a deploy was ready to be published and I tried many different techniques for it. Initially, I used Outgoing Notifications with IFTTT. With that, I was able to receive a notification on my mobile whenever the deploy was ready. It worked fine, but I wanted to receive a notification on my PC, not my mobile, which will open the deploys page of the website when I click on it.
+[Netlify](https://netlify.com) is one of the worlds largest hosting providers for JAMStack Websites. All of my websites are hosted on it. Some of them use manual deploys as [they are deployed via CI](https://blog.haideralipunjabi.com/posts/using-ci-to-update-static-websites/). I have disabled auto-publishing for some of the websites because I like to preview them before publishing.  Since a CI is used during deploy, the time taken for the website to deploy on Netlify is random. I wanted to be notified whenever a deploy was ready to be published and I tried many different techniques for it. Initially, I used [Outgoing Notifications](https://docs.netlify.com/site-deploys/notifications/) with [IFTTT](https://ifttt.com). With that, I was able to receive a notification on my mobile whenever the deploy was ready. It worked fine, but I wanted to receive a notification on my PC, not my mobile, which will open the deploys page of the website when I click on it.
 
 For a project of mine, I learnt how to make Telegram Bots. With that, I was able to create another bot that messaged me whenever a website was ready to deploy.
 
@@ -51,9 +51,14 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
 
        https://api.telegram.org/bot<token>/deleteWebhook
 7. Now, go to your website's settings on Netlify. In Build & Deploy > Deploy Notifications, add a new Outgoing Webhook.
-8. Select the required event (Details of all events), and the following in URL field.
+8. Select the required event ([Details of all events](https://docs.netlify.com/site-deploys/notifications/)), and the following in URL field.
 
        https://api.telegram.org/bot<token>/sendMessage?chat_id=<chat_id>&text=<message>
 
    The **<message>** is the message you want to receive. I send the name of the website, event and the link to the website's deploys page.
 9. The set up is done. Now, you will receive a Telegram Message whenever a deploy is ready.
+
+### References
+
+* [Netlify Deploy Notifications](https://docs.netlify.com/site-deploys/notifications/)
+* [Telegram Bots](https://core.telegram.org/bots/)
