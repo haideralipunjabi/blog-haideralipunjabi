@@ -1,7 +1,6 @@
 +++
 date = 2020-05-17T12:30:00Z
 description = "Use Netlify Outgoing Notifiications with Telegram Bot API to receive notification on Telegram"
-draft = true
 images = ["/uploads/blogpost1705.png"]
 other_blogs = []
 tags = ["netlify", "telegram", "webhook", "web"]
@@ -21,7 +20,7 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
 3. Open the following URL in your browser
    https://api.telegram.org/bot$token/setWebhook?url=$unique_url
 4. Now,  send a message to your bot from your Telegram account. In the [Webhook.site](https://webhook.site) window, you will receive a new request which looks like:
-    ``` json
+ 	{{< highlight json >}}
            {
              "update_id": 213123213,
              "message": {
@@ -45,16 +44,17 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
                "text": "Jd"
              }
            }
-     ```
+     {{</ highlight >}}
 5. Note the chat\["id"\] from the previous step. It is the chat id you need. (Referred by **$chatid**)
 6. You can delete the webhook now 
      https://api.telegram.org/bot$token/deleteWebhook 
 
 7. Now, go to your website's settings on Netlify. In Build & Deploy > Deploy Notifications, add a new Outgoing Webhook.
 
-8. Select the required event ([Details of all events](https://docs.netlify.com/site-deploys/notifications/)), and the following in URL field.
-   https://api.telegram.org/bot$token/sendMessage?chat_id=$chatid&text=$message
-
+8. Select the required event ([Details of all events](https://docs.netlify.com/site-deploys/notifications/)), and the following in URL field. 
+   
+       https://api.telegram.org/bot$token/sendMessage?chat_id=$chatid&text=$message
+   
        The **$message** is the message you want to receive. I send the name of the website, event and the link to the website's deploys page.
 
 9. The set up is done. Now, you will receive a Telegram Message whenever a deploy is ready.
@@ -63,5 +63,3 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
 
 * [Netlify Deploy Notifications](https://docs.netlify.com/site-deploys/notifications/)
 * [Telegram Bots](https://core.telegram.org/bots/)
-
-[Read this on my blog](https://blog.haideralipunjabi.com/posts/receive-netlify-notification-on-telegram/)
