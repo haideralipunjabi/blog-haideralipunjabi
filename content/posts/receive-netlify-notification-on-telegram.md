@@ -46,3 +46,8 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
            "text": "Jd"
          }
        }
+5. Note the chat\["id"\] from the previous step. It is the chat id _you need. (_Referred _by_ **<chat___id>**)
+6. You can delete the webhook now
+
+       https://api.telegram.org/bot<token>/deleteWebhook
+ 7.
