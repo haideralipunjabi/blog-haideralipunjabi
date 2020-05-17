@@ -50,7 +50,10 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
 6. You can delete the webhook now
 
        https://api.telegram.org/bot<token>/deleteWebhook
-7. Now, go to your website's settings on Netlify. IIn Build & Deploy > Deploy Notifications, add a new Outgoing Webhook.
-8. Select the required event (Details of all events) , and the following in URL field.
+7. Now, go to your website's settings on Netlify. In Build & Deploy > Deploy Notifications, add a new Outgoing Webhook.
+8. Select the required event (Details of all events), and the following in URL field.
 
        https://api.telegram.org/bot<token>/sendMessage?chat_id=<chat_id>&text=<message>
+
+   The **<message>** is the message you want to receive. I send the name of the website, event and the link to the website's deploys page.
+9. The set up is done. Now, you will receive a Telegram Message whenever a deploy is ready.
