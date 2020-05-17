@@ -2,9 +2,11 @@
 date = 2020-05-17T12:30:00Z
 description = "Use Netlify Outgoing Notifiications with Telegram Bot API to receive notification on Telegram"
 images = ["/uploads/blogpost1705.png"]
-other_blogs = []
 tags = ["netlify", "telegram", "webhook", "web"]
 title = "Receive Netlify Notification on Telegram"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/receive-netlify-notification-on-telegram-2d77"
+provider = "Dev"
 
 +++
 ### Introduction
