@@ -10,4 +10,11 @@ title = "Receive Netlify Notification on Telegram"
 +++
 ### Introduction
 
-Netlify is one of the worlds largest hosting providers for JAMStack Websites. All of my websites are hosted on it. Some of them use manual deploys as they are deployed via CI. I have disabled auto-publishing for some of the websites because I like to preview them before publishing.  Since a CI is used during deploy, the time taken for the website to deploy on Netlify is random. I wanted to be notified whenever a deploy was ready to be published and I tried many different techniques for it. Initially, I used Outgoing Notifications with IFTTT. With that, I was able to receive a notification on my mobile whenever the deploy was ready.
+Netlify is one of the worlds largest hosting providers for JAMStack Websites. All of my websites are hosted on it. Some of them use manual deploys as they are deployed via CI. I have disabled auto-publishing for some of the websites because I like to preview them before publishing.  Since a CI is used during deploy, the time taken for the website to deploy on Netlify is random. I wanted to be notified whenever a deploy was ready to be published and I tried many different techniques for it. Initially, I used Outgoing Notifications with IFTTT. With that, I was able to receive a notification on my mobile whenever the deploy was ready. It worked fine, but I wanted to receive a notification on my PC, not my mobile, which will open the deploys page of the website when I click on it.
+
+For a project of mine, I learnt how to make Telegram Bots. With that, I was able to create another bot that messaged me whenever a website was ready to deploy.
+
+### Setup
+
+1. Follow [this tutorial to create the Telegram Bot](https://core.telegram.org/bots/#3-how-do-i-create-a-bot). Note the API Token you receive. In the following steps, it will be referred to by **<token>**
+2. The bot will need to know your chat id. To get that, 
