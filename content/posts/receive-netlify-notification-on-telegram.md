@@ -54,7 +54,9 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
 6. You can delete the webhook now
 
        https://api.telegram.org/bot$token/deleteWebhook
+       
 7. Now, go to your website's settings on Netlify. In Build & Deploy > Deploy Notifications, add a new Outgoing Webhook.
+
 8. Select the required event ([Details of all events](https://docs.netlify.com/site-deploys/notifications/)), and the following in URL field.
 
        https://api.telegram.org/bot$token/sendMessage?chat_id=$chatid&text=$message
