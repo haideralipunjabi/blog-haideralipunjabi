@@ -21,3 +21,28 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
 3. Open the following URL in your browser
 
        https://api.telegram.org/bot<token>/setWebhook?url=<unique_url>
+4. Now,  send a message to your bot from your Telegram account. In the [Webhook.site](https://webhook.site) window, you will receive a new request which look like:
+
+       {
+         "update_id": 213123213,
+         "message": {
+           "message_id": 16,
+           "from": {
+             "id": 987654321,
+             "is_bot": false,
+             "first_name": "John",
+             "last_name": "Doe",
+             "username": "johndoe",
+             "language_code": "en"
+           },
+           "chat": {
+             "id": 987654321,		// <----- chat_id
+             "first_name": "John",
+             "last_name": "Doe",
+             "username": "johndoe",
+             "type": "private"
+           },
+           "date": 1589716177,
+           "text": "Jd"
+         }
+       }
