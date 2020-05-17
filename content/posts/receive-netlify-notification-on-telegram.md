@@ -21,7 +21,9 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
 3. Open the following URL in your browser
 
        https://api.telegram.org/bot<token>/setWebhook?url=<unique_url>
-4. Now,  send a message to your bot from your Telegram account. In the [Webhook.site](https://webhook.site) window, you will receive a new request which look like:
+4. Now,  send a message to your bot from your Telegram account. In the [Webhook.site](https://webhook.site) window, you will receive a new request which looks like:
+
+   {{< highlight json >}}
 
        {
          "update_id": 213123213,
@@ -46,6 +48,7 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
            "text": "Jd"
          }
        }
+    {{</ highlight >}}
 5. Note the chat\["id"\] from the previous step. It is the chat id _you need. (_Referred _by_ **<chat___id>**)
 6. You can delete the webhook now
 
