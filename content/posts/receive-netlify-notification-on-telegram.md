@@ -50,7 +50,7 @@ For a project of mine, I learnt how to make Telegram Bots. With that, I was able
        }
 
    {{</ highlight >}}
-5. Note the chat\["id"\] from the previous step. It is the chat id you need. (Referred by **$chatid**)
+5. Note the chat\["id"\] from the previous step. It is the chat id you need. (Referred by **$chatid**)  
 6. You can delete the webhook now
 
        https://api.telegram.org/bot$token/deleteWebhook
