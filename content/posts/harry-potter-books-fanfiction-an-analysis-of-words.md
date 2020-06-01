@@ -32,4 +32,20 @@ It took me an hour to the processing. I didn't want to do the processing again i
 
 #### Making the Word Cloud
 
-I took a look at [wordcloud Python Package](https://github.com/amueller/word_cloud) and copied the code from its examples to generate the word cloud.
+I took a look at [wordcloud Python Package](https://github.com/amueller/word_cloud) and copied the code from its examples to generate the word cloud. 
+
+To make the mask image, I downloaded some images from the Internet and used Inkscape to fix them.
+
+#### Feedback
+
+After posting the first attempt over at Reddit & Twitter, I received a lot of feedback. Common among them were the queries about why is Daphne more frequent and why is Ron less frequent (I will answer both later), suggestions to remove more words to focus it more on Harry Potter related words, and to show some other visualisations, especially ones comparing the books and fanfiction.
+
+### Attempt 2
+
+#### Finding more stopwords
+
+In my first attempt, I used the nltk English stopwords corpus, which is just 179 words. I searched for a bigger list and ended up using a customised 20,000 most common words list from [google-10000-english repository](). What were the customisations? I had to remove some words (like magic, magical, wand, wards, vampire, etc) and some names (Harry, Ron, Fred, Arthur, etc) from the 20k list so that they aren't removed from my analysis. Storing the results of the processing from my first attempt into json files saved me from spending another hour of processing. I just removed the necessary keys from each data file.
+
+#### Harry Potter Canon Books
+
+I also downloaded the text versions of the 7 books from somewhere on the Internet, sanitised them a bit, and applied the same process as the fan 
