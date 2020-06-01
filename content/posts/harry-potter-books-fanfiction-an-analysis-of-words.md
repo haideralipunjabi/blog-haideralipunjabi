@@ -70,3 +70,21 @@ I also downloaded the text versions of the 7 books from somewhere on the Interne
 ### Important Results
 
 #### Who is Daphne? Why is she so popular in Fanfiction?
+
+> Hermione’s name was called. Trembling, she left the 
+>
+> chamber with Anthony Goldstein, Gregory Goyle, and 
+>
+> **Daphne Greengrass**. Students who had already been 
+>
+> tested did not return afterward, so Harry and Ron 
+>
+> had no idea how Hermione had done.
+>
+> \-> Harry Potter and the Order of the Phoenix
+
+Daphne Greengrass is an almost non-entity in canon, and a blank slate for fanfiction writers. In canon & most fanfictions, she is the sister of Astoria Greengrass (another almost non-entity) who becomes the wife of Draco Malfoy. In fanfictions, she is usually a Slytherin due to her ambitions & cunningness & not because of being a Pureblood Supermasict. Her family is depicted as Light or Grey, and support "Lord Potter". She is a popular pairing in Independent Harry stories.
+
+Her being a blank slate character-wise is a boon for writers who want to write an OC without explicitly mentioning it.
+
+[Video explaining Daphne Greengrass and her popularity](https://www.youtube.com/watch?v=4mSD-GAmz1I)
