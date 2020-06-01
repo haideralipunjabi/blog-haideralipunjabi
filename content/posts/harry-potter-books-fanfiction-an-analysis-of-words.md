@@ -88,3 +88,7 @@ Daphne Greengrass is an almost non-entity in canon, and a blank slate for fanfic
 Her being a blank slate character-wise is a boon for writers who want to write an OC without explicitly mentioning it.
 
 [Video explaining Daphne Greengrass and her popularity](https://www.youtube.com/watch?v=4mSD-GAmz1I)
+
+#### What happened to Ron?
+
+Ron is an almost opposite of Daphne. JKR wrote Ron in such a beautiful manner that many fanfiction writers are unable to write a good Ron. In canon, Ron is flawed but is also very funny, brave and loyal to his friends. In fanfictions, especially where Harry is very different to canon (Independent, Super-Powered, Lord Potter, etc), Harry usually ignores Ron (if diverging before Hogwarts) or the author does a lot of Ron bashing to justify Harry breaking up their friendship.
