@@ -20,7 +20,7 @@ There are many approaches I could have taken to prepare the data. I decided to d
 
 {{<images>}}
 
-![Word Cloud from Attempt 1](/uploads/out_final1.png "Word Cloud from Attempt 1")
+"/uploads/fics.png"
 
 {{</images>}}
 
