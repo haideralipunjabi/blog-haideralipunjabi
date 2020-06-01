@@ -80,9 +80,14 @@ $breakpoints: (
       }
     }
   }
+  @include respond-below(xs) {
+    .image-resp {
+      width: 100%;
+    }
+  }
   @include respond-between(xs, lg) {
     .image-resp {
-      width: 50%;
+      width: 100%;
     }
   }
   @include respond-above(lg) {
