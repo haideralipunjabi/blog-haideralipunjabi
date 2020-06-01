@@ -61,3 +61,12 @@ I also downloaded the text versions of the 7 books from somewhere on the Interne
 #### Average Frequency of Occurrence of Words per book or story
 
 1. Top 20 Most Occurring Words in Fanfiction Stories
+
+   ![](/uploads/graph1.png)
+2. Top 20 Most Occurring Words in Harry Potter Books (excluding Top 20 from Fanfiction Stories)
+
+   ![](/uploads/graph2.png)
+
+### Important Results
+
+#### Who is Daphne? Why is she so popular in Fanfiction?
