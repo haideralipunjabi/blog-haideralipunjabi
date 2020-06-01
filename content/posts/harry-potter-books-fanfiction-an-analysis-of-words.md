@@ -25,6 +25,8 @@ There are many approaches I could have taken to prepare the data. I decided to d
 
 I used simple Python + BeautifulSoup combination to scrape the stories form  [Fanfiction.net](http://fanfiction.net/). I sorted the stories based on their Favorite Count, and filtered them to stories having more than 100k words. ([Link to the URL](https://www.fanfiction.net/book/Harry-Potter/?&srt=4&r=10&len=100&p=1)). I scraped first 10 pages, (each page has 25 stories) resulting in 250 stories. It took me a total of 10 hours (7 on one day, and 3 on the next) to scrape all the stories.
 
+{{<github src="https://github.com/haideralipunjabi/harrypotter-analysis/blob/master/scrape_fanfics.py">}}
+
 #### Processing the Data
 
 Taking hints from the [original post](), I used nltk to tokenize the stories, and removed the common words from the nltk English Stopwords Corpus. This was my first attempt at doing anything like this, and the process was taking 3-4 minutes per story initially. After some optimization, I was able to reduce the time to 1-2 minutes per story. I talked to a friend about the problem, and he suggested me to try multiprocessing. After adding multiprocessing, I had the idea of distributing the load over two CPUs (my laptop and a Raspberry Pi 4B). I copied the script and 25% of the stories over to the Pi and started the job.
@@ -32,12 +34,15 @@ Taking hints from the [original post](), I used nltk to tokenize the stories, an
 _Additional Tip:_ [_screen_](https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/) _is a good utility to do long jobs over SSH_
 
 It took me an hour to the processing. I didn't want to do the processing again if I needed to remove some more words so I decided to store the word frequency data into json files. (Really helpful in future)
+{{<github src="https://github.com/haideralipunjabi/harrypotter-analysis/blob/master/text_to_json.py">}}
 
 #### Making the Word Cloud
 
 I took a look at [wordcloud Python Package](https://github.com/amueller/word_cloud) and copied the code from its examples to generate the word cloud.
 
 To make the mask image, I downloaded some images from the Internet and used Inkscape to fix them.
+
+{{<github src="https://github.com/haideralipunjabi/harrypotter-analysis/blob/master/make_wordcloud.py">}}
 
 #### Feedback
 
@@ -68,6 +73,12 @@ I also downloaded the text versions of the 7 books from somewhere on the Interne
 2. Top 20 Most Occurring Words in Harry Potter Books (excluding Top 20 from Fanfiction Stories)
 
 {{<image src="/uploads/graph2.png" class="image-resp" align="center">}}
+
+
+#### Code to generate the above visualisations
+
+{{<github src="https://github.com/haideralipunjabi/harrypotter-analysis/blob/master/make_graph.py">}}
+
 
 ### Important Results
 
@@ -132,6 +143,12 @@ Ron is an almost opposite of Daphne. JKR wrote Ron in such a beautiful manner th
 {{<image src="/uploads/book7.png" class="image-resp" align="center">}}
 
    I used an image of the Deathly Hallows for this. You will see "wand" becomes very used due to "Elder wand". Hallows, Cloak, Wandmaker appear. Also, Griphook is back.
+
+
+### Future Plans
+
+I am planning to scrape AO3 in the future to do some more analysis. I might also create some other Word Clouds from other popular books.
+
 
 ### Reference:
 
