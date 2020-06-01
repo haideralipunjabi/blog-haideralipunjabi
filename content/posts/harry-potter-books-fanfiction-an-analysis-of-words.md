@@ -18,11 +18,8 @@ On 28th May, [a post on r/dataisbeautiful](https://www.reddit.com/r/dataisbeauti
 
 There are many approaches I could have taken to prepare the data. I decided to download the stories first and then do the processing on the local files due to my slow & unreliable internet.
 
-{{<images>}}
+{{<image src="/uploads/out_final1.png" class="image-resp" align="center">}}
 
-"/uploads/fics.png"
-
-{{</images>}}
 
 #### Scraping Fanfiction
 
@@ -60,30 +57,23 @@ I also downloaded the text versions of the 7 books from somewhere on the Interne
 
 #### Frequently Occurring Words in Top 250 Fanfictions
 
-![Frequently Occurring Words in Top 250 Fanfictions](/uploads/fics.png "Frequently Occurring Words in Top 250 Fanfictions")
+{{<image src="/uploads/fics.png" class="image-resp" align="center">}}
+
 
 #### Average Frequency of Occurrence of Words per book or story
 
 1. Top 20 Most Occurring Words in Fanfiction Stories
 
-   ![](/uploads/graph1.png)
+{{<image src="/uploads/graph1.png" class="image-resp" align="center">}}
 2. Top 20 Most Occurring Words in Harry Potter Books (excluding Top 20 from Fanfiction Stories)
 
-   ![](/uploads/graph2.png)
+{{<image src="/uploads/graph2.png" class="image-resp" align="center">}}
 
 ### Important Results
 
 #### Who is Daphne? Why is she so popular in Fanfiction?
 
-> Hermione’s name was called. Trembling, she left the 
->
-> chamber with Anthony Goldstein, Gregory Goyle, and 
->
-> **Daphne Greengrass**. Students who had already been 
->
-> tested did not return afterward, so Harry and Ron 
->
-> had no idea how Hermione had done.
+> Hermione’s name was called. Trembling, she left the chamber with Anthony Goldstein, Gregory Goyle, and **Daphne Greengrass**. Students who had already been tested did not return afterward, so Harry and Ron had no idea how Hermione had done.
 >
 > \-> Harry Potter and the Order of the Phoenix
 
@@ -103,39 +93,43 @@ Ron is an almost opposite of Daphne. JKR wrote Ron in such a beautiful manner th
 
 1. **Philosopher's Stone**
 
-   ![](/uploads/book1.png)
+{{<image src="/uploads/book1.png" class="image-resp" align="center">}}
 
    I tried to use an image of 9 3/4 . The word Quirrell and Griphook are frequent in this book and will lose their frequency in future books.
+
 2. **Chamber of Secrets**
 
-   ![](/uploads/book2.png)
+{{<image src="/uploads/book2.png" class="image-resp" align="center">}}
 
    I used an image of Dobby the Free Elf. You will words like Dobby, Lockhart (I hate that guy), Polyjuice, Parseltongue, Mandrakes, Mudbloods making an appearance in this book.
+
 3. **Prisoner of Azkaban**
 
-   ![](/uploads/book3.png)
+{{<image src="/uploads/book3.png" class="image-resp" align="center">}}
 
    I used an image of Prongs (James' Marauder Nickname, and Animagus form. Harry's Patronus) for this book. Words like Lupin, Sirius, Pettigrew, dementors, Crookshanks, Patronus start appearing.
+
 4. **Goblet of Fire**
 
-   ![](/uploads/book4.png)
+{{<image src="/uploads/book4.png" class="image-resp" align="center">}}
 
    I tried to use an Image of the Triwizard Trophy. Words like Cedric, Beauxbatons, Crouch,  Durmstrang start appearing.
+
 5. **Order of the Phoenix**
 
-   ![](/uploads/book5.png)
+{{<image src="/uploads/book5.png" class="image-resp" align="center">}}
 
    Tried to use an image of a Phoenix. Umbridge is very popular in this book.
+
 6. **Half Blood Prince**
 
-   ![](/uploads/book6.png)
+{{<image src="/uploads/book6.png" class="image-resp" align="center">}}
 
    I used an image of the Half Blood Prince for this book. Apart from the usual, Slughorn is the most common word in this book.
-
     
 7. **Deathly Hallows**
 
-   ![](/uploads/book7.png)
+{{<image src="/uploads/book7.png" class="image-resp" align="center">}}
 
    I used an image of the Deathly Hallows for this. You will see "wand" becomes very used due to "Elder wand". Hallows, Cloak, Wandmaker appear. Also, Griphook is back.
 
