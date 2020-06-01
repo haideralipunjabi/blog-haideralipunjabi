@@ -12,7 +12,7 @@ title = "Harry Potter Books & Fanfiction - An Analysis of Words"
 
 On 28th May, [a post on r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful/comments/gs4me1/oc_word_cloud_comparison_between_user_comments_on/) inspired me to learn how to make Word Clouds myself. Being a huge Harry Potter fan, the data I was going to use was obvious. Using the Books seemed too simple so I decided to scrape 250 stories from [Fanfiction.net](http://fanfiction.net/) , and make a Word Cloud from that data. I posted [my first attempt on r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful/comments/gtxzx8/oc_frequently_occurring_words_in_top_250_harry/), and based on the feedback I received, I decided to write this blog.
 
-The entire source code (except the data files & output files) is available here
+[The entire source code (except the data files & output files) is available here](https://github.com/haideralipunjabi/harrypotter-analysis)
 
 ### Attempt 1
 
@@ -134,3 +134,10 @@ Ron is an almost opposite of Daphne. JKR wrote Ron in such a beautiful manner th
    ![](/uploads/book7.png)
 
    I used an image of the Deathly Hallows for this. You will see "wand" becomes very used due to "Elder wand". Hallows, Cloak, Wandmaker appear. Also, Griphook is back.
+
+### Reference:
+
+1. [wordcloud Python Package]()
+2. [nltk](https://www.nltk.org/)
+3. [r/HPFanfiction](https://www.reddit.com/r/HPfanfiction)
+4. [Snape, Snape, Severus Snape - Music Video](https://www.youtube.com/watch?v=4Rp5bdBBEeM)
