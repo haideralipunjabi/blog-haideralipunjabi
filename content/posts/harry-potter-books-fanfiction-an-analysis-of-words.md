@@ -1,10 +1,9 @@
 +++
-date = 2020-06-01T13:30:00Z
+date = 2020-06-01T14:30:00Z
 description = "Graphs and WordCloud based analysis of Most Occurring Words in Harry Potter Books and popular Fanfiction Stories"
-draft = true
-images = []
+images = ["/uploads/blog_10.jpg"]
 other_blogs = []
-tags = []
+tags = ["harrypotter", "python", "visualisation"]
 title = "Harry Potter Books & Fanfiction - An Analysis of Words"
 
 +++
