@@ -24,4 +24,6 @@ I used simple Python + BeautifulSoup combination to scrape the stories form  [Fa
 
 #### Processing the Data
 
-Taking hints from the [original post](), I used nltk to tokenize the stories, and removed the common words from the nltk English Stopwords Corpus. This was my first attempt at doing anything like this, and the process was taking 3-4 minutes per story initially. After some optimization, I was able to reduce the time to 1-2 minutes per 
+Taking hints from the [original post](), I used nltk to tokenize the stories, and removed the common words from the nltk English Stopwords Corpus. This was my first attempt at doing anything like this, and the process was taking 3-4 minutes per story initially. After some optimization, I was able to reduce the time to 1-2 minutes per story. I talked to a friend about the problem, and he suggested me to try multiprocessing. After adding multiprocessing, I had the idea of distributing the load over two CPUs (my laptop and a Raspberry Pi 4B). I copied the script and 25% of the stories over to the Pi and started the job. 
+
+_Additional Tip:_ [_screen_](https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/) _is a good utility to do long jobs over SSH_
