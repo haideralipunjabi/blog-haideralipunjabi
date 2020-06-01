@@ -66,7 +66,11 @@ I also downloaded the text versions of the 7 books from somewhere on the Interne
 
 1. Top 20 Most Occurring Words in Fanfiction Stories
 
-   ![](/uploads/graph1.png)
+   {{<images>}}
+
+   "/uploads/graph1.png"
+
+   {{</images>}}
 2. Top 20 Most Occurring Words in Harry Potter Books (excluding Top 20 from Fanfiction Stories)
 
    ![](/uploads/graph2.png)
