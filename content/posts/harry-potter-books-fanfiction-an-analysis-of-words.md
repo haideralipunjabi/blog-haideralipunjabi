@@ -2,9 +2,14 @@
 date = 2020-06-01T14:30:00Z
 description = "Graphs and WordCloud based analysis of Most Occurring Words in Harry Potter Books and popular Fanfiction Stories"
 images = ["/uploads/blog_10.jpg"]
-other_blogs = []
 tags = ["harrypotter", "python", "visualisation"]
 title = "Harry Potter Books & Fanfiction - An Analysis of Words"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/harry-potter-books-fanfiction-an-analysis-of-words-1hi7"
+provider = "Dev"
+[[other_blogs]]
+link = "https://medium.com/hackesta/harry-potter-books-fanfiction-an-analysis-of-words-cfa29ee28d1a"
+provider = "Medium"
 
 +++
 ### Background
