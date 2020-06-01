@@ -18,7 +18,11 @@ On 28th May, [a post on r/dataisbeautiful](https://www.reddit.com/r/dataisbeauti
 
 There are many approaches I could have taken to prepare the data. I decided to download the stories first and then do the processing on the local files due to my slow & unreliable internet.
 
+{{<images>}}
+
 ![Word Cloud from Attempt 1](/uploads/out_final1.png "Word Cloud from Attempt 1")
+
+{{</images>}}
 
 #### Scraping Fanfiction
 
