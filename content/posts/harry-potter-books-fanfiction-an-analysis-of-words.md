@@ -18,13 +18,15 @@ The entire source code (except the data files & output files) is available here
 
 There are many approaches I could have taken to prepare the data. I decided to download the stories first and then do the processing on the local files due to my slow & unreliable internet.
 
+![Word Cloud from Attempt 1](/uploads/out_final1.png "Word Cloud from Attempt 1")
+
 #### Scraping Fanfiction
 
 I used simple Python + BeautifulSoup combination to scrape the stories form  [Fanfiction.net](http://fanfiction.net/). I sorted the stories based on their Favorite Count, and filtered them to stories having more than 100k words. ([Link to the URL](https://www.fanfiction.net/book/Harry-Potter/?&srt=4&r=10&len=100&p=1)). I scraped first 10 pages, (each page has 25 stories) resulting in 250 stories. It took me a total of 10 hours (7 on one day, and 3 on the next) to scrape all the stories.
 
 #### Processing the Data
 
-Taking hints from the [original post](), I used nltk to tokenize the stories, and removed the common words from the nltk English Stopwords Corpus. This was my first attempt at doing anything like this, and the process was taking 3-4 minutes per story initially. After some optimization, I was able to reduce the time to 1-2 minutes per story. I talked to a friend about the problem, and he suggested me to try multiprocessing. After adding multiprocessing, I had the idea of distributing the load over two CPUs (my laptop and a Raspberry Pi 4B). I copied the script and 25% of the stories over to the Pi and started the job. 
+Taking hints from the [original post](), I used nltk to tokenize the stories, and removed the common words from the nltk English Stopwords Corpus. This was my first attempt at doing anything like this, and the process was taking 3-4 minutes per story initially. After some optimization, I was able to reduce the time to 1-2 minutes per story. I talked to a friend about the problem, and he suggested me to try multiprocessing. After adding multiprocessing, I had the idea of distributing the load over two CPUs (my laptop and a Raspberry Pi 4B). I copied the script and 25% of the stories over to the Pi and started the job.
 
 _Additional Tip:_ [_screen_](https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/) _is a good utility to do long jobs over SSH_
 
@@ -32,7 +34,7 @@ It took me an hour to the processing. I didn't want to do the processing again i
 
 #### Making the Word Cloud
 
-I took a look at [wordcloud Python Package](https://github.com/amueller/word_cloud) and copied the code from its examples to generate the word cloud. 
+I took a look at [wordcloud Python Package](https://github.com/amueller/word_cloud) and copied the code from its examples to generate the word cloud.
 
 To make the mask image, I downloaded some images from the Internet and used Inkscape to fix them.
 
@@ -48,4 +50,14 @@ In my first attempt, I used the nltk English stopwords corpus, which is just 179
 
 #### Harry Potter Canon Books
 
-I also downloaded the text versions of the 7 books from somewhere on the Internet, sanitised them a bit, and applied the same process as the fan 
+I also downloaded the text versions of the 7 books from somewhere on the Internet, sanitised them a bit, and applied the same process as the fanfiction stories to generate their data. Using that data, I was able to compare the occurrence of some words in fanfiction vs canon. Since I had the data and the code, I decided to make their corresponding word clouds as well.
+
+### Visualisations from Attempt 2:
+
+#### Frequently Occurring Words in Top 250 Fanfictions
+
+![Frequently Occurring Words in Top 250 Fanfictions](/uploads/fics.png "Frequently Occurring Words in Top 250 Fanfictions")
+
+#### Average Frequency of Occurrence of Words per book or story
+
+1. Top 20 Most Occurring Words in Fanfiction Stories
