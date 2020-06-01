@@ -97,10 +97,40 @@ Ron is an almost opposite of Daphne. JKR wrote Ron in such a beautiful manner th
 
 #### The 7 Canon Books:
 
-1. Philosopher's Stone
+1. **Philosopher's Stone**
 
    ![](/uploads/book1.png)
-2. Chamber of Secrets
+
+   I tried to use an image of 9 3/4 . The word Quirrell and Griphook are frequent in this book and will lose their frequency in future books.
+2. **Chamber of Secrets**
 
    ![](/uploads/book2.png)
-3. Prisoner of Azkaban
+
+   I used an image of Dobby the Free Elf. You will words like Dobby, Lockhart (I hate that guy), Polyjuice, Parseltongue, Mandrakes, Mudbloods making an appearance in this book.
+3. **Prisoner of Azkaban**
+
+   ![](/uploads/book3.png)
+
+   I used an image of Prongs (James' Marauder Nickname, and Animagus form. Harry's Patronus) for this book. Words like Lupin, Sirius, Pettigrew, dementors, Crookshanks, Patronus start appearing.
+4. **Goblet of Fire**
+
+   ![](/uploads/book4.png)
+
+   I tried to use an Image of the Triwizard Trophy. Words like Cedric, Beauxbatons, Crouch,  Durmstrang start appearing.
+5. **Order of the Phoenix**
+
+   ![](/uploads/book5.png)
+
+   Tried to use an image of a Phoenix. Umbridge is very popular in this book.
+6. **Half Blood Prince**
+
+   ![](/uploads/book6.png)
+
+   I used an image of the Half Blood Prince for this book. Apart from the usual, Slughorn is the most common word in this book.
+
+    
+7. **Deathly Hallows**
+
+   ![](/uploads/book7.png)
+
+   I used an image of the Deathly Hallows for this. You will see "wand" becomes very used due to "Elder wand". Hallows, Cloak, Wandmaker appear. Also, Griphook is back.
