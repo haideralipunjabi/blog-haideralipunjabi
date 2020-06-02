@@ -29,7 +29,7 @@ There are many approaches I could have taken to prepare the data. I decided to d
 
 I used simple Python + BeautifulSoup combination to scrape the stories form  [Fanfiction.net](http://fanfiction.net/). I sorted the stories based on their Favorite Count, and filtered them to stories having more than 100k words. ([Link to the URL](https://www.fanfiction.net/book/Harry-Potter/?&srt=4&r=10&len=100&p=1)). I scraped first 10 pages, (each page has 25 stories) resulting in 250 stories. It took me a total of 10 hours (7 on one day, and 3 on the next) to scrape all the stories.
 
-{{<github repo="haideralipunjabi/harrypotter-analysis" file="scrape_fanfics.py" lang="python">}}
+{{<github repo="haideralipunjabi/harrypotter-analysis" file="scrape_fanfics.py" lang="python" options="linenos=true">}}
 
 #### Processing the Data
 
@@ -38,7 +38,7 @@ Taking hints from the [original post](), I used nltk to tokenize the stories, an
 _Additional Tip:_ [_screen_](https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/) _is a good utility to do long jobs over SSH_
 
 It took me an hour to the processing. I didn't want to do the processing again if I needed to remove some more words so I decided to store the word frequency data into json files. (Really helpful in future)
-{{<github repo="haideralipunjabi/harrypotter-analysis" file="text_to_json.py" lang="python">}}
+{{<github repo="haideralipunjabi/harrypotter-analysis" file="text_to_json.py" lang="python" options="linenos=true">}}
 
 #### Making the Word Cloud
 
@@ -46,7 +46,7 @@ I took a look at [wordcloud Python Package](https://github.com/amueller/word_clo
 
 To make the mask image, I downloaded some images from the Internet and used Inkscape to fix them.
 
-{{<github repo="haideralipunjabi/harrypotter-analysis" file="make_wordcloud.py" lang="python">}}
+{{<github repo="haideralipunjabi/harrypotter-analysis" file="make_wordcloud.py" lang="python" options="linenos=true">}}
 
 #### Feedback
 
@@ -81,7 +81,7 @@ I also downloaded the text versions of the 7 books from somewhere on the Interne
 
 #### Code to generate the above visualisations
 
-{{<github repo="haideralipunjabi/harrypotter-analysis" file="make_graph.py" lang="python">}}
+{{<github repo="haideralipunjabi/harrypotter-analysis" file="make_graph.py" lang="python" options="linenos=true">}}
 
 
 ### Important Results
