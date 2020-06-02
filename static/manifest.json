@@ -1,0 +1,31 @@
+{
+    "name": "Blog - Haider Ali Punjabi",
+    "short_name": "Blog - Haider Ali Punjabi",
+    "start_url": "/?utm_source=pwa",
+    "display": "standalone",
+    "background_color": "#353b43",
+    "theme_color": "#57cc8a",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/favicons/icon-32x32.png",
+        "type": "image/png", "sizes": "32x32"
+      },
+      {
+        "src": "/favicons/icon-16x16.png",
+        "type": "image/png", "sizes": "16x16"
+      },
+      {
+        "src": "/favicons/mstile-150x150.png",
+        "type": "image/png", "sizes": "150x150"
+      },
+      {
+        "src": "/favicons/android-chrome-192x192.png",
+        "type": "image/png", "sizes": "192x192"
+      },
+      {
+        "src": "/favicons/android-chrome-512x512.png",
+        "type": "image/png", "sizes": "512x512"
+      }
+    ]
+  }
