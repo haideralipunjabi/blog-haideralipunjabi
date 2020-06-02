@@ -1,0 +1,14 @@
+before_install:
+  - sudo apt-get install hugo
+
+# command to run tests
+before_deploy: 
+  - hugo --gc --cleanDestinationDir
+
+deploy:
+  provider: netlify
+  site: $NETLIFY_SITE
+  auth: $NETLIFY_AUTH
+  dir: public
+  edge: true # opt in to dpl v2
+ 
