@@ -2,7 +2,7 @@ language: python
 python:
   - "3.6"
 before_install:
-  - sudo apt-get install hugo
+  - sudo apt-get -y install hugo
 
 # command to run tests
 before_deploy: 
