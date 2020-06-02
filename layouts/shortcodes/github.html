@@ -1,1 +1,4 @@
-<script src='https://gist-it.appspot.com/{{.Get "src"}}'></script>
+{{ $dataJ := getJSON "https://api.github.com/repos/"  (.Get "repo")  "/contents/"  (.Get "file")  }}
+{{ $con := base64Decode $dataJ.content }}
+
+{{ highlight $con (.Get "lang") "" }}
