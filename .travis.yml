@@ -1,8 +1,11 @@
 language: python
 python:
   - "3.6"
-before_install:
-  - sudo apt-get -y install hugo
+  
+dist: xenial
+addons:
+  snaps:
+    - hugo
 
 # command to run tests
 before_deploy: 
