@@ -5,6 +5,9 @@ images = ["/uploads/blog_10.jpg"]
 tags = ["harrypotter", "python", "visualisation"]
 title = "Harry Potter Books & Fanfiction - An Analysis of Words"
 [[other_blogs]]
+link = "https://github.com/haideralipunjabi/harrypotter-analysis"
+provider = "Github"
+[[other_blogs]]
 link = "https://dev.to/haideralipunjabi/harry-potter-books-fanfiction-an-analysis-of-words-1hi7"
 provider = "Dev"
 [[other_blogs]]
