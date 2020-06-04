@@ -36,6 +36,7 @@ fields:
       options:
       - Medium
       - Dev
+      - Github
       source:
         type: simple
         section: 
