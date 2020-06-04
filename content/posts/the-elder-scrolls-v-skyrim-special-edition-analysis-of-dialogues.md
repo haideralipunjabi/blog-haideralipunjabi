@@ -24,6 +24,8 @@ I am going to look into other data I can extract this way, and maybe make some o
 
 In the CSV, there were two columns of data I was interested in **RESPONSE TEXT** & **TOPIC TEXT**. Response Text was the larger one, with over 40k unique dialogues. Topic Text had only around 5.5K unique dialogues and also needed some additional processing. Topic Text contained some game constants such as `RoomCost` , `HorseCost`, and other prices, which had to be filtered out. I did all that in `csv_to_json.py`. Here's the code for it:
 
+{{<github repo="skyrim-dialogueanalysis" file="csv_to_json.py" lang="python" options="linenos=true">}}
+
 ### Counting the Words
 
 Like the [previous visualisation](),  I used [nltk']()s stopwords corpus, along with a modified version of [20k most common words by Google](https://github.com/first20hours/google-10000-english). Interestingly, the modifications I did for Harry Potter were valid for Skyrim as well, because there is no dialogue with names like Harry, Ron, Arthur, etc and they share words like vampires, magic, etc.
@@ -34,13 +36,17 @@ _Additional Tip:_ [_progress_](https://pypi.org/project/progress/) _is a great P
 
 Here's the code I used for counting:
 
+{{<github repo="skyrim-dialogueanalysis" file="count_words.py" lang="python" options="linenos=true">}}
+
 ### Making the WordCloud
 
-I used pretty much the same process as the [last visualisation](https://blog.haideralipunjabi.com/posts/harry-potter-books-fanfiction-an-analysis-of-words/). I changed the maximum font size to depict the variation properly and used a custom font this time. 
+I used pretty much the same process as the [last visualisation](https://blog.haideralipunjabi.com/posts/harry-potter-books-fanfiction-an-analysis-of-words/). I changed the maximum font size to depict the variation properly and used a custom font this time.
 
 To make the WordCloud, I used the [wordcloud](https://amueller.github.io/word_cloud/) package. For the mask, I used [Skyrim Logo Vector](https://www.nexusmods.com/skyrim/mods/68054). For the font, I used [Sovngarde](https://www.nexusmods.com/skyrimspecialedition/mods/386) font.
 
 Here's the code for the wordcloud:
+
+{{<github repo="skyrim-dialogueanalysis" file="make_wordcloud.py" lang="python" options="linenos=true">}}
 
 ### Making the Graph
 
@@ -51,13 +57,15 @@ I initially planned on making a set of graphs from the data, but wasn't able to 
 
 Since I had already made this, I thought of sharing it here, in case someone is interested in the image or its code.
 
+{{<github repo="skyrim-dialogueanalysis" file="make_graphs.py" lang="python" options="linenos=true">}}
+
 ### Future Plans
 
 I will look into making custom scripts (if someone already has them, do share it with me) to extract other interesting data from Skyrim and see what I can do with them.
 
 ### References:
 
-* [Natural Language Toolkit](https://nltk.org) 
+* [Natural Language Toolkit](https://nltk.org)
 * [wordcloud](https://amueller.github.io/word_cloud/) package
 * [Skyrim Logo Vector](https://www.nexusmods.com/skyrim/mods/68054)
 * [Sovngarde](https://www.nexusmods.com/skyrimspecialedition/mods/386)
