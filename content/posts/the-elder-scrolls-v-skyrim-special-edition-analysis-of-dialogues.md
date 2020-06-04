@@ -17,3 +17,11 @@ _Disclaimer: A lot of the code is shared between_ [_my previous_](https://blog.h
 ### Getting the data
 
 I don't like opening my Windows installation (I have a dual boot setup, and use Manjaro mainly), and looked around the internet for some sort of data dump of Skyrim Dialogues. Unfortunately, I couldn't find any and then decided to extract the data myself. I had recently formatted my Windows Partition so had to reinstall the game. It also provided the benefit that no mods would pollute the data. (I had over 150 mods before the format). I downloaded the latest [xEdit](http://tes5edit.github.io/) and used the `Export dialogues.pas` script that comes with it to export all the dialogues. (It took me 22:05 minutes).
+
+I am going to look into other data I can extract this way, and maybe make some other stuff.
+
+### Processing the data
+
+In the CSV, there were two columns of data I was interested in **RESPONSE TEXT** & **TOPIC TEXT**. Response Text was the larger one, with over 40k unique dialogues. Topic Text had only around 5.5K unique dialogs, and also needed some additional processing. Topic Text contained some game constants such as `RoomCost` , `HorseCost`, and other prices, which had to filtered out. I did all that in `csv_to_json.py`. Here's the code for it:
+
+### Counting the Words
