@@ -1,5 +1,5 @@
 +++
-date = 2020-06-04T13:30:00Z
+date = 2020-06-04T12:30:00Z
 description = "How I made a WordCloud for most occurring words in The Elder Scrolls V: Skyrim Special Edition"
 draft = true
 images = []
@@ -14,6 +14,13 @@ After [my last visualisation of Harry Potter data](https://blog.haideralipunjabi
 
 _Disclaimer: A lot of the code is shared between_ [_my previous_](https://blog.haideralipunjabi.com/posts/harry-potter-books-fanfiction-an-analysis-of-words/) _project and this one_
 
+### Visualisations
+
+{{<imgur id="odnJWMw" ext="png" class="image-resp" align="center" title="WordCloud of Most Occurring Words in Dialogues of Skyrim Special Edition">}}
+
+{{<imgur id="ca71mqu" ext="png" class="image-resp" align="center" title="Graph of DLC contribution towards dialogues">}}
+
+
 ### Getting the data
 
 I don't like opening my Windows installation (I have a dual boot setup, and use Manjaro mainly), and looked around the internet for some sort of data dump of Skyrim Dialogues. Unfortunately, I couldn't find any and then decided to extract the data myself. I had recently formatted my Windows Partition so had to reinstall the game. It also provided the benefit that no mods would pollute the data. (I had over 150 mods before the format). I downloaded the latest [xEdit](http://tes5edit.github.io/) and used the `Export dialogues.pas` script that comes with it to export all the dialogues. (It took me 22:05 minutes).
@@ -24,7 +31,7 @@ I am going to look into other data I can extract this way, and maybe make some o
 
 In the CSV, there were two columns of data I was interested in **RESPONSE TEXT** & **TOPIC TEXT**. Response Text was the larger one, with over 40k unique dialogues. Topic Text had only around 5.5K unique dialogues and also needed some additional processing. Topic Text contained some game constants such as `RoomCost` , `HorseCost`, and other prices, which had to be filtered out. I did all that in `csv_to_json.py`. Here's the code for it:
 
-{{<github repo="skyrim-dialogueanalysis" file="csv_to_json.py" lang="python" options="linenos=true">}}
+{{<github repo="haideralipunjabi/skyrim-dialogueanalysis" file="csv_to_json.py" lang="python" options="linenos=true">}}
 
 ### Counting the Words
 
@@ -36,7 +43,7 @@ _Additional Tip:_ [_progress_](https://pypi.org/project/progress/) _is a great P
 
 Here's the code I used for counting:
 
-{{<github repo="skyrim-dialogueanalysis" file="count_words.py" lang="python" options="linenos=true">}}
+{{<github repo="haideralipunjabi/skyrim-dialogueanalysis" file="count_words.py" lang="python" options="linenos=true">}}
 
 ### Making the WordCloud
 
@@ -46,7 +53,7 @@ To make the WordCloud, I used the [wordcloud](https://amueller.github.io/word_cl
 
 Here's the code for the wordcloud:
 
-{{<github repo="skyrim-dialogueanalysis" file="make_wordcloud.py" lang="python" options="linenos=true">}}
+{{<github repo="haideralipunjabi/skyrim-dialogueanalysis" file="make_wordcloud.py" lang="python" options="linenos=true">}}
 
 ### Making the Graph
 
@@ -57,7 +64,7 @@ I initially planned on making a set of graphs from the data, but wasn't able to 
 
 Since I had already made this, I thought of sharing it here, in case someone is interested in the image or its code.
 
-{{<github repo="skyrim-dialogueanalysis" file="make_graphs.py" lang="python" options="linenos=true">}}
+{{<github repo="haideralipunjabi/skyrim-dialogueanalysis" file="make_graphs.py" lang="python" options="linenos=true">}}
 
 ### Future Plans
 
