@@ -36,7 +36,7 @@ Here's the code I used for counting:
 
 ### Making the WordCloud
 
-I used pretty much the same process as the last visualisation. I changed the maximum font size to depict the variation properly and used a custom font this time. 
+I used pretty much the same process as the [last visualisation](https://blog.haideralipunjabi.com/posts/harry-potter-books-fanfiction-an-analysis-of-words/). I changed the maximum font size to depict the variation properly and used a custom font this time. 
 
 To make the WordCloud, I used the [wordcloud](https://amueller.github.io/word_cloud/) package. For the mask, I used [Skyrim Logo Vector](https://www.nexusmods.com/skyrim/mods/68054). For the font, I used [Sovngarde](https://www.nexusmods.com/skyrimspecialedition/mods/386) font.
 
@@ -50,3 +50,16 @@ I initially planned on making a set of graphs from the data, but wasn't able to 
 2. Some of the data doesn't; produce interesting visualisations. Nords have the highest dialogue count, and after the difference between the first few races and the remaining is so huge that a lot of the races aren't visible.
 
 Since I had already made this, I thought of sharing it here, in case someone is interested in the image or its code.
+
+### Future Plans
+
+I will look into making custom scripts (if someone already has them, do share it with me) to extract other interesting data from Skyrim and see what I can do with them.
+
+### References:
+
+* [Natural Language Toolkit](https://nltk.org) 
+* [wordcloud](https://amueller.github.io/word_cloud/) package
+* [Skyrim Logo Vector](https://www.nexusmods.com/skyrim/mods/68054)
+* [Sovngarde](https://www.nexusmods.com/skyrimspecialedition/mods/386)
+* [xEdit](http://tes5edit.github.io/)
+* [Harry Potter Books & Fanfiction - An Analysis of Words](https://blog.haideralipunjabi.com/posts/harry-potter-books-fanfiction-an-analysis-of-words/)
