@@ -1,6 +1,6 @@
 +++
 date = 2020-06-04T13:30:00Z
-description = "How I made a WordCloud for most occurring word in The Elder Scrolls V: Skyrim Special Edition"
+description = "How I made a WordCloud for most occurring words in The Elder Scrolls V: Skyrim Special Edition"
 draft = true
 images = []
 other_blogs = []
