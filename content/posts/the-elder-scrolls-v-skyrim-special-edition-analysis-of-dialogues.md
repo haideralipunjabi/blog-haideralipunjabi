@@ -49,4 +49,4 @@ I initially planned on making a set of graphs from the data, but wasn't able to 
 1. Some of the data was weird. Argneir had the highest dialogue count due to dialogues of many NPCs (including General Tullius, I think) is assigned to him.
 2. Some of the data doesn't; produce interesting visualisations. Nords have the highest dialogue count, and after the difference between the first few races and the remaining is so huge that a lot of the races aren't visible.
 
-Since I had already made this, I thought of sharing it here, in case someone is interested in the image or it's code.
+Since I had already made this, I thought of sharing it here, in case someone is interested in the image or its code.
