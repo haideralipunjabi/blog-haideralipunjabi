@@ -1,11 +1,13 @@
 +++
-date = 2020-06-04T12:30:00Z
+date = 2020-06-04T13:30:00Z
 description = "How I made a WordCloud for most occurring words in The Elder Scrolls V: Skyrim Special Edition"
 draft = true
-images = []
-other_blogs = []
+images = ["/uploads/blog11.jpg"]
 tags = ["skyrim", "games", "data", "python", "visualisation"]
 title = "The Elder Scrolls V: Skyrim Special Edition - Analysis of Dialogues"
+[[other_blogs]]
+link = "https://github.com/haideralipunjabi/skyrim-dialogueanalysis"
+provider = "Github"
 
 +++
 ### Background
