@@ -22,6 +22,14 @@ I am going to look into other data I can extract this way, and maybe make some o
 
 ### Processing the data
 
-In the CSV, there were two columns of data I was interested in **RESPONSE TEXT** & **TOPIC TEXT**. Response Text was the larger one, with over 40k unique dialogues. Topic Text had only around 5.5K unique dialogs, and also needed some additional processing. Topic Text contained some game constants such as `RoomCost` , `HorseCost`, and other prices, which had to filtered out. I did all that in `csv_to_json.py`. Here's the code for it:
+In the CSV, there were two columns of data I was interested in **RESPONSE TEXT** & **TOPIC TEXT**. Response Text was the larger one, with over 40k unique dialogues. Topic Text had only around 5.5K unique dialogues and also needed some additional processing. Topic Text contained some game constants such as `RoomCost` , `HorseCost`, and other prices, which had to be filtered out. I did all that in `csv_to_json.py`. Here's the code for it:
 
 ### Counting the Words
+
+Like the [previous visualisation](),  I used [nltk']()s stopwords corpus, along with a modified version of [20k most common words by Google](https://github.com/first20hours/google-10000-english). Interestingly, the modifications I did for Harry Potter were valid for Skyrim as well, because there is no dialogue with names like Harry, Ron, Arthur, etc and they share words like vampires, magic, etc.
+
+I counted both RESPONSE TEXT & TOPIC TEXT data separately and then merged them into a single file count.json
+
+_Additional Tip:_ [_progress_](https://pypi.org/project/progress/) _is a great Python Package to show progress in your scripts._
+
+Here's the code I used for counting:
