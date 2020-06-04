@@ -33,3 +33,15 @@ I counted both RESPONSE TEXT & TOPIC TEXT data separately and then merged them i
 _Additional Tip:_ [_progress_](https://pypi.org/project/progress/) _is a great Python Package to show progress in your scripts._
 
 Here's the code I used for counting:
+
+### Making the WordCloud
+
+I used pretty much the same process as the last visualisation. I changed the maximum font size to depict the variation properly and used a custom font this time. 
+
+To make the WordCloud, I used the [wordcloud](https://amueller.github.io/word_cloud/) package. For the mask, I used [Skyrim Logo Vector](https://www.nexusmods.com/skyrim/mods/68054). For the font, I used [Sovngarde](https://www.nexusmods.com/skyrimspecialedition/mods/386) font.
+
+Here's the code for the wordcloud:
+
+### Making the Graph
+
+I initially planned on making a set of graphs from the data.
