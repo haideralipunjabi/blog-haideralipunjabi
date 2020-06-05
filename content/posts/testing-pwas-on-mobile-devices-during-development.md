@@ -4,7 +4,7 @@ description = "Tutorial / Blog Post explaining PWA Testing on mobile devices usi
 draft = true
 images = []
 other_blogs = []
-tags = []
+tags = ["android", "pwa", "webdev"]
 title = "Testing PWAs on mobile devices during development"
 
 +++
@@ -28,6 +28,8 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 
 1. Go to your Phone Settings > System > Developer Options (This might vary in different phones, so if it is not the same in your's, look it up on the internet)
 2. Turn on Android Debugging and ADB over Network.
+
+   ![](/uploads/screenshot_20200605-114625_settings-2.png)
 3. Note the IP Address and Port shown under ADB over Network
 4. Install [ADB]() on your computer
 5. Go to your command-line / command prompt and enter
@@ -42,11 +44,15 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 
 1. Make sure your development server is running on your PC
 2. Go to [`chrome://inspect/#devices`](chrome://inspect/#devices). You should see your device along with a Connected status indicator
+
+   ![](/uploads/maim-1591337796.png)
 3. Enable Port Forwarding
 4. Click Add Rule
 5. In the Device Port, enter the port number on which you want to access the site on your device
 6. In the Local Address field, enter the address and port of your development server. (e.g, localhost:1313)
 7. Click Add
+
+   ![](/uploads/maim-1591337806.png)
 
 Port Forwarding should be setup and you will be able to access your server on your Android Device on localhost:port (which you set in Step 5.)
 
@@ -106,6 +112,8 @@ Now that you can access the PWA on your mobile, you need to find a way to test i
 
 1. Setup ADB, as shown in the Chrome Port Forwarding
 2. In [`chrome://inspect/#devices`](chrome://inspect/#devices), you will see a list of all pages opened on your mobile device.
+
+   ![](/uploads/maim-1591337816.png)
 3. Click on the inspect button to launch the Dev Tools for that page
 
 ## References
