@@ -23,3 +23,9 @@ In this blog post, I will explain two methods which will help you test your PWAs
 Host a site on your machine, access the content from an Android Device (over Android Debugging Bridge). By using Port Forwarding, the browser on your mobile will be able to access the site on its own localhost, thus in a Secure Context.
 
 Most of the tutorials on internet use Wired ADB, which discourages many people from using this method. I will be using Wireless ADB, which isn't very difficult to setup.
+
+### ADB over Network
+
+1. Go to your Phone Settings > System > Developer Options (This might vary in different phones, so if it is not the same in your's, look it up on the internet)
+2. Turn on Android Debugging and ADB over Network.
+3. Note the IP Address and Port shown under ADB over Network
