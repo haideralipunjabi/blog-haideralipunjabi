@@ -96,4 +96,21 @@ First of all, you will need to setup netlify-cli and authorize it. You will need
 4. To start a Netlify Dev server, you can use `netlify dev` , but since we want to Start a Public Live Session, we will use
 
        netlify dev --live
-5. You will get a URL that looks like [`https://clever-cray-2aa156-6639f3.netlify.live/`](https://clever-cray-2aa156-6639f3.netlify.live/ "https://clever-cray-2aa156-6639f3.netlify.live/")`. This URL will be accessible by everyone on internet`
+5. You will get a URL that looks like `https://clever-cray-2aa156-6639f3.netlify.live/`. This URL will be accessible by everyone on internet.
+
+netlify-cli has many other features, [read the documentation]() for more info.
+
+Netlify is also a great choice for testing PWAs on your mobile device without deploying to production.
+
+### Pros and Cons
+
+**Pros:**
+
+* Can be used to test on any device on any network
+* Easy to integrate in your build environment if you are already using Netlify (which many people do)
+
+**Cons:**
+
+* Slower Deployment and Testing
+
+## Testing PWAs on Mobile Devices
