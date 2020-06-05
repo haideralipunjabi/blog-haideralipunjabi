@@ -41,7 +41,7 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 ### Using Chrome Port Forwarding
 
 1. Make sure your development server is running on your PC
-2. Go to Chrome > Dev Tools > Inspect Devices. In the left-hand menu, you should see your device along with a Connected status indicator
+2. Go to [`chrome://inspect/#devices`](chrome://inspect/#devices). You should see your device along with a Connected status indicator
 3. Enable Port Forwarding
 4. Click Add Rule
 5. In the Device Port, enter the port number on which you want to access the site on your device
@@ -96,23 +96,4 @@ First of all, you will need to setup netlify-cli and authorize it. You will need
 4. To start a Netlify Dev server, you can use `netlify dev` , but since we want to Start a Public Live Session, we will use
 
        netlify dev --live
-5. You will get a URL that looks like `https://clever-cray-2aa156-6639f3.netlify.live/`. This URL will be accessible by everyone on internet.
-
-netlify-cli has many other features, [read the documentation]() for more info.
-
-Netlify is also a great choice for testing PWAs on your mobile device without deploying to production.
-
-### Pros and Cons
-
-**Pros:**
-
-* Can be used to test on any device on any network
-* Easy to integrate in your build environment if you are already using Netlify (which many people do)
-
-**Cons:**
-
-* Slower Deployment and Testing
-
-## Testing PWAs on Mobile Devices
-
-Now that your PWA is accessible on your mobile devices, the next thing you will need to know is how to test it properly. On the PC, testing becomes easy with Dev Tools of various browsers. I have yet to find a good way to use Dev Tools on mobile only. Google Chrome provides a good way of accessing Dev Tools for any page on your mobile, from your browser on PC. You will need to setup ADB (as shown above) for this.
+5. You will get a URL that looks like `[https://clever-cray-2aa156-6639f3.netlify.live/](https://clever-cray-2aa156-6639f3.netlify.live/ "https://clever-cray-2aa156-6639f3.netlify.live/")`. This URL will be accessible by everyone on internet\`
