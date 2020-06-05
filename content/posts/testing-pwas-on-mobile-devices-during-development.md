@@ -101,3 +101,5 @@ First of all, you will need to setup netlify-cli and authorize it. You will need
 netlify-cli has many more features you should read about in the [documentation](https://docs.netlify.com/cli/get-started/#netlify-dev).
 
 ## Testing your PWA on your mobile
+
+Now that you can access the PWA on your mobile, you need to find a way to test it properly. The Dev Tools available in PC Browsers help in debugging and testing, but unfortunately, I have yet to find a similar feature on phone. 
