@@ -19,3 +19,7 @@ The capability to be installed on a mobile device is very important for a PWA, a
 In this blog post, I will explain two methods which will help you test your PWAs on your phone.
 
 ## Chrome Port Forwarding
+
+Host a site on your machine, access the content from an Android Device (over Android Debugging Bridge). By using Port Forwarding, the browser on your mobile will be able to access the site on its own localhost, thus in a Secure Context.
+
+Most of the tutorials on internet use Wired ADB, which discourages many people from using this method. I will be using Wireless ADB, which isn't very difficult to setup.
