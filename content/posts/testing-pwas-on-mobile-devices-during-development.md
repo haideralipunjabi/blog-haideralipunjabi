@@ -107,3 +107,10 @@ Now that you can access the PWA on your mobile, you need to find a way to test i
 1. Setup ADB, as shown in the Chrome Port Forwarding
 2. In [`chrome://inspect/#devices`](chrome://inspect/#devices), you will see a list of all pages opened on your mobile device.
 3. Click on the inspect button to launch the Dev Tools for that page
+
+## References
+
+* [Progressive Web Apps -Mozilla]()
+* [Netlify Dev](https://www.netlify.com/products/dev/)
+* [Access Local Servers - Google Tools for Web Developers](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server)
+* [Remote Debugging WebView](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews)
