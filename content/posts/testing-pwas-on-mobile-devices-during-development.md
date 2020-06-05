@@ -114,3 +114,5 @@ Netlify is also a great choice for testing PWAs on your mobile device without de
 * Slower Deployment and Testing
 
 ## Testing PWAs on Mobile Devices
+
+Now that your PWA is accessible on your mobile devices, the next thing you will need to know is how to test it properly. On the PC, testing becomes easy with Dev Tools of various browsers. I have yet to find a good way to use Dev Tools on mobile only. Google Chrome provides a good way of accessing Dev Tools for any page on your mobile, from your browser on PC. You will need to setup ADB (as shown above) for this.
