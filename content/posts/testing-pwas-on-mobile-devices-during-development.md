@@ -29,3 +29,7 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 1. Go to your Phone Settings > System > Developer Options (This might vary in different phones, so if it is not the same in your's, look it up on the internet)
 2. Turn on Android Debugging and ADB over Network.
 3. Note the IP Address and Port shown under ADB over Network
+4. Install [ADB]() on your computer
+5. Go to your command-line / command prompt and enter 
+
+       adb connect <ip-address>:<port>
