@@ -49,3 +49,17 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 7. Click Add
 
 Port Forwarding should be setup and you will be able to access your server on your Android Device on localhost:port (which you set in Step 5.)
+
+[More Detailed Tutorial](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server)
+
+### Pros vs Cons
+
+**Pros:**
+
+* Faster Deployment and Testing
+* Already using ADB and Chrome, which will also be used if you want to use the Dev Tools on your mobile device
+
+**Cons:**
+
+* Can only be used for Android Devices
+* The devices need to be on the same network
