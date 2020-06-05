@@ -30,6 +30,22 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 2. Turn on Android Debugging and ADB over Network.
 3. Note the IP Address and Port shown under ADB over Network
 4. Install [ADB]() on your computer
-5. Go to your command-line / command prompt and enter 
+5. Go to your command-line / command prompt and enter
 
        adb connect <ip-address>:<port>
+
+   Use the IP Address and Port from Step 3
+6. When connecting for the first time, you will need to authorize the connection on your phone.
+7. Your device should be connected to your PC over WiFi.
+
+### Using Chrome Port Forwarding
+
+1. Make sure your development server is running on your PC
+2. Go to Chrome > Dev Tools > Inspect Devices. In the left-hand menu, you should see your device along with a Connected status indicator
+3. Enable Port Forwarding
+4. Click Add Rule
+5. In the Device Port, enter the port number on which you want to access the site on your device
+6. In the Local Address field, enter the address and port of your development server. (e.g, localhost:1313)
+7. Click Add
+
+Port Forwarding should be setup and you will be able to access your server on your Android Device on localhost:port (which you set in Step 5.)
