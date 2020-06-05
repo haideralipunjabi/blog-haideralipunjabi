@@ -2,7 +2,7 @@
 date = 2020-06-05T13:30:00Z
 description = "Tutorial / Blog Post explaining PWA Testing on mobile devices using two methods, Chrome Port Forwarding & Netlify Dev"
 draft = true
-images = []
+images = ["/uploads/blog12.jpg"]
 other_blogs = []
 tags = ["android", "pwa", "webdev"]
 title = "Testing PWAs on mobile devices during development"
