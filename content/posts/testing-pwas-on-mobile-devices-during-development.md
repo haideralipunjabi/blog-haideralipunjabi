@@ -63,3 +63,37 @@ Port Forwarding should be setup and you will be able to access your server on yo
 
 * Can only be used for Android Devices
 * The devices need to be on the same network
+
+## Netlify Dev
+
+[Netlify Dev](https://www.netlify.com/products/dev/) is part of the [netlify-cli](https://docs.netlify.com/cli/get-started), and is a great choice if you are already using netlify-cli, or need to showcase your work live without deploying it to production. Netlify Dev also allows you to use many features from the Netlify Ecosystem like Netlify Functions, Custom Headers, etc.
+
+### Setup
+
+First of all, you will need to setup netlify-cli and authorize it. You will need an account on Netlify for it.
+
+[Here's a link to a detailed tutorial]()
+
+1. Install netlify-cli
+
+       npm install netlify-cli -g
+2. Authenticate
+
+       netlify login
+
+   Authorize it in the browser window that opens.
+3. Setup your repository using
+
+   a. Automated Setup (if your repository is on Github)
+
+       netlify init
+
+   b. Manual (for other Git Providers, or if you wise to do it like this)
+
+       netlify init --manual
+
+   You can do a lot of stuff with this cli, but I will skip directly to Netlify Dev
+4. To start a Netlify Dev server, you can use `netlify dev` , but since we want to Start a Public Live Session, we will use
+
+       netlify dev --live
+5. You will get a URL that looks like [`https://clever-cray-2aa156-6639f3.netlify.live/`](https://clever-cray-2aa156-6639f3.netlify.live/ "https://clever-cray-2aa156-6639f3.netlify.live/")`. This URL will be accessible by everyone on internet`
