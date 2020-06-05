@@ -105,3 +105,5 @@ netlify-cli has many more features you should read about in the [documentation](
 Now that you can access the PWA on your mobile, you need to find a way to test it properly. The Dev Tools available in PC Browsers help in debugging and testing, but unfortunately, I have yet to find a similar feature on phone. Fortunately, Chrome provides a solution by allowing us access to the Dev Tools for a page on mobile devices using ADB.
 
 1. Setup ADB, as shown in the Chrome Port Forwarding
+2. In [`chrome://inspect/#devices`](chrome://inspect/#devices), you will see a list of all pages opened on your mobile device.
+3. Click on the inspect button to launch the Dev Tools for that page
