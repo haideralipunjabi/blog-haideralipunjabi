@@ -8,7 +8,7 @@ title = "Flag Colours Visualisation - From Geopandas to Leaflet and back"
 link = "https://dev.to/haideralipunjabi/flag-colours-visualisation-from-geopandas-to-leaflet-and-back-4ohk"
 provider = "Dev"
 [[other_blogs]]
-link = "https://link.medium.com/JYTq7U0t1X"
+link = "https://towardsdatascience.com/flag-colours-visualisation-from-geopandas-to-leaflet-and-back-28f6400980f2"
 provider = "Medium"
 
 +++
