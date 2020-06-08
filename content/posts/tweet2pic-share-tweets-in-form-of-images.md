@@ -8,7 +8,7 @@ title = "Tweet2Pic - Share Tweets in the form of Images"
 link = "https://dev.to/haideralipunjabi/tweet2pic-share-tweets-in-the-form-of-images-3b9n"
 provider = "Dev"
 [[other_blogs]]
-link = "https://medium.com/hackesta/tweet2pic-share-tweets-in-form-of-images-2da0dcb99e8b"
+link = "https://medium.com/@haideralipunjabi/tweet2pic-share-tweets-in-form-of-images-2da0dcb99e8b"
 provider = "Medium"
 
 +++
