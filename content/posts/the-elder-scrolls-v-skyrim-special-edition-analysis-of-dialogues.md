@@ -8,7 +8,7 @@ title = "The Elder Scrolls V: Skyrim Special Edition - Analysis of Dialogues"
 link = "https://dev.to/haideralipunjabi/the-elder-scrolls-v-skyrim-special-edition-analysis-of-dialogues-2d1c"
 provider = "Dev"
 [[other_blogs]]
-link = "https://medium.com/hackesta/the-elder-scrolls-v-skyrim-special-edition-analysis-of-dialogues-456ac452d10e"
+link = "https://medium.com/@haideralipunjabi/the-elder-scrolls-v-skyrim-special-edition-analysis-of-dialogues-456ac452d10e"
 provider = "Medium"
 [[other_blogs]]
 link = "https://github.com/haideralipunjabi/skyrim-dialogueanalysis"
