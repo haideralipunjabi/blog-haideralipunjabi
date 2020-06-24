@@ -48,6 +48,6 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 
 #### 1 (b). Using ADB with Python (pure-python-adb)
 
-You can define the following function to connect to  the first ADB device connected to you computer using Python
+You can define the following function to connect to  the first ADB device connected to your computer using Python
 
 We will be using this function later to return an instance of `ppadb.device.Device` which will be used to take screenshot, and send input to your device.
