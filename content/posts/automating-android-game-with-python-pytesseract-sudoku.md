@@ -78,3 +78,7 @@ The following function will extract the numbers from the passed `image` and retu
 Now that we have the 9x9 Sudoku, we need to solve it. Solving Sudoku is a topic that has been covered a lot, and I also copied this code from [geeksforgeeks.org](https://www.geeksforgeeks.org/ "geeksforgeeks.org/"). 
 
 [Here's the geekforgeeks article on Sudoku](https://www.geeksforgeeks.org/sudoku-backtracking-7/)
+
+#### 5. Sending the solved input to your Android Device using Python
+
+To send the input, I first filtered out the input from the solved Sudoku Grid,i.e, only send the values which were missing. I used the `get_coords` function from earlier to get the coords of each box and then calculated their centres. I sent a touch at that centre using ADB, and then sent over the solution.
