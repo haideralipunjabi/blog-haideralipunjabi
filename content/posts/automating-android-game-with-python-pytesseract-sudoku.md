@@ -23,3 +23,5 @@ The script can be divided into 5 parts
 Out of the 5, I will be focusing mostly on 2,3 & 5 as 1 & 4 are topics that have been extensively covered.
 
 The complete code is available on the following repository:
+
+You can also watch the script in action on:
