@@ -25,3 +25,25 @@ Out of the 5, I will be focusing mostly on 2,3 & 5 as 1 & 4 are topics that have
 The complete code is available on the following repository:
 
 You can also watch the script in action on:
+
+### Tutorial
+
+#### 1 (a). Using ADB to Connect to your Device
+
+Most of the tutorials on internet use Wired ADB, which discourages many people from using this method. I will be using Wireless ADB, which isn't very difficult to setup.
+
+1. Go to your Phone Settings > System > Developer Options (This might vary in different phones, so if it is not the same in your's, look it up on the internet)
+2. Turn on Android Debugging and ADB over Network.
+
+   ![](/uploads/screenshot_20200605-114625_settings-2.png)
+3. Note the IP Address and Port shown under ADB over Network
+4. Install [ADB]() on your computer
+5. Go to your command-line / command prompt and enter
+
+       adb connect <ip-address>:<port>
+
+   Use the IP Address and Port from Step 3
+6. When connecting for the first time, you will need to authorize the connection on your phone.
+7. Your device should be connected to your PC over WiFi.
+
+#### 1 (b). 
