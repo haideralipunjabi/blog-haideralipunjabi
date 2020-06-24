@@ -15,8 +15,8 @@ I made a Python Script to Automate a Sudoku Game on Android after watching [Engi
 The script can be divided into 5 parts
 
 1. Connecting to an Android device using ADB, and getting the screenshot of the game from it
-2. Using Pillow to process the screenshot for Pytesseract
-3. Using Pytesseract to extract the Sudoku Game Grid to a 2D List in Python.
+2. Using [Pillow](https://pypi.org/project/Pillow/) to process the screenshot for [pytesseract](https://pypi.org/project/pytesseract/)
+3. Using [pytesseract](https://pypi.org/project/pytesseract/) to extract the Sudoku Game Grid to a 2D List in Python.
 4. Solving the Sudoku Game
 5. Sending the solved input to your Android Device using Python
 
@@ -24,7 +24,18 @@ Out of the 5, I will be focusing mostly on 2,3 & 5 as 1 & 4 are topics that have
 
 The complete code is available on the following repository:
 
+[Github: haideralipunjabi/sudoku_automate](https://github.com/haideralipunjabi/sudoku_automate)
+
 You can also watch the script in action on:
+
+{{< youtube fGY1nQzzGUc >}}
+
+### Libraries Used
+
+* [Pillow](https://pypi.org/project/Pillow/)
+* [pure-python-adb](https://pypi.org/project/pure-python-adb/)
+* [pytesseract](https://pypi.org/project/pytesseract/)
+* [progress](https://pypi.org/project/progress/)
 
 ### Tutorial
 
@@ -35,9 +46,10 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 1. Go to your Phone Settings > System > Developer Options (This might vary in different phones, so if it is not the same in your's, look it up on the internet)
 2. Turn on Android Debugging and ADB over Network.
 
-   ![](/uploads/screenshot_20200605-114625_settings-2.png)
+   {{<imgur id="zjUIKeF" ext="png" class="image-resp" align="center" title="ADB over Network">}}
+
 3. Note the IP Address and Port shown under ADB over Network
-4. Install [ADB]() on your computer
+4. Install [ADB](https://developer.android.com/studio/command-line/adb) on your computer
 5. Go to your command-line / command prompt and enter
 
        adb connect <ip-address>:<port>
@@ -46,40 +58,48 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 6. When connecting for the first time, you will need to authorize the connection on your phone.
 7. Your device should be connected to your PC over WiFi.
 
-#### 1 (b). Using ADB with Python (pure-python-adb)
+#### 1 (b). Using ADB with Python ([pure-python-adb](https://pypi.org/project/pure-python-adb/))
 
 You can define the following function to connect to  the first ADB device connected to your computer using Python
+
+{{<github repo="haideralipunjabi/sudoku_automate" file="adb.py" lang="python" sub_lines="1-10" options="linenos=true">}}
 
 We will be using this function later to return an instance of `ppadb.device.Device` which will be used to take a screenshot, and send input to your device.
 
 #### 1 (c). Taking a Screenshot and saving it
 
-pure-python-adb makes it very easy to capture a screenshot of your device. The `screencap` function is all that you need to get the screenshot. Use Pythons File IO to save it to \`screen.png\`
+[pure-python-adb](https://pypi.org/project/pure-python-adb/) makes it very easy to capture a screenshot of your device. The `screencap` function is all that you need to get the screenshot. Use Pythons File IO to save it to \`screen.png\`
 
-![](/uploads/screen.png)
+{{<github repo="haideralipunjabi/sudoku_automate" file="adb.py" lang="python" sub_lines="12-15" options="linenos=true">}}
 
-#### 2. Processing the screenshot with Pillow
+{{<imgur id="HrtXJUo" ext="png" class="image-resp" align="center" title="Screenshot of Sudoku">}}
 
-In the captured screenshot, the accuracy of any OCR will be very low. To increase accuracy, I used Pillow to process the screenshot so that it only shows the numbers in black color on a white background. 
+#### 2. Processing the screenshot with [Pillow](https://pypi.org/project/Pillow/)
 
-To do that, we first convert the image to grayscale (or single channel) using `image.convert('L')`. This will make the convert the colors to shades of greys (0-255). 
+In the captured screenshot, the accuracy of any OCR will be very low. To increase accuracy, I used [Pillow](https://pypi.org/project/Pillow/) to process the screenshot so that it only shows the numbers in black color on a white background.
 
-![](/uploads/grayscale.png)
+To do that, we first convert the image to grayscale (or single channel) using `image.convert('L')`. This will make the convert the colors to shades of greys (0-255).
+
+{{<imgur id="IEF2xXo" ext="png" class="image-resp" align="center" title="Grayscale Screenshot of Sudoku">}}
 
 After this, we need the numbers (which are the darkest, or very near to black) in black color, and the rest in white. For this, we use `image.point()`  so that all the greys > 50  become white (255) and the rest (numbers) become 0. I also increased the Contrast and Sharpness a bit to be on the safer side.
 
-![](/uploads/processed.png)
+{{<imgur id="1rkOOfg" ext="png" class="image-resp" align="center" title="Processed Screenshot of Sudoku">}}
 
-#### 3.  Extracting the numbers from the image using Pytesseract
+{{<github repo="haideralipunjabi/sudoku_automate" file="automate.py" lang="python" sub_lines="26-31" options="linenos=true">}}
 
-Using Pytesseract on the whole image might give us the numbers, but it won't tell us in which box the number was present. So, I use Pillow to crop each box and then use Pytesseract on the cropped images. Before using Pytesseract, I defined some functions to give me the coordinates of each box and to give me a cropped image of each box.
+#### 3.  Extracting the numbers from the image using [pytesseract](https://pypi.org/project/pytesseract/)
 
-Since Sudoku has a 9x9 grid, I use two for loops from 0 to 8 to loop over each box. The Pytesseract wasn't accurate enough on the default configuration and I had to pass the config `--psm 10 --oem 0`. 
+Using [pytesseract](https://pypi.org/project/pytesseract/) on the whole image might give us the numbers, but it won't tell us in which box the number was present. So, I use [Pillow](https://pypi.org/project/Pillow/) to crop each box and then use [pytesseract](https://pypi.org/project/pytesseract/) on the cropped images. Before using [pytesseract](https://pypi.org/project/pytesseract/), I defined some functions to give me the coordinates of each box and to give me a cropped image of each box.
+
+Since Sudoku has a 9x9 grid, I use two for loops from 0 to 8 to loop over each box. The [pytesseract](https://pypi.org/project/pytesseract/) wasn't accurate enough on the default configuration and I had to pass the config `--psm 10 --oem 0`.
 
 * The `--psm` argument defines the Page Segmentation Method. `10` stands for `Treat the image as a single character`. This seemed most appropriate since I am passing cropped images of each box.
-* The `--oem` argument defines the OCR Engine Mode. `0` stands for `Legacy Engine Only`. 
+* The `--oem` argument defines the OCR Engine Mode. `0` stands for `Legacy Engine Only`.
 
 The following function will extract the numbers from the passed `image` and return a 9x9 2D List with the numbers.
+
+{{<github repo="haideralipunjabi/sudoku_automate" file="automate.py" lang="python" sub_lines="34-48" options="linenos=true">}}
 
 #### 4. Solving the Sudoku Game
 
@@ -87,10 +107,21 @@ Now that we have the 9x9 Sudoku, we need to solve it. Solving Sudoku is a topic 
 
 [Here's the geekforgeeks article on Sudoku](https://www.geeksforgeeks.org/sudoku-backtracking-7/)
 
+{{<github repo="haideralipunjabi/sudoku_automate" file="sudoku.py" lang="python" options="linenos=true">}}
 #### 5. Sending the solved input to your Android Device using Python
 
 To send the input, I first filtered out the input from the solved Sudoku Grid,i.e, only send the values which were missing. I used the `get_coords` function from earlier to get the coords of each box and then calculated their centres. I sent a touch at that centre using ADB, and then sent over the solution.
 
+{{<github repo="haideralipunjabi/sudoku_automate" file="automate.py" lang="python" sub_lines="51-60" options="linenos=true">}}
+
 #### Running the code
 
 All the code that I wrote is in functions and they are called one by one. Note that the grid that I get in step 3 isn't passed directly to step 4. I use `deepcopy` to create a copy of it, so that I can compare the solved grid with the unsolved/original one in step 5.
+
+{{<github repo="haideralipunjabi/sudoku_automate" file="automate.py" lang="python" sub_lines="63-73" options="linenos=true">}}
+
+### References
+
+* [Engineer Man's Youtube](https://www.youtube.com/channel/UCrUL8K81R4VBzm-KOYwrcxQ)
+* [Tesseract OCR Best Practices - ai-facets.org](https://ai-facets.org/tesseract-ocr-best-practices/)
+* [ADB - Connect over Wi-Fi](https://developer.android.com/studio/command-line/adb#wireless)

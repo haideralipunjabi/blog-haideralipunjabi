@@ -1,4 +1,19 @@
 {{ $dataJ := getJSON "https://api.github.com/repos/"  (.Get "repo")  "/contents/"  (.Get "file")  }}
 {{ $con := base64Decode $dataJ.content }}
+{{ if (.Get "sub_lines") }}
+    {{ $linenos := (split (.Get "sub_lines") "-") }}
+    {{ $lower := int (index $linenos 0) }}
+    {{ $upper := int (index $linenos 1) }}
+    {{ $lines := split $con "\n" }}
+    {{ $slines := slice }}
+    {{ range $idx, $val := $lines}}
+        {{ if (and (ge $idx (sub $lower 1) ) (le $idx (sub $upper 1))) }}
+            {{ $slines = $slines | append $val }}
+        {{ end }}
+    {{ end }}
+    {{ highlight (delimit $slines "\n") (.Get "lang") (.Get "options") }}
+{{ else }}
+    {{ highlight $con (.Get "lang") (.Get "options") }}
 
-{{ highlight $con (.Get "lang") (.Get "options") }}
+{{ end }}
+
