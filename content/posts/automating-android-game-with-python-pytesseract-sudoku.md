@@ -46,4 +46,8 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 6. When connecting for the first time, you will need to authorize the connection on your phone.
 7. Your device should be connected to your PC over WiFi.
 
-#### 1 (b). 
+#### 1 (b). Using ADB with Python (pure-python-adb)
+
+You can define the following function to connect to  the first ADB device connected to you computer using Python
+
+We will be using this function later to return an instance of `ppadb.device.Device` which will be used to take screenshot, and send input to your device.
