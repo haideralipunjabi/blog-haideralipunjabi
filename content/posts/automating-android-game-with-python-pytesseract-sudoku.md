@@ -56,11 +56,19 @@ We will be using this function later to return an instance of `ppadb.device.Devi
 
 pure-python-adb makes it very easy to capture a screenshot of your device. The `screencap` function is all that you need to get the screenshot. Use Pythons File IO to save it to \`screen.png\`
 
+![](/uploads/screen.png)
+
 #### 2. Processing the screenshot with Pillow
 
 In the captured screenshot, the accuracy of any OCR will be very low. To increase accuracy, I used Pillow to process the screenshot so that it only shows the numbers in black color on a white background. 
 
-To do that, we first convert the image to grayscale (or single channel) using `image.convert('L')`. This will make the convert the colors to shades of greys (0-255). After this, we need the numbers (which are the darkest, or very near to black) in black color, and the rest in white. For this, we use `image.point()`  so that all the greys > 50  become white (255) and the rest (numbers) become 0. I also increased the Contrast and Sharpness a bit to be on the safer side.
+To do that, we first convert the image to grayscale (or single channel) using `image.convert('L')`. This will make the convert the colors to shades of greys (0-255). 
+
+![](/uploads/grayscale.png)
+
+After this, we need the numbers (which are the darkest, or very near to black) in black color, and the rest in white. For this, we use `image.point()`  so that all the greys > 50  become white (255) and the rest (numbers) become 0. I also increased the Contrast and Sharpness a bit to be on the safer side.
+
+![](/uploads/processed.png)
 
 #### 3.  Extracting the numbers from the image using Pytesseract
 
