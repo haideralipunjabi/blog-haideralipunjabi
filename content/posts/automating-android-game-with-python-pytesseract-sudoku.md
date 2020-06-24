@@ -85,4 +85,4 @@ To send the input, I first filtered out the input from the solved Sudoku Grid,i.
 
 #### Running the code
 
-All the code that I wrote is in functions and they are called one by one. Note that the grid that I get in step 3 isn't passed directly to step 4. I use `deepcopy` to create copy of it, so that I can compare the solved grid with the unsolved/original one in step 5.
+All the code that I wrote is in functions and they are called one by one. Note that the grid that I get in step 3 isn't passed directly to step 4. I use `deepcopy` to create a copy of it, so that I can compare the solved grid with the unsolved/original one in step 5.
