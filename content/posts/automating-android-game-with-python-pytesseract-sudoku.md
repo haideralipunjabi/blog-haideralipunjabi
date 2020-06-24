@@ -62,4 +62,8 @@ In the captured screenshot, the accuracy of any OCR will be very low. To increas
 
 To do that, we first convert the image to grayscale (or single channel) using `image.convert('L')`. This will make the convert the colors to shades of greys (0-255). After this, we need the numbers (which are the darkest, or very near to black) in black color, and the rest in white. For this, we use `image.point()`  so that all the greys > 50  become white (255) and the rest (numbers) become 0. I also increased the Contrast and Sharpness a bit to be on the safer side.
 
-#### 3.  
+#### 3.  Extracting the numbers from the image using Pytesseract
+
+Using Pytesseract on the whole image might give us the numbers, but it won't tell us in which box the number was present. So, I use Pillow to crop each box and the use Pytesseract on the cropped images. Before using Pytesseract, I defined some functions to give me the coordinates of each box and to give me a cropped image of each box.
+
+Since Sudoku has a 9x9 grid, I use two for loops from 0 to 8 to loop over each box. The Pytesseract wasn't accurate enough on default configuration and I had to pass the config `--psm 10 --oem 0`. 
