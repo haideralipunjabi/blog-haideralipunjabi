@@ -2,9 +2,14 @@
 date = 2020-06-24T13:30:00Z
 description = "Tutorial / Blog Post demonstrating Android Game Automation using Python. The game used is Sudoku, and also uses Pytesseract (OCR) to get the Sudoku game from Android to your Python Code. The solved game is then input to the device using ADB (pure-python-adb)."
 images = ["/uploads/og.jpg"]
-other_blogs = []
 tags = ["python", "android"]
 title = "Automating Android Games with Python & Pytesseract: Sudoku"
+[[other_blogs]]
+link = "https://github.com/haideralipunjabi/sudoku_automate"
+provider = "Github"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/automating-android-games-with-python-pytesseract-sudoku-ojp"
+provider = "Dev"
 
 +++
 ### Introduction
@@ -20,6 +25,8 @@ The script can be divided into 5 parts
 5. Sending the solved input to your Android Device using Python
 
 Out of the 5, I will be focusing mostly on 2,3 & 5 as 1 & 4 are topics that have been extensively covered.
+
+Link to the game I automated: [https://play.google.com/store/apps/details?id=com.quarzo.sudoku](https://play.google.com/store/apps/details?id=com.quarzo.sudoku "https://play.google.com/store/apps/details?id=com.quarzo.sudoku")
 
 The complete code is available on the following repository:
 
@@ -46,7 +53,6 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 2. Turn on Android Debugging and ADB over Network.
 
    {{<imgur id="zjUIKeF" ext="png" class="image-resp" align="center" title="ADB over Network">}}
-
 3. Note the IP Address and Port shown under ADB over Network
 4. Install [ADB](https://developer.android.com/studio/command-line/adb) on your computer
 5. Go to your command-line / command prompt and enter
@@ -102,11 +108,12 @@ The following function will extract the numbers from the passed `image` and retu
 
 #### 4. Solving the Sudoku Game
 
-Now that we have the 9x9 Sudoku, we need to solve it. Solving Sudoku is a topic that has been covered a lot, and I also copied this code from [geeksforgeeks.org](https://www.geeksforgeeks.org/ "geeksforgeeks.org/"). 
+Now that we have the 9x9 Sudoku, we need to solve it. Solving Sudoku is a topic that has been covered a lot, and I also copied this code from [geeksforgeeks.org](https://www.geeksforgeeks.org/ "geeksforgeeks.org/").
 
 [Here's the geekforgeeks article on Sudoku](https://www.geeksforgeeks.org/sudoku-backtracking-7/)
 
 {{<github repo="haideralipunjabi/sudoku_automate" file="sudoku.py" lang="python" options="linenos=true">}}
+
 #### 5. Sending the solved input to your Android Device using Python
 
 To send the input, I first filtered out the input from the solved Sudoku Grid,i.e, only send the values which were missing. I used the `get_coords` function from earlier to get the coords of each box and then calculated their centres. I sent a touch at that centre using ADB, and then sent over the solution.
