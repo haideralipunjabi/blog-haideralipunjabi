@@ -50,4 +50,12 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 
 You can define the following function to connect to  the first ADB device connected to your computer using Python
 
-We will be using this function later to return an instance of `ppadb.device.Device` which will be used to take screenshot, and send input to your device.
+We will be using this function later to return an instance of `ppadb.device.Device` which will be used to take a screenshot, and send input to your device.
+
+#### 1 (c). Taking a Screenshot and saving it
+
+pure-python-adb makes it very easy to capture a screenshot of your device. The `screencap` function is all that you need to get the screenshot. Use Pythons File IO to save it to \`screen.png\`
+
+#### 2. Processing the screenshot with Pillow
+
+In the captured screenshot, the accuracy of any OCR will be very low. To increase accuracy, I used Pillow to process the screenshot so that it only shows the numbers in black color on a white background. 
