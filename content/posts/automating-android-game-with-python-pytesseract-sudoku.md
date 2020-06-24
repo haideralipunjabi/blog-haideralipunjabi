@@ -4,7 +4,7 @@ description = "Tutorial / Blog Post demonstrating Android Game Automation using 
 images = ["/uploads/og.jpg"]
 other_blogs = []
 tags = ["python", "android"]
-title = "Automating Android Game with Python & Pytesseract: Sudoku"
+title = "Automating Android Games with Python & Pytesseract: Sudoku"
 
 +++
 ### Introduction
