@@ -64,6 +64,17 @@ To do that, we first convert the image to grayscale (or single channel) using `i
 
 #### 3.  Extracting the numbers from the image using Pytesseract
 
-Using Pytesseract on the whole image might give us the numbers, but it won't tell us in which box the number was present. So, I use Pillow to crop each box and the use Pytesseract on the cropped images. Before using Pytesseract, I defined some functions to give me the coordinates of each box and to give me a cropped image of each box.
+Using Pytesseract on the whole image might give us the numbers, but it won't tell us in which box the number was present. So, I use Pillow to crop each box and then use Pytesseract on the cropped images. Before using Pytesseract, I defined some functions to give me the coordinates of each box and to give me a cropped image of each box.
 
-Since Sudoku has a 9x9 grid, I use two for loops from 0 to 8 to loop over each box. The Pytesseract wasn't accurate enough on default configuration and I had to pass the config `--psm 10 --oem 0`. 
+Since Sudoku has a 9x9 grid, I use two for loops from 0 to 8 to loop over each box. The Pytesseract wasn't accurate enough on the default configuration and I had to pass the config `--psm 10 --oem 0`. 
+
+* The `--psm` argument defines the Page Segmentation Method. `10` stands for `Treat the image as a single character`. This seemed most appropriate since I am passing cropped images of each box.
+* The `--oem` argument defines the OCR Engine Mode. `0` stands for `Legacy Engine Only`. 
+
+The following function will extract the numbers from the passed `image` and return a 9x9 2D List with the numbers.
+
+#### 4. Solving the Sudoku Game
+
+Now that we have the 9x9 Sudoku, we need to solve it. Solving Sudoku is a topic that has been covered a lot, and I also copied this code from [geeksforgeeks.org](https://www.geeksforgeeks.org/ "geeksforgeeks.org/"). 
+
+[Here's the geekforgeeks article on Sudoku](https://www.geeksforgeeks.org/sudoku-backtracking-7/)
