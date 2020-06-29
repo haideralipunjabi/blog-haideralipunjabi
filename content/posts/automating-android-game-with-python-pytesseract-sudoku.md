@@ -5,6 +5,9 @@ images = ["/uploads/og.jpg"]
 tags = ["python", "android"]
 title = "Automating Android Games with Python & Pytesseract: Sudoku"
 [[other_blogs]]
+link = "https://levelup.gitconnected.com/automating-android-games-with-python-pytesseract-sudoku-c25b811d5e8a"
+provider = "Medium"
+[[other_blogs]]
 link = "https://github.com/haideralipunjabi/sudoku_automate"
 provider = "Github"
 [[other_blogs]]
