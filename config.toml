@@ -3,6 +3,8 @@ disqusShortname = "blog-haideralipunjabi"
 languageCode = "en-us"
 theme = "m10c"
 title = "Haider Ali Punjabi"
+googleAnalytics = "UA-111349580-3"
+
 [params]
 author = "Haider Ali Punjabi"
 avatar = "profile.jpg"
