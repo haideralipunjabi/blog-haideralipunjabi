@@ -28,3 +28,8 @@ url = "https://facebook.com/haiderali176"
 [[params.social]]
 name = "twitter"
 url = "https://twitter.com/HAliPunjabi"
+
+[outputs]
+    page = ["HTML", "json"]
+    section = ["HTML","json"]
+    home = ["HTML","json"]

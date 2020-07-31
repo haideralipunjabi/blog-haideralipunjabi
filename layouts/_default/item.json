@@ -1,0 +1,7 @@
+{
+    "name": "{{ .Title }}",
+    "permalink" : "{{ .Permalink }}",
+    {{ with .Params.images }}
+    "image": "{{ index . 0 | absURL }}"
+    {{ end }}
+}
