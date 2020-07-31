@@ -1,7 +1,5 @@
-{{ define "response" }}
 [
     {{ range $index, $element := .Paginator.Pages }}
     {{ if $index }}, {{ end }}{{ .Render "single" }}
     {{ end }}
 ]
-{{ end }}
