@@ -1,11 +1,12 @@
 +++
-date = 2020-08-02T07:30:00Z
+date = 2020-08-02T06:50:00Z
 description = "I recently decided to redesign my website, and went all out on it. I made a small python script to act as a Static Site Generator and optimised it to the extreme."
-draft = true
 images = ["/uploads/blog-newwebsite.jpeg"]
-other_blogs = []
 tags = ["website", "html", "jamstack", "javascript"]
 title = "Redesigning My Website - Automation, Custom SSG & Optimisations"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/redesigning-my-website-automation-custom-ssg-optimisations-3h85"
+provider = "Dev"
 
 +++
 ### **The Old Design**
