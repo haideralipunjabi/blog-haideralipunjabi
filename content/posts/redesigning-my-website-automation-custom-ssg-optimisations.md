@@ -2,7 +2,7 @@
 date = 2020-08-02T07:30:00Z
 description = "I recently decided to redesign my website, and went all out on it. I made a small python script to act as a Static Site Generator and optimised it to the extreme."
 draft = true
-images = []
+images = ["/uploads/blog-newwebsite.jpeg"]
 other_blogs = []
 tags = ["website", "html", "jamstack", "javascript"]
 title = "Redesigning My Website - Automation, Custom SSG & Optimisations"
@@ -43,7 +43,7 @@ For the loading part, I had two choices. One, I could use JavaScript and its fet
 
 On the other hand, I could use a Static Site Generator that would put the data into the HTML files during the build process. The client will only need to download the HTML file which already has all the data in it. The advantage, of course, would be the increase in performance, but I don’t like using Static Site Generators for such a simple task. Static Site Generators are usually made for generating much bigger and complicated sites (many are specially tuned for generating a blogging website from markdown files).
 
-I finally decided on writing a Python Script that would act as my custom Static Site Generator. Jinja2 is a great Python module for generating files from templates. I had already used similar scripts in other projects of mine. This is a great way to add a common part (header, footer, navigation bar, etc) of code to a multi-paged website. I was also able to generate a multilingual web app using a similar technique.
+I finally decided on writing a Python Script that would act as my custom Static Site Generator. [Jinja2](https://jinja.palletsprojects.com/) is a great Python module for generating files from templates. I had already used similar scripts in other projects of mine. This is a great way to add a common part (header, footer, navigation bar, etc) of code to a multi-paged website. I was also able to generate a multilingual web app using a similar technique.
 
 Deciding to use a Python Script allowed me to make a lot of stuff editable from the CMS (Name, Open Graph Information, Colors, etc).
 
@@ -62,12 +62,16 @@ At the time of writing this, I have 5 different JSON files for various sections 
 2. backpack.json, foss-contributions.json, timeline.json, projects.json  
    Each of these contained an array of items to be used in different sections. You can see the actual structure in the code below. For the icons, I was originally using the Font Awesome class names but changed it to the path to increase performance. (More on this later)
 
+   *backpack.json*
    {{<github repo="haideralipunjabi/portfolio-v2" file="data/backpack.json" lang="json" sub_lines="3-6" options="linenos=true">}}
 
+   *foss-contributions.json*
    {{<github repo="haideralipunjabi/portfolio-v2" file="data/foss-contributions.json" lang="json" sub_lines="3-6" options="linenos=true">}}
 
+   *timeline.json*
    {{<github repo="haideralipunjabi/portfolio-v2" file="data/timeline.json" lang="json" sub_lines="3-7" options="linenos=true">}}
 
+   *projects.json*
    {{<github repo="haideralipunjabi/portfolio-v2" file="data/projects.json" lang="json" sub_lines="3-17" options="linenos=true">}}
 
 #### **Data from the Internet**
@@ -92,10 +96,25 @@ Also, Netlify does provide a feature to minify and bundle resources, which shoul
 
 #### **Optimizing Font Awesome**
 
-Apart from other places in the website, the “My Backpack” section heavily used Font Awesome. Font Awesome files are huge in size and each icon had a request associated to it. To overcome this, I stopped using Font Awesome the normal way (adding fa* fa-* classes to elements) and took advantage of using Jinja2 to import the SVG icons into the HTML wherever required. After generating the final page using Jinja2, all the SVGs are present as inline SVGs and are loaded as part of the HTML document. This removed the size of the helper script (approx 1.4mb) and removed a good number of requests.
+Apart from other places in the website, the “My Backpack” section heavily used Font Awesome. Font Awesome files are huge in size and each icon had a request associated to it. To overcome this, I stopped using Font Awesome the normal way (adding fa\* fa-\* classes to elements) and took advantage of using [Jinja2](https://jinja.palletsprojects.com/) to import the SVG icons into the HTML wherever required. After generating the final page using [Jinja2](https://jinja.palletsprojects.com/), all the SVGs are present as inline SVGs and are loaded as part of the HTML document. This removed the size of the helper script (approx 1.4mb) and removed a good number of requests.
 
 {{<imgur id="ez2hCDy" ext="png" class="image-resp" align="center" title="Screenshot of My Backpack Section">}}
 
 #### **Optimizing Favicons**
 
 I originally used another Python script to generate Favicons but they were being requested numerous times during the page load. After some research, I came across this [favicon generator site](https://realfavicongenerator.net/) which generated beautiful icons and reduced the number of requests to just 2 requests.
+
+#### Final Score
+
+{{<imgur id="4cweeeV" ext="png" class="image-resp" align="center" title="Final Lighthouse Score">}}
+
+### Resources
+
+* [CasperTheGhost](https://github.com/dev-caspertheghost)’s [portfolio website](https://caspertheghost.me/)
+* [Florin Pop](https://www.florin-pop.com/)
+* [HTML5UP](https://html5up.net/)
+* [Forestry](https://forestry.io/)
+* [Netlify CMS](https://www.netlifycms.org/)
+* [Jinja2](https://jinja.palletsprojects.com/)
+* [Webpagetest - Lighthouse Test](https://www.webpagetest.org/lighthouse)
+* [web.dev](https://web.dev/)
