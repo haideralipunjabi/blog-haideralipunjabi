@@ -9,6 +9,8 @@ link = "https://dev.to/haideralipunjabi/redesigning-my-website-automation-custom
 provider = "Dev"
 
 +++
+[**Link to the redesigned website**](https://haideralipunjabi.com)
+
 ### **The Old Design**
 
 Over the years, my portfolio website has gone through many changes. I always liked my website as simple as possible, with the possibility of editing my resume without opening the code. I have always preferred using HTML/CSS & JS to make websites if possible. I will, of course, use a proper SSG if the project needs it (mostly Hugo for blogs). I am also not against using some framework like React or Vue, but I only use them in projects with a huge number of components.
@@ -63,16 +65,16 @@ At the time of writing this, I have 5 different JSON files for various sections 
 2. backpack.json, foss-contributions.json, timeline.json, projects.json  
    Each of these contained an array of items to be used in different sections. You can see the actual structure in the code below. For the icons, I was originally using the Font Awesome class names but changed it to the path to increase performance. (More on this later)
 
-   *backpack.json*
+   _backpack.json_
    {{<github repo="haideralipunjabi/portfolio-v2" file="data/backpack.json" lang="json" sub_lines="3-6" options="linenos=true">}}
 
-   *foss-contributions.json*
+   _foss-contributions.json_
    {{<github repo="haideralipunjabi/portfolio-v2" file="data/foss-contributions.json" lang="json" sub_lines="3-6" options="linenos=true">}}
 
-   *timeline.json*
+   _timeline.json_
    {{<github repo="haideralipunjabi/portfolio-v2" file="data/timeline.json" lang="json" sub_lines="3-7" options="linenos=true">}}
 
-   *projects.json*
+   _projects.json_
    {{<github repo="haideralipunjabi/portfolio-v2" file="data/projects.json" lang="json" sub_lines="3-17" options="linenos=true">}}
 
 #### **Data from the Internet**
@@ -97,7 +99,7 @@ Also, Netlify does provide a feature to minify and bundle resources, which shoul
 
 #### **Optimizing Font Awesome**
 
-Apart from other places in the website, the “My Backpack” section heavily used Font Awesome. Font Awesome files are huge in size and each icon had a request associated to it. To overcome this, I stopped using Font Awesome the normal way (adding fa\* fa-\* classes to elements) and took advantage of using [Jinja2](https://jinja.palletsprojects.com/) to import the SVG icons into the HTML wherever required. After generating the final page using [Jinja2](https://jinja.palletsprojects.com/), all the SVGs are present as inline SVGs and are loaded as part of the HTML document. This removed the size of the helper script (approx 1.4mb) and removed a good number of requests.
+Apart from other places in the website, the “My Backpack” section heavily used Font Awesome. Font Awesome files are huge in size and each icon had a request associated to it. To overcome this, I stopped using Font Awesome the normal way (adding fa* fa-* classes to elements) and took advantage of using [Jinja2](https://jinja.palletsprojects.com/) to import the SVG icons into the HTML wherever required. After generating the final page using [Jinja2](https://jinja.palletsprojects.com/), all the SVGs are present as inline SVGs and are loaded as part of the HTML document. This removed the size of the helper script (approx 1.4mb) and removed a good number of requests.
 
 {{<imgur id="ez2hCDy" ext="png" class="image-resp" align="center" title="Screenshot of My Backpack Section">}}
 
