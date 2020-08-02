@@ -1,5 +1,5 @@
 +++
-date = 2020-08-02T06:50:00Z
+date = 2020-08-02T06:45:00Z
 description = "I recently decided to redesign my website, and went all out on it. I made a small python script to act as a Static Site Generator and optimised it to the extreme."
 images = ["/uploads/blog-newwebsite.jpeg"]
 tags = ["website", "html", "jamstack", "javascript"]
