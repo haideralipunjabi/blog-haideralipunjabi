@@ -87,7 +87,7 @@ function CSVToArray( strData, strDelimiter ){
 }
 
 (function() {
-    url  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWw4mGb3Hw2-erJ_1_KIJa1E1SAp5-ZOWmZMkEUyH65a_qF7ZhbV4kVy90AqkC0RExAOLzylAQWaqZ/pub?gid=802742501&single=true&output=csv"
+    url  = "https://cors-anywhere.herokuapp.com/docs.google.com/spreadsheets/d/e/2PACX-1vSWw4mGb3Hw2-erJ_1_KIJa1E1SAp5-ZOWmZMkEUyH65a_qF7ZhbV4kVy90AqkC0RExAOLzylAQWaqZ/pub?gid=802742501&single=true&output=csv"
 fetch(url).then((response)=>{
     return response.text()
 }).then((text)=>{
