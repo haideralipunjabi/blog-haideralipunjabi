@@ -39,9 +39,13 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
    {{<image src="/uploads/screenshot_20200605-114625_settings-2.png" class="image-resp" align="center">}}
   
 3. Note the IP Address and Port shown under ADB over Network
+  
 4. Install [ADB]() on your computer
+  
 5. Go to your command-line / command prompt and enter `adb connect <ip-address>:<port>` (Use the IP Address and Port from Step 3)
+  
 6. When connecting for the first time, you will need to authorize the connection on your phone.
+  
 7. Your device should be connected to your PC over WiFi.
 
 ### Using Chrome Port Forwarding
