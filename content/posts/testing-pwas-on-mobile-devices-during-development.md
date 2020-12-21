@@ -34,8 +34,6 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 
    {{<image src="/uploads/screenshot_20200605-114625_settings-2.png" class="image-resp" align="center">}}
   
-![](/uploads/screenshot_20200605-114625_settings-2.png)
-
 1. Go to your Phone Settings > System > Developer Options (This might vary in different phones, so if it is not the same in your's, look it up on the internet)
   
 2. Turn on Android Debugging and ADB over Network.
