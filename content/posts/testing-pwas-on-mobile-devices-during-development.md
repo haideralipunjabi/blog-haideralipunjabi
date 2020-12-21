@@ -3,9 +3,14 @@ date = 2020-06-05T13:30:00Z
 description = "Tutorial / Blog Post explaining PWA Testing on mobile devices using two methods, Chrome Port Forwarding & Netlify Dev"
 draft = true
 images = ["/uploads/blog12.jpg"]
-other_blogs = []
 tags = ["android", "pwa", "webdev"]
 title = "Testing PWAs on mobile devices during development"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/testing-pwas-on-mobile-devices-during-development-22mm"
+provider = "Dev"
+[[other_blogs]]
+link = "https://levelup.gitconnected.com/testing-pwas-on-mobile-devices-during-development-c38ee43d4e4d"
+provider = "Medium"
 
 +++
 ## PWA? What is that?
@@ -26,11 +31,12 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 
 ### ADB over Network
 
+![](/uploads/screenshot_20200605-114625_settings-2.png)
+
 1. Go to your Phone Settings > System > Developer Options (This might vary in different phones, so if it is not the same in your's, look it up on the internet)
 2. Turn on Android Debugging and ADB over Network.
-   
-   {{<image src="/uploads/screenshot_20200605-114625_settings-2.png" class="image-resp" align="center">}}
 
+   {{<image src="/uploads/screenshot_20200605-114625_settings-2.png" class="image-resp" align="center">}}
 3. Note the IP Address and Port shown under ADB over Network
 4. Install [ADB]() on your computer
 5. Go to your command-line / command prompt and enter
@@ -47,7 +53,6 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
 2. Go to [`chrome://inspect/#devices`](chrome://inspect/#devices). You should see your device along with a Connected status indicator
 
    {{<image src="/uploads/maim-1591337796.png" class="image-resp" align="center">}}
-
 3. Enable Port Forwarding
 4. Click Add Rule
 5. In the Device Port, enter the port number on which you want to access the site on your device
@@ -57,6 +62,8 @@ Most of the tutorials on internet use Wired ADB, which discourages many people f
    {{<image src="/uploads/maim-1591337806.png" class="image-resp" align="center">}}
 
 Port Forwarding should be setup and you will be able to access your server on your Android Device on localhost:port (which you set in Step 5.)
+
+![](/uploads/maim-1591337806.png)
 
 [More Detailed Tutorial](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server)
 
@@ -83,25 +90,22 @@ First of all, you will need to setup netlify-cli and authorize it. You will need
 [Here's a link to a detailed tutorial]()
 
 1. Install netlify-cli
-       `npm install netlify-cli -g`
-
+   `npm install netlify-cli -g`
 2. Authenticate
-      `netlify login`
+   `netlify login`
 
    Authorize it in the browser window that opens.
-
 3. Setup your repository using
 
    a. Automated Setup (if your repository is on Github)
-       `netlify init`
+   `netlify init`
 
    b. Manual (for other Git Providers, or if you wise to do it like this)
-      `netlify init --manual`
+   `netlify init --manual`
 
    You can do a lot of stuff with this cli, but I will skip directly to Netlify Dev
 4. To start a Netlify Dev server, you can use `netlify dev` , but since we want to Start a Public Live Session, we will use
-       `netlify dev --live`
-       
+   `netlify dev --live`
 5. You will get a URL that looks like `https://clever-cray-2aa156-6639f3.netlify.live/`. This URL will be accessible by everyone on internet.
 
 netlify-cli has many more features you should read about in the [documentation](https://docs.netlify.com/cli/get-started/#netlify-dev).
@@ -114,8 +118,9 @@ Now that you can access the PWA on your mobile, you need to find a way to test i
 2. In [`chrome://inspect/#devices`](chrome://inspect/#devices), you will see a list of all pages opened on your mobile device.
 
    {{<image src="/uploads/maim-1591337816.png" class="image-resp" align="center">}}
-
 3. Click on the inspect button to launch the Dev Tools for that page
+
+   ![](/uploads/maim-1591337816.png)
 
 ## References
 
