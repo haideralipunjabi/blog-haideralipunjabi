@@ -1,7 +1,6 @@
 +++
 date = 2020-06-05T13:30:00Z
 description = "Tutorial / Blog Post explaining PWA Testing on mobile devices using two methods, Chrome Port Forwarding & Netlify Dev"
-draft = true
 images = ["/uploads/blog12.jpg"]
 tags = ["android", "pwa", "webdev"]
 title = "Testing PWAs on mobile devices during development"
@@ -124,7 +123,7 @@ Now that you can access the PWA on your mobile, you need to find a way to test i
 
 ## References
 
-* [Progressive Web Apps -Mozilla]()
+* [Progressive Web Apps -Mozilla](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 * [Netlify Dev](https://www.netlify.com/products/dev/)
 * [Access Local Servers - Google Tools for Web Developers](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server)
 * [Remote Debugging WebView](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews)
