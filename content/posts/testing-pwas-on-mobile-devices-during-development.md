@@ -1,5 +1,5 @@
 +++
-date = 2020-06-05T13:30:00Z
+date = 2020-12-21T10:30:00Z
 description = "Tutorial / Blog Post explaining PWA Testing on mobile devices using two methods, Chrome Port Forwarding & Netlify Dev"
 images = ["/uploads/blog12.jpg"]
 tags = ["android", "pwa", "webdev"]
