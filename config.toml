@@ -3,11 +3,10 @@ disqusShortname = "blog-haideralipunjabi"
 languageCode = "en-us"
 theme = "m10c"
 title = "Haider Ali Punjabi"
-googleAnalytics = "UA-111349580-3"
 
 [params]
 author = "Haider Ali Punjabi"
-avatar = "profile.jpg"
+avatar = "profile.webp"
 description = "Student | Developer | Photographer"
 fbappid = "213871356404751"
 [[params.social]]

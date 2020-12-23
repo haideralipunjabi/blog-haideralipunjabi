@@ -16,10 +16,12 @@
   <meta property="fb:app_id" content="{{ .Site.Params.fbappid }}" />
   {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
-  <link rel="stylesheet" href="/css/previewer.min.css">
-  <script src="https://kit.fontawesome.com/4ac40a47d1.js"></script>
-  <script src="/js/previewer.min.js"></script>
-  {{ template "_internal/google_analytics.html" . }}
+  <link rel="preload" href="/css/previewer.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/previewer.min.css"></noscript>
+  <script src="https://kit.fontawesome.com/4ac40a47d1.js" async></script>
+  <script src="/js/previewer.min.js" async></script>
+  <script data-goatcounter="https://blog-haideralipunjabi.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
   {{ template "_internal/twitter_cards.html" . }}
   {{ template "_internal/opengraph.html" . }}
   {{ range .AlternativeOutputFormats -}}
@@ -38,9 +40,11 @@
     </p>
     <div class="app-header-social">
       {{ range .Site.Params.social }}
-      <a target="_blank" href="{{ .url }}">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
+      <a target="_blank" rel="noopener noreferrer" href="{{ .url }}">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
       {{ end }}
       <!-- <a href="https://www.patreon.com/bePatron?u=35249787" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script> -->
+      <br/>
+      <a target="_blank" rel="noopener noreferrer"  href="https://www.buymeacoffee.com/HAliPunjabi"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HAliPunjabi&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff"></a>
     </div>
 
   </header>
@@ -50,7 +54,10 @@
     {{ end }}
   </main>
   <script>
-    var previewer = new Previewer;
+    window.addEventListener('load', function () {
+      var previewer = new Previewer;
+
+    });
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('/sw.js').then(function (registration) {
