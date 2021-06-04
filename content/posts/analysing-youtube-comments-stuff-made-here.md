@@ -1,7 +1,6 @@
 +++
 date = 2021-06-04T17:00:00Z
 description = "Blog post on analysing comments from the videos of Shane Wighton's Youtube channel Stuff Made Here. He made a video in collaboration with LockPickingLawyer which had a huge number of people interested. The analysis searches the comments for words related to the collaboration."
-draft = true
 images = ["/uploads/ogimage-blog.jpg"]
 other_blogs = []
 tags = ["python", "visualisation"]
