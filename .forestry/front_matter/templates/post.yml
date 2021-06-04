@@ -51,6 +51,7 @@ fields:
   description: Links to the same post on other blogs
 pages:
 - content/posts/adding-view-count-to-your-jamstack-website.md
+- content/posts/analysing-youtube-comments-stuff-made-here.md
 - content/posts/automating-android-game-with-python-pytesseract-sudoku.md
 - content/posts/clean-efficient-coding - an-example-for-beginners.md
 - content/posts/country-flag-visualisation.md
