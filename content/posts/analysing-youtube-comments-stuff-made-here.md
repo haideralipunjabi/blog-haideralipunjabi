@@ -2,9 +2,14 @@
 date = 2021-06-04T17:00:00Z
 description = "Blog post on analysing comments from the videos of Shane Wighton's Youtube channel Stuff Made Here. He made a video in collaboration with LockPickingLawyer which had a huge number of people interested. The analysis searches the comments for words related to the collaboration."
 images = ["/uploads/ogimage-blog.jpg"]
-other_blogs = []
 tags = ["python", "visualisation"]
 title = "Analysing YouTube Comments — Stuff Made Here"
+[[other_blogs]]
+link = "https://github.com/haideralipunjabi/smh-youtube-analysis"
+provider = "Github"
+[[other_blogs]]
+link = "https://haideralipunjabi.medium.com/analysing-youtube-comments-stuff-made-here-ad7a2aeda49f"
+provider = "Medium"
 
 +++
 ### Introduction
