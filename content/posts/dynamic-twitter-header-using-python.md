@@ -20,4 +20,12 @@ Then, a couple of days ago I saw a cool "Made With CSS" header and thought about
 
 ## The Idea
 
-The idea is really simple, make a Dynamic Twitter Header that display's the likes and retweets of the Tweet announcing the header. Since the header will change when users interact with the Tweet, the user
+The idea is really simple, make a Dynamic Twitter Header that display's the likes and retweets of the Tweet announcing the header. Since the header will change when users interact with the Tweet, more users will interact with it, just to see the header update. I was expecting the likes/retweets on the tweet to increase after I publish this blog, but it has already become one of my top tweets while I am typing this.
+
+Although I hadn't planned it initially, after receiving feedback from what little audience I have on my Twitter, I also added the Latest 3 Followers to the header.
+
+## Demo
+
+Before starting the actual tutorial, you can check my header on [my Twitter (@HAliPunjabi)](https://twitter.com/HAliPunjabi) and the [related Tweet ]()
+
+## Prerequisite - Twitter 
