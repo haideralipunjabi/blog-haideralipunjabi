@@ -31,3 +31,6 @@ Before starting the actual tutorial, you can check my header on [my Twitter (@HA
 ## Prerequisite - Twitter Developer Account and App
 
 Before writing the actual code, you are going to need a Twitter Developer Account and then create a Twitter App. Using the created App's Keys and Tokens, you will be able to update your header and get the data from Twitter about your followers and likes/retweets on any tweet.
+
+1. Go to [Twitter Developer Account](https://developer.twitter.com/en/apply-for-access) and apply for access. It shouldn't take too long to get approved.
+2. 
