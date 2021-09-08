@@ -28,4 +28,6 @@ Although I hadn't planned it initially, after receiving feedback from what littl
 
 Before starting the actual tutorial, you can check my header on [my Twitter (@HAliPunjabi)](https://twitter.com/HAliPunjabi) and the [related Tweet ]()
 
-## Prerequisite - Twitter 
+## Prerequisite - Twitter Developer Account and App
+
+Before writing the actual code, you are going to need a Twitter Developer Account and then create a Twitter App. Using the created App's Keys and Tokens, you will be able to update your header and get the data from Twitter about your followers and likes/retweets on any tweet.
