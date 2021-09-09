@@ -35,4 +35,21 @@ Before writing the actual code, you are going to need a Twitter Developer Accoun
 1. Go to [Twitter Developer Account](https://developer.twitter.com/en/apply-for-access) and apply for access. It shouldn't take too long to get approved.
 2. Go to Overview and Create a New App. Name the App whatever you want, and copy and save the API Key and Secret they will provide. I will refer to them as `CONSUMER_KEY` and `CONSUMER_SECRET` from now on.
 3. Change the App Permissions to `Read and Write` (or `Read and Write and Direct Messages` if your script needs it).
-4. Go to **Keys and Tokens** section and generate Access Token and Secret. Copy these as well and save them somewhere. I will refer to them as 
+4. Go to the **Keys and Tokens** section and generate Access Token and Secret. Copy these as well and save them somewhere. I will refer to them as `ACCESS_TOKEN` and `ACCESS_TOKEN_SECRET` from now on.
+
+## Writing the script
+
+To make the tutorial (and the code) easy, I won't be using any pre-made images but will generate everything from scratch using Python.
+
+### Setup
+
+1. Create a directory where you will store the code
+2. Create a file `.env` that will store our Keys and Tokens. This is how its contents should look
+
+       ACCESS_TOKEN=<ACCESS_TOKEN from Step 4>
+       ACCESS_TOKEN_SECRET=<ACCESS_TOKEN_SECRET from Step 4>
+       CONSUMER_KEY=<CONSUMER_KEY from Step 2>
+       CONSUMER_SECRET=<CONSUMER_SECRET from Step 2>
+3. Create a directory called `fonts` and download `SourceCodePro-Regular.ttf` from [Google Fonts](https://fonts.google.com/specimen/Source+Code+Pro) into it
+
+### Code
