@@ -37,6 +37,7 @@ fields:
       - Medium
       - Dev
       - Github
+      - Hashnode
       source:
         type: simple
         section: 
