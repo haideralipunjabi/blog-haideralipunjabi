@@ -53,6 +53,7 @@ To make the tutorial (and the code) easy, I won't be using any pre-made images b
 The whole code is available on Github, so I will explain only the important parts of it.
 
 1. Variables and Constants to be used later on in the code {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="8-29" >}}
+  
 2. Authentication to Twitter
 {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="32-38" >}}
 3. Fetching required data
