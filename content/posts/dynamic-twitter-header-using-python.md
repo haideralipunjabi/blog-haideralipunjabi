@@ -55,16 +55,16 @@ The whole code is available on Github, so I will explain only the important part
 
 1. Variables and Constants to be used later on in the code
 
-   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="8-29" >}}
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="8-29" >}}  
 2. Authentication to Twitter
 
-   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="32-38" >}}
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="32-38" >}}  
 3. Fetching required data
 
-   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="40-52" >}}
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="40-52" >}}  
 4. Drawing the header. The coordinates are mostly hardcoded around the 1500x500px dimension of the header. Only the followers' images and the rectangle around them is calculated based on the width of usernames.
 
-   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="50-108" >}}
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="54-108" >}}  
 5. Driver Code
 
-   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="111-117" >}}
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="111-117" >}}  
