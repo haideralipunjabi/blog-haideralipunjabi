@@ -49,9 +49,8 @@ To make the tutorial (and the code) easy, I won't be using any pre-made images b
 2. Create a file `.env` that will store our Keys and Tokens. This is how its contents should look
 {{<github repo="haideralipunjabi/twitter-header-script" file=".env.sample" lang="bash" options="linenos=true">}}
 3. Create a directory called `fonts` and download `SourceCodePro-Regular.ttf` from [Google Fonts](https://fonts.google.com/specimen/Source+Code+Pro) into it
-
+  
 ### Code
-
 The whole code is available on Github, so I will explain only the important parts of it.
 
 1. Variables and Constants to be used later on in the code {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="8-29" >}}
