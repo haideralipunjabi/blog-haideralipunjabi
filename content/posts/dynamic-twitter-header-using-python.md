@@ -39,7 +39,7 @@ Before writing the actual code, you are going to need a Twitter Developer Accoun
 3. Change the App Permissions to `Read and Write` (or `Read and Write and Direct Messages` if your script needs it).
 4. Go to the **Keys and Tokens** section and generate Access Token and Secret. Copy these as well and save them somewhere. I will refer to them as `ACCESS_TOKEN` and `ACCESS_TOKEN_SECRET` from now on.  
 
-
+  
 ## Writing the script
 To make the tutorial (and the code) easy, I won't be using any pre-made images but will generate everything from scratch using Python.
 
