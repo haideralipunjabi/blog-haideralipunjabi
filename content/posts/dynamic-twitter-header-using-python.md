@@ -44,9 +44,11 @@ To make the tutorial (and the code) easy, I won't be using any pre-made images b
 ### Setup
 
 1. Create a directory where you will store the code
+	```
+    TEST
+    ```
 2. Create a file `.env` that will store our Keys and Tokens. This is how its contents should look
-
-        {{<github repo="haideralipunjabi/twitter-header-script" file=".env.sample" lang="bash" options="linenos=true">}}
+{{<github repo="haideralipunjabi/twitter-header-script" file=".env.sample" lang="bash" options="linenos=true">}}
 3. Create a directory called `fonts` and download `SourceCodePro-Regular.ttf` from [Google Fonts](https://fonts.google.com/specimen/Source+Code+Pro) into it
 
 ### Code
