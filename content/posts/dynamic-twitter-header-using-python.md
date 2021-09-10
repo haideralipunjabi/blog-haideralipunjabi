@@ -37,7 +37,7 @@ Before writing the actual code, you are going to need a Twitter Developer Accoun
 1. Go to [Twitter Developer Account](https://developer.twitter.com/en/apply-for-access) and apply for access. It shouldn't take too long to get approved.
 2. Go to Overview and Create a New App. Name the App whatever you want, and copy and save the API Key and Secret they will provide. I will refer to them as `CONSUMER_KEY` and `CONSUMER_SECRET` from now on.
 3. Change the App Permissions to `Read and Write` (or `Read and Write and Direct Messages` if your script needs it).
-4. Go to the **Keys and Tokens** section and generate Access Token and Secret. Copy these as well and save them somewhere. I will refer to them as `ACCESS_TOKEN` and `ACCESS_TOKEN_SECRET` from now on.
+4. Go to the **Keys and Tokens** section and generate Access Token and Secret. Copy these as well and save them somewhere. I will refer to them as `ACCESS_TOKEN` and `ACCESS_TOKEN_SECRET` from now on.  
 
 ## Writing the script
 
