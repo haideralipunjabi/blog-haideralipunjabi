@@ -51,7 +51,7 @@ To make the tutorial (and the code) easy, I won't be using any pre-made images b
 3. Create a directory called `fonts` and download `SourceCodePro-Regular.ttf` from [Google Fonts](https://fonts.google.com/specimen/Source+Code+Pro) into it
   
 ### Code
-The whole code is available on Github, so I will explain only the important parts of it.
+The whole code is [available on Github](https://github.com/haideralipunjabi/twitter-header-script), so I will explain only the important parts of it.
 
 1. Variables and Constants to be used later on in the code {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="8-29" >}}
   
