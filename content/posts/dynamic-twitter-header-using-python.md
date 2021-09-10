@@ -1,10 +1,19 @@
 +++
 date = 2021-09-10T10:30:00Z
 description = "Tutorial on writing a Python Script that updates your Twitter Header with statistics and your latest 3 followers"
+draft = true
 images = ["/uploads/frame-2.png"]
-other_blogs = []
 tags = ["python", "automation", "twitter"]
 title = "Dynamic Twitter Header using Python"
+[[other_blogs]]
+link = "https://github.com/haideralipunjabi/twitter-header-script"
+provider = "Github"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/dynamic-twitter-header-using-python-4hkm"
+provider = "Dev"
+[[other_blogs]]
+link = "https://haideralipunjabi.hashnode.dev/dynamic-twitter-header-using-python"
+provider = "Hashnode"
 
 +++
 Twitter Headers are a craze among the tweeps of Tech Twitter, especially the ones "Made With CSS". Even though I am fairly comfortable with CSS, I lack the creativity to make a good CSS header with it, and near impossible to make anything on par with the CSS geniuses there. (Check out [@Prathkum](https://twitter.com/Prathkum), he is a CSS Wizard and one of the inspirations behind my header projects).
