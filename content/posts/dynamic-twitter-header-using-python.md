@@ -1,7 +1,6 @@
 +++
-date = 2021-09-10T13:30:00Z
+date = 2021-09-10T10:30:00Z
 description = "Tutorial on writing a Python Script that updates your Twitter Header with statistics and your latest 3 followers"
-draft = true
 images = ["/uploads/frame-2.png"]
 other_blogs = []
 tags = ["python", "automation", "twitter"]
