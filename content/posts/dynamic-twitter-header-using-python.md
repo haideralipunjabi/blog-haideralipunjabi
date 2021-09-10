@@ -46,10 +46,25 @@ To make the tutorial (and the code) easy, I won't be using any pre-made images b
 1. Create a directory where you will store the code
 2. Create a file `.env` that will store our Keys and Tokens. This is how its contents should look
 
-       ACCESS_TOKEN=<ACCESS_TOKEN from Step 4>
-       ACCESS_TOKEN_SECRET=<ACCESS_TOKEN_SECRET from Step 4>
-       CONSUMER_KEY=<CONSUMER_KEY from Step 2>
-       CONSUMER_SECRET=<CONSUMER_SECRET from Step 2>
+   {{<github repo="haideralipunjabi/twitter-header-script" file=".env.sample" lang="bash" options="linenos=true">}}
 3. Create a directory called `fonts` and download `SourceCodePro-Regular.ttf` from [Google Fonts](https://fonts.google.com/specimen/Source+Code+Pro) into it
 
 ### Code
+
+The whole code is available on Github, so I will explain only the important parts of it. 
+
+1. Variables and Constants to be used later on in the code
+
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="8-29" >}}
+2. Authentication to Twitter
+
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="32-38" >}}
+3. Fetching required data
+
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="40-52" >}}
+4. Drawing the header. The coordinates are mostly hardcoded around the 1500x500px dimension of the header. Only the followers' images and the rectangle around them is calculated based on the width of usernames.
+
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="50-108" >}}
+5. Driver Code
+
+   {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="111-117" >}}
