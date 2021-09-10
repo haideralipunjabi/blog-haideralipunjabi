@@ -28,7 +28,7 @@ Although I hadn't planned it initially, after receiving feedback from what littl
 
 {{< tweet 1435219303465324548 >}}
 
-Before starting the actual tutorial, you can check my header on [my Twitter (@HAliPunjabi)](https://twitter.com/HAliPunjabi) and the [related Tweet ]()
+Before starting the actual tutorial, you can check my header on [my Twitter (@HAliPunjabi)](https://twitter.com/HAliPunjabi) and the [related Tweet ](https://twitter.com/HAliPunjabi/status/1435219303465324548)
 
 ## Prerequisite - Twitter Developer Account and App
 
