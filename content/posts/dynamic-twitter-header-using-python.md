@@ -63,3 +63,13 @@ The whole code is [available on Github](https://github.com/haideralipunjabi/twit
    {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="54-108" >}}
 5. Driver Code
    {{<github repo="haideralipunjabi/twitter-header-script" file="main.py" lang="python" options="linenos=true" sub_lines="111-117" >}}
+
+### Execution
+
+You can run this script to update the header. I will suggest keeping this as a cronjob, for at least every two minutes to get the best results. I am hosting this on my Raspberry Pi, but you could try hosting it on Heroku, or some other service.
+
+## Other Related Resources
+
+* [Twitter Developer Docs](https://developer.twitter.com/en/docs)
+* [Create a real-time Twitter banner! (NodeJS) - Devesh B](https://blog.deveshb.me/create-a-real-time-twitter-banner)
+* [Prathkum on Twitter for Awesome CSS Headers](https://twitter.com/Prathkum)
