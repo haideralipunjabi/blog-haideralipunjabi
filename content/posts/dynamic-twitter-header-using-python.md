@@ -5,6 +5,9 @@ images = ["/uploads/frame-2.png"]
 tags = ["python", "automation", "twitter"]
 title = "Dynamic Twitter Header using Python"
 [[other_blogs]]
+link = "https://levelup.gitconnected.com/dynamic-twitter-header-using-python-6a73c6b17aad"
+provider = "Medium"
+[[other_blogs]]
 link = "https://github.com/haideralipunjabi/twitter-header-script"
 provider = "Github"
 [[other_blogs]]
