@@ -67,7 +67,7 @@ export default function handler(req: NextApiRequest,res: NextApiResponse<GameDat
 let id = getIndex();  
 res.status(200).json({  
 id: id,  
- word: gameWords\\\[id\\\]  
+ word: gameWords\[id\]  
 });  
 }
 
