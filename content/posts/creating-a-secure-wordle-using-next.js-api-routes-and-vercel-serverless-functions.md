@@ -1,26 +1,30 @@
 +++
-date = ""
+date = 2022-02-01T08:30:00Z
 description = "Tutorial on how a secure Wordle game can be created using Next.js API Routes and Vercel Serverless Functions"
 draft = true
-images = []
+images = ["/uploads/blogog.jpg"]
 other_blogs = []
-tags = []
+tags = ["javascript", "serverless", "functions", "nextjs", "wordle", "game"]
 title = "Creating a secure Wordle using Serverless Functions"
 
 +++
 ## Introduction
 
+[Wordle](https://www.powerlanguage.co.uk/wordle/) has been viral on Twitter for the past few weeks. It's a really simple game and has been really successful. But, [people were able to reverse engineer it](https://reichel.dev/blog/reverse-engineering-wordle.html) and find out what the words are going to be in the future. I wanted to try and make one that can't be reverse-engineered that way. I did make one, but since there are hundreds of "How to make Wordle" tutorials out there, I will focus only on the "how to make it a bit more secure" part. I will use Serverless Functions for it.
+
+_Note: Serverless Functions can cost a bit if your Wordle becomes viral._
+
 ## What's wrong with Wordle?
 
-I won't say anything is wrong with Wordle. It's just a choice that its developer made. I am sure if Josh Wardle wanted, he could have made it more secure, and if I was in his shoes, I would have also made it as he has.
+I won't say anything is wrong with [Wordle](https://www.powerlanguage.co.uk/wordle/). It's just a choice that its developer made. I am sure if [Josh Wardle](https://www.powerlanguage.co.uk) wanted, he could have made it more secure, and if I was in his shoes, I would have also made it as he has.
 
-Why? Because using API Routes and Serverless Functions is costly if the traffic is too much.
+Why? Because using Serverless Functions is costly if the traffic is too much.
 
-Robert Reichel wrote a good article on Reverse Engineering Wordle which explains how Josh Wardle's Wordle determines the words on the client-side.
+[Robert Reichel ](https://reichel.dev/)wrote a [good article on Reverse Engineering Wordle](https://reichel.dev/blog/reverse-engineering-wordle.html) which explains how [Josh Wardle's Wordle](powerlanguage.co.uk/wordle/) determines the words on the client-side.
 
 > At this point, we've done enough digging to know how Wordle is choosing the word of the day. We know that Wordle uses a client-side date-based algorithm to determine which word to use from a static wordlist. Each day is predictable so long as we have all of the code pieced together
 >
-> \-- Reverse Engineering Wordle | Robert Reichel
+> \-- [Reverse Engineering Wordle | Robert Reichel](https://reichel.dev/blog/reverse-engineering-wordle.html)
 
 ## What do I mean by secure?
 
@@ -30,7 +34,7 @@ Also, another advantage of using this method is. No matter where in the world yo
 
 ## How to do it?
 
-I won't write about how to make the entire Wordle game, but just the API  / Serverless Functions Part.  It can be deployed on any platform you like. I deployed mine on Next.js and Vercel.
+I won't write about how to make the entire Wordle game, but just the API  / Serverless Functions Part.  It can be deployed on any platform you like. I deployed mine on[ Next.js](https://nextjs.org/) and [Vercel](https://vercel.com/).
 
 ### Requirements:
 
@@ -52,8 +56,9 @@ The logic for it is pretty simple. We will make an API Route that:
 import { DateTime } from 'luxon';  
 import type { NextApiRequest, NextApiResponse } from 'next'  
 import { GameData } from '../../lib/interfaces';  
-import gameWords from "../../data/selected.json";
+import gameWords from "../../data/selected.json"; // The list of words
 
+// Function to calculate the difference between today and and a fixed date  
 function getIndex():number {  
     let start = DateTime.fromFormat("31/01/2022","dd/mm/yyyy").setZone("UTC+5:30").startOf("day")  
     let today = DateTime.now().setZone("UTC+5:30").startOf("day")  
@@ -86,3 +91,11 @@ export default function handler(
   }
 
 {{</ highlight >}}
+
+With these two APIs, you can make a Wordle game that is a bit more secure. 
+
+## References:
+
+* [Josh Wardle's Wordle](https://www.powerlanguage.co.uk/wordle/)
+* [Reverse Engineering Wordle - Robert Reichel](https://reichel.dev/blog/reverse-engineering-wordle.html)
+* [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction)
