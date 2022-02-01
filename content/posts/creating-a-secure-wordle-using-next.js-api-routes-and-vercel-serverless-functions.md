@@ -56,19 +56,18 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { GameData } from '../../lib/interfaces';  
 import gameWords from "../../data/selected.json";
 
-  
 function getIndex():number {  
-let start = DateTime.fromFormat("31/01/2022","dd/mm/yyyy").setZone("UTC+5:30").startOf("day")  
-let today = DateTime.now().setZone("UTC+5:30").startOf("day")  
-return today.diff(start,'days').get('days');  
+    let start = DateTime.fromFormat("31/01/2022","dd/mm/yyyy").setZone("UTC+5:30").startOf("day")  
+    let today = DateTime.now().setZone("UTC+5:30").startOf("day")  
+    return today.diff(start,'days').get('days');  
 }
 
 export default function handler(req: NextApiRequest,res: NextApiResponse<GameData>) {  
-let id = getIndex();  
-res.status(200).json({  
-id: id,  
- word: gameWords\[id\]  
-});  
+    let id = getIndex();  
+    res.status(200).json({  
+        id: id,  
+        word: gameWords\[id\]  
+    });  
 }
 
 {{</ highlight >}}
