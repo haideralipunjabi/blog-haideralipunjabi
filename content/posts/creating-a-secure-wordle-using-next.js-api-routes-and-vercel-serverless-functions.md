@@ -2,12 +2,16 @@
 date = 2022-02-01T08:00:00Z
 description = "Tutorial on how a secure Wordle game can be created using Next.js API Routes and Vercel Serverless Functions"
 images = ["/uploads/blogog.jpg"]
-other_blogs = []
 tags = ["javascript", "serverless", "functions", "nextjs", "wordle", "game"]
 title = "Creating a secure Wordle using Serverless Functions"
+[[other_blogs]]
+link = "https://haideralipunjabi.hashnode.dev/creating-a-secure-wordle-using-serverless-functions"
+provider = "Hashnode"
+[[other_blogs]]
+link = "https://dev.to/haideralipunjabi/creating-a-secure-wordle-using-serverless-functions-28di"
+provider = "Dev"
 
 +++
-
 ## Introduction
 
 [Wordle](https://www.powerlanguage.co.uk/wordle/) has been viral on Twitter for the past few weeks. It's a really simple game and has been really successful. But, [people were able to reverse engineer it](https://reichel.dev/blog/reverse-engineering-wordle.html) and find out what the words are going to be in the future. I wanted to try and make one that can't be reverse-engineered that way. I did make one, but since there are hundreds of "How to make Wordle" tutorials out there, I will focus only on the "how to make it a bit more secure" part. I will use Serverless Functions for it.
