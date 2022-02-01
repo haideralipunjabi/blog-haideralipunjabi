@@ -14,11 +14,11 @@ title = "Creating a secure Wordle using Next.js API Routes and Vercel Serverless
 
 I won't say anything is wrong with Wordle. It's just a choice that its developer made. I am sure if Josh Wardle wanted, he could have made it more secure, and if I was in his shoes, I would have also made it as he has.
 
-Why? Because using API Routes and Serverless Functions is costly if the traffic is too much. 
+Why? Because using API Routes and Serverless Functions is costly if the traffic is too much.
 
 Robert Reichel wrote a good article on Reverse Engineering Wordle which explains how Josh Wardle's Wordle determines the words on the client-side.
 
->  At this point, we've done enough digging to know how Wordle is choosing the word of the day. We know that Wordle uses a client-side date-based algorithm to determine which word to use from a static wordlist. Each day is predictable so long as we have all of the code pieced together
+> At this point, we've done enough digging to know how Wordle is choosing the word of the day. We know that Wordle uses a client-side date-based algorithm to determine which word to use from a static wordlist. Each day is predictable so long as we have all of the code pieced together
 >
 > \-- Reverse Engineering Wordle | Robert Reichel
 
@@ -43,51 +43,32 @@ _Note: This post is about how to make this using Next.js API Routes and Vercel S
 The logic for it is pretty simple. We will make an API Route that:
 
 1. Loads the list of words from which we select a word each day
-2. Calculates the number of days since some fixed data (e.g, the day the app/game is launched). 
+2. Calculates the number of days since some fixed data (e.g, the day the app/game is launched).
 3. Selecting and responding with the word from the list of words using the calculated difference.
 
 ### Code:
 
 {{< highlight js >}}
 
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-import { DateTime } from 'luxon';
-
-import type { NextApiRequest, NextApiResponse } from 'next'
-
-import { GameData } from '../../lib/interfaces';
-
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction  
+import { DateTime } from 'luxon';  
+import type { NextApiRequest, NextApiResponse } from 'next'  
+import { GameData } from '../../lib/interfaces';  
 import gameWords from "../../data/selected.json";
 
-function getIndex():number {
-
-  let start = DateTime.fromFormat("31/01/2022","dd/mm/yyyy").setZone("UTC+5:30").startOf("day")
-
-  let today = DateTime.now().setZone("UTC+5:30").startOf("day")
-
-  return today.diff(start,'days').get('days');
-
+  
+function getIndex():number {  
+let start = DateTime.fromFormat("31/01/2022","dd/mm/yyyy").setZone("UTC+5:30").startOf("day")  
+let today = DateTime.now().setZone("UTC+5:30").startOf("day")  
+return today.diff(start,'days').get('days');  
 }
 
-export default function handler(
-
-  req: NextApiRequest,
-
-  res: NextApiResponse<GameData>
-
-) {
-
-  let id = getIndex();
-
-  res.status(200).json({
-
-    id: id,
-
-    word: gameWords\[id\]
-
-  });
-
+export default function handler(req: NextApiRequest,res: NextApiResponse<GameData>) {  
+let id = getIndex();  
+res.status(200).json({  
+id: id,  
+ word: gameWords\[id\]  
+});  
 }
 
 {{</ highlight >}}
