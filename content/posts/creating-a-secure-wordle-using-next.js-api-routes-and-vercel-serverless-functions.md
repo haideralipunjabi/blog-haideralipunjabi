@@ -5,7 +5,7 @@ draft = true
 images = []
 other_blogs = []
 tags = []
-title = "Creating a secure Wordle using Next.js API Routes and Vercel Serverless Functions"
+title = "Creating a secure Wordle using Serverless Functions"
 
 +++
 ## Introduction
@@ -30,13 +30,11 @@ Also, another advantage of using this method is. No matter where in the world yo
 
 ## How to do it?
 
-I won't write about how to make the entire Wordle game, but just the API Routes / Serverless Functions Part.
+I won't write about how to make the entire Wordle game, but just the API  / Serverless Functions Part.  It can be deployed on any platform you like. I deployed mine on Next.js and Vercel.
 
 ### Requirements:
 
 * A list of words from which each day's word will be chosen. It's better if this is a subset of a larger list of words that decide which word is accepted and which isn't. The word acceptance logic and the large list can be client-side. (It would be better as it will reduce the load on API and may save money). The smaller list of words is never loaded on the client.
-
-_Note: This post is about how to make this using Next.js API Routes and Vercel Serverless Functions, but can be used with any language/framework and any sort of server solution._
 
 ### Logic:
 
@@ -69,5 +67,22 @@ export default function handler(req: NextApiRequest,res: NextApiResponse<GameDat
         word: gameWords\[id\]  
     });  
 }
+
+{{</ highlight >}}
+
+Also, if you want, you can make another API Endpoint that returns the time left for next word.
+
+{{< highlight js >}}
+
+import { NextApiRequest, NextApiResponse } from "next/types";  
+import {DateTime} from "luxon";
+
+export default function handler(  
+    req: NextApiRequest,  
+    res: NextApiResponse<number>  
+  ) {  
+    let t = DateTime.now().setZone("UTC+5:30").startOf('day').plus({days:1}).valueOf()  
+    res.status(200).send(t)  
+  }
 
 {{</ highlight >}}
