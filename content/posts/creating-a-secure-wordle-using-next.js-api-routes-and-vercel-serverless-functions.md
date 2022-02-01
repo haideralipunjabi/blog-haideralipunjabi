@@ -1,7 +1,6 @@
 +++
 date = 2022-02-01T08:30:00Z
 description = "Tutorial on how a secure Wordle game can be created using Next.js API Routes and Vercel Serverless Functions"
-draft = true
 images = ["/uploads/blogog.jpg"]
 other_blogs = []
 tags = ["javascript", "serverless", "functions", "nextjs", "wordle", "game"]
