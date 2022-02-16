@@ -5,6 +5,9 @@ images = ["/uploads/blogog.jpg"]
 tags = ["javascript", "serverless", "functions", "nextjs", "wordle", "game"]
 title = "Creating a secure Wordle using Serverless Functions"
 [[other_blogs]]
+link = "https://levelup.gitconnected.com/creating-a-secure-wordle-using-serverless-functions-6a5e6f280d40"
+provider = "Medium"
+[[other_blogs]]
 link = "https://haideralipunjabi.hashnode.dev/creating-a-secure-wordle-using-serverless-functions"
 provider = "Hashnode"
 [[other_blogs]]
