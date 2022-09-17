@@ -12,4 +12,4 @@ title = "Displaying the time you spent coding in your status bar - WakaTime and 
 
 WakaTime is an open-source time-tracking dashboard for programmers. It has open-source IDE Plugins for 60 editors, and integrations with popular platforms like Github, Slack etc.
 
-It's straightforward to use. You just make an account and download plugins for all your IDEs. It then automatically 
+It's straightforward to use. You just make an account and download plugins for all your IDEs. It then automatically records all your timings and groups them according to projects, operating systems, IDEs, etc.
