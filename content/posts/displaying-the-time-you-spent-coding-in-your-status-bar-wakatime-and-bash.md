@@ -7,6 +7,7 @@ tags = ["wakatime", "bash", "shell"]
 title = "Display the time you spent coding in your status bar - WakaTime and Polybar"
 
 +++
+
 ## Introduction
 
 ### WakaTime
@@ -19,7 +20,7 @@ It's straightforward to use. You just make an account and download plugins for a
 
 ### Polybar
 
-[Polybar](https://polybar.github.io/) is a tool for Linux-based Operating Systems that helps in creating Status Bars. I have been using it for a while and really like it. I have also made some other scripts for it. 
+[Polybar](https://polybar.github.io/) is a tool for Linux-based Operating Systems that helps in creating Status Bars. I have been using it for a while and really like it. I have also made some other scripts for it.
 
 ## WakaTime API
 
@@ -66,7 +67,7 @@ exec = \~/bin/wakatime-stats
 interval = 60  
 label = Coding: %output%
 
-{{< /higlight >}}
+{{< / highlight >}}
 
 Using the above snipper, I am able to see my coding time in my status bar.
 
@@ -74,5 +75,5 @@ Using the above snipper, I am able to see my coding time in my status bar.
 
 ## References
 
-* [WakaTime API Documentation](https://wakatime.com/developers)
-* [Polybar Status Bar]()
+- [WakaTime API Documentation](https://wakatime.com/developers)
+- [Polybar Status Bar]()
