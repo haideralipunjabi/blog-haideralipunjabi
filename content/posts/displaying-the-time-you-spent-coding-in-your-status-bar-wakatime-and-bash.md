@@ -1,7 +1,6 @@
 +++
 date = 2022-09-19T14:30:00Z
 description = "Tutorial on how to write a script to fetch your coding stats from WakaTime API."
-draft = true
 images = ["/uploads/cover.png"]
 other_blogs = []
 tags = ["wakatime", "bash", "shell"]
