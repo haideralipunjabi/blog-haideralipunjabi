@@ -10,11 +10,17 @@ title = "Display the time you spent coding in your status bar - WakaTime and Pol
 +++
 ## Introduction
 
-WakaTime is an open-source time-tracking dashboard for programmers. It has open-source IDE Plugins for 60 editors, and integrations with popular platforms like Github, Slack etc.
+### WakaTime
+
+[WakaTime](https://wakatime.com/) is an open-source time-tracking dashboard for programmers. It has open-source IDE Plugins for 60 editors, and integrations with popular platforms like Github, Slack etc.
 
 It's straightforward to use. You just make an account and download plugins for all your IDEs. It then automatically records all your timings and groups them according to projects, operating systems, IDEs, etc.
 
 ![](/uploads/2022-09-19-175752_2335x1001_scrot.png)
+
+### Polybar
+
+[Polybar](https://polybar.github.io/) is a tool for Linux-based Operating Systems that helps in creating Status Bars. I have been using it for a while and really like it. I have also made some other scripts for it. 
 
 ## WakaTime API
 
@@ -66,3 +72,8 @@ label = Coding: %output%
 Using the above snipper, I am able to see my coding time in my status bar.
 
 ![](/uploads/2022-09-19-175804_248x42_scrot.png)
+
+## References
+
+* [WakaTime API Documentation](https://wakatime.com/developers)
+* [Polybar Status Bar]()
