@@ -15,6 +15,9 @@ jobs:
         with:
           hugo-version: "0.135.0"
 
+      - name: Build
+        run: hugo --gc --cleanDestinationDir
+
       - name: Deploy
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
@@ -22,5 +25,5 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
           build_directory: 'public'
-          build_command: 'hugo --gc --cleanDestinationDir'
+          build_command: 'echo skip static site'
           install_command: "echo skip installing dependencies"
