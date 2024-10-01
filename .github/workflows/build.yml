@@ -2,10 +2,10 @@ name: CI
 on: push
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Update theme
         run: git submodule update --init --recursive
@@ -13,13 +13,13 @@ jobs:
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.79.1"
+          hugo-version: "0.135.0"
 
       - name: Build
         run: hugo --gc --cleanDestinationDir
 
       - name: Deploy
-        uses: jsmrcaga/action-netlify-deploy@master
+        uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
