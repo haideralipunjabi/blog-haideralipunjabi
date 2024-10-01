@@ -1,5 +1,14 @@
-{{ $dataJ := getJSON "https://api.github.com/repos/"  (.Get "repo")  "/contents/"  (.Get "file")  }}
-{{ $con := base64Decode $dataJ.content }}
+{{ $data := dict }}
+{{ $con := "" }}
+{{ $url := print "https://api.github.com/repos/"  (.Get "repo")  "/contents/"  (.Get "file") }}
+{{ with resources.GetRemote $url }}
+    {{ with .Err }}
+        {{ errorf "%s" . }}
+    {{ else }}
+        {{ $data = . | transform.Unmarshal }}
+        {{ $con = base64Decode $data.content }}
+    {{ end }}
+{{ end }}
 {{ if (.Get "sub_lines") }}
     {{ $linenos := (split (.Get "sub_lines") "-") }}
     {{ $lower := int (index $linenos 0) }}
@@ -14,6 +23,5 @@
     {{ highlight (delimit $slines "\n") (.Get "lang") (.Get "options") }}
 {{ else }}
     {{ highlight $con (.Get "lang") (.Get "options") }}
-
 {{ end }}
 

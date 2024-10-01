@@ -1,0 +1,54 @@
++++
+date = 2024-10-01T09:30:00Z
+description = "My attempt at Count to a Million Challenge"
+tags = ["reddit", "automation", "javascript"]
+title = "DevTools Blocked? No Problem: My Count to a Million Challenge Solution"
+images = ["/uploads/ctam_og.png"]
++++
+
+On September 28, 2024 around 11pm, I was about to go to bed and was browsing Reddit on my phone as one does before sleeping. I came across [this post](https://www.reddit.com/r/webdev/comments/1frg8r2/i_built_a_website_that_will_be_won_by_the_first/) by [u/MobilePanda1](https://www.reddit.com/user/MobilePanda1/) about a [website](https://counttoamillion.com/) they had made *"that will be won by the first person to count to a million. Scripting is allowed"*. This piqued my interest and I grabbed my laptop from my bedside and started looking into it.
+
+Count to a Million basically involved entering numbers from one to one million on a website one by one. Automating it using scripts was allowed.
+
+## Blocked DevTools
+
+Like everyone else, I tried opening DevTools to look more deeply into the page but to my surprise, it was blocked. Any attempts at opening it failed, and even if I forced it somehow, there was some sort of a failsafe that sent the browser back to the prevoius page. I think it was someone in Reddit comments that mentioned this was due to a library called [disable-devtool](https://github.com/theajack/disable-devtool).A very interesting project I'll explore further in the future.
+
+I spent some time trying to disable this library (studying the source code for any variable, etc I can override, using uBlock to block it, etc) but nothing worked at all. I stopped trying to get DevTools to work and decided to work without it.
+
+## Executing JavaScript without DevTools
+
+My next attempt involved executing JS without DevTools. I executed a lot of code using `javascript:` URLs and `alert()` to get outputs. I was able to automate a bit like this but it was frustrating and I realised something's off about the timing that always makes the code fail after a couple of numbers. However, I realized I needed DevTools and after thinking about how the blocking library might be working I decided to do something unconventional.
+
+## Android Debugging
+
+I have experience with [debugging websites on mobile using ADB / Chrome Port Forwarding](https://blog.haideralipunjabi.com/posts/testing-pwas-on-mobile-devices-during-development/), and I thought the DevTools blocking library might now be able to block that. It basically is a method to access DevTools for websites open on your phone. I fortunately had my old Android phone lying in my drawer and booted it up and started working. It worked somewhat. I was able to get DevTools to open and work with it. The library was able to detect it sometimes but not always. The trick was to open the DevTools after the page was loaded. With DevTools now working, my initial attempt was again automating the UI. Changing the value of the input box and then simulating the button click didn't work though, I guess there was some protection there.  
+
+Then I tried to inspect the Networks tab to figure out how it was communicating with the API so that I may be able to automate that. It took me more time than I expected to figure out the WebSockets request (never worked with WebSockets before). After spending a bit of time reading about how to send WebSockets request, I started sending the requests from the DevTools console itself. 
+
+I first tried looping from one to one million and sending them but that didn't work. I though it was because of some anti spam protection and I tried adding delays. They worked to some extent but always failed after 10-15 numbers.
+
+It took me a while to realise that the server is sending a response back using WebSockets and I need to wait for that before sending another number. This was the last clue I needed and I wrote a small script that worked very well. 
+
+```js 
+websocket.onmessage = function(str) {
+    let n = JSON.parse(str.data)["value"];
+  websocket.send(JSON.stringify({"type":"update-count","value":n+1}));
+};
+```
+
+I kept the code running and tried to see how I was doing compared to others. Someone named [x_ssc](https://x.com/x_ssc) was on first and I realised whatever method they were using, was similar but far superior to mine as the numbers were increasing much faster than mine. I decided to stop there and went to sleep while keeping the code running, in case something went wrong for others and I won. When I woke up the next morning, I saw my code had stopped executing somewhere around the early twenty thousand and I checked the website to see [x_ssc](https://x.com/x_ssc) had won. That was expected, and when I saw [their solution](https://x.com/x_ssc/status/1840143647968506129), I realised that I was on the right path but I also knew the latency issue would have never occured to me. 
+
+Here's how my setup looked.  
+{{<imgur id="ZxmGBmA" ext="jpeg" class="image-resp" align="center" title="My setup during Count to a Million Challenge">}}
+## Conclusion
+It was a fun exercise, and I learnt some new stuff. WebSockets is something that I always planned to use in some project but never got around to it.
+
+Thanks to [Noah Baron](https://x.com/noahthebaron) for making this. 
+
+## Related
+* [Count to a Million Website](https://counttoamillion.com/)
+* [Noah Baron - The Creator's Twitter / X](https://x.com/noahthebaron)
+* [The winning algorithm](https://x.com/x_ssc/status/1840143647968506129)
+* [sawyer / xssc - The Winner's Twitter / X](https://x.com/x_ssc/)
+* [Ankur Parihar's Solution](https://medium.com/@ankurparihar/count-to-million-challange-javascript-2c1b534c2040)
