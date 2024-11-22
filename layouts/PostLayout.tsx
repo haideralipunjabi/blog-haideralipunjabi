@@ -90,6 +90,14 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                       </dl>
                     </li>
                   ))}
+                  <li>
+                    <Link
+                      href="https://buymeacoffee.com/halipunjabi"
+                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                    >
+                      Buy me a Coffee
+                    </Link>
+                  </li>
                 </ul>
               </dd>
             </dl>
@@ -113,18 +121,23 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
             </div>
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                <div className="py-4 xl:py-8">
-                  <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                    Links
-                  </h2>
-                  <div>
-                    {links?.map((link) => (
-                      <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                        <Link href={link.link}>{link.provider}</Link>
-                      </div>
-                    ))}
+                {links && (
+                  <div className="py-4 xl:py-8">
+                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                      Links
+                    </h2>
+                    <div>
+                      {links?.map((link, idx) => (
+                        <div
+                          key={idx}
+                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                        >
+                          <Link href={link.link}>{link.provider}</Link>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
                 {tags && (
                   <div className="py-4 xl:py-8">
                     <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
