@@ -1,0 +1,59 @@
+---
+title: Monitoring a Self-Hosted HealthChecks.io Instance (without modifying containers)
+date: '2024-11-23'
+tags: ["selfhosted"]
+images: ["/uploads/og_healthcheck.png"]
+draft: false
+---
+
+## Introduction
+
+In the exciting (but sometimes tricky) world of self-hosting, you might find yourself wanting to monitor the health of your various services. A popular choice for this is [HealthChecks.io](https://healthchecks.io). But what happens if your self-hosted [HealthChecks.io](https://healthchecks.io) instance goes down? How do you ensure you get notified?
+
+This post details the solution I found during my own self-hosting journey, allowing you to monitor your self-hosted [HealthChecks.io](https://healthchecks.io) using the hosted service at [HealthChecks.io](https://healthchecks.io) – all without modifying any containers!
+
+## Why Self-Host HealthChecks.io?
+
+The free and supporter plans of [HealthChecks.io](https://healthchecks.io) offer a generous 20 job limit, which might be sufficient for some. However, if you anticipate needing more jobs in the future, self-hosting allows for easier scaling without migration headaches. Additionally, setting it up with tools like [Portainer](https://portainer.io) can be quite straightforward.
+
+The challenge arises when you consider that a downed self-hosted [HealthChecks.io](https://healthchecks.io) container would leave you blind to notifications. Here's how to use the hosted service to monitor your on-premise instance.
+
+## Beyond Cron and Curl:
+
+While a simple cron-based curl command might seem like the answer, the [official HealthChecks.io Docker image](https://hub.docker.com/r/healthchecks/healthchecks) doesn't include curl, wget, or nc. Modifying the container itself is not ideal due to potential update/restart conflicts.
+
+## The Solution: Using echo and /dev/tcp
+
+Research revealed a clever way to send HTTP requests using just echo and redirection to the /dev/tcp file descriptor.  This allows you to construct an HTTP request and "send" it without additional tools.
+
+Here's the command that sends a GET request to the HealthChecks.io server:
+
+
+```bash 
+echo -e "GET /<uuid> HTTP/1.1\nHost: hc-ping.com\n\n" > /dev/tcp/hc-ping.com/80
+
+```
+
+(Replace \<uuid\> with your actual HealthChecks.io ping URL)
+
+## Combining Forces: Cron and Docker Exec
+
+We can combine this technique with docker exec to schedule the request execution.  Here's the final crontab entry:
+
+
+```bash 
+*/15 * * * * docker exec HealthChecks.io bash -c 'echo -e "GET /<uuid> HTTP/1.1\nHost: hc-ping.com\n\n" > /dev/tcp/hc-ping.com/80'
+```
+
+*Important Note: Ensure that the user to whose crontab you add this to has permission to run docker*
+
+## Conclusion
+
+By utilizing this approach, you can effectively monitor your self-hosted HealthChecks.io instance using the hosted service, ensuring you stay informed about its health even if it encounters issues.
+
+## References
+
+* [How to open a TCP/UDP socket in a bash shell](https://www.xmodulo.com/tcp-udp-socket-bash-shell.html)
+* [HealthChecks.io](https://healthchecks.io/)
+* [Running with Docker - HealthChecks.io](https://healthchecks.io/docs/self_hosted_docker/)
+* [Portainer](https://www.portainer.io/)
