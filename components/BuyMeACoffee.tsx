@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { BuyMeACoffee as Icon } from './social-icons/icons'
 import Image from 'next/image'
 const BuyMeACoffee = () => {
   return (
