@@ -7,7 +7,7 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://blog.haideralipunjabi.com',
-  siteRepo: 'https://github.com/haideralipunjabi/blog-haideralipunjabi/',
+  siteRepo: 'https://github.com/haideralipunjabi/blog-haideralipunjabi',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/profile.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   email: 'me@haideralipunjabi.com',
