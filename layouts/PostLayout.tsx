@@ -9,6 +9,7 @@ import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import BuyMeACoffee from '@/components/BuyMeACoffee'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/master/data/${path}`
 const discussUrl = (path) =>
@@ -91,12 +92,8 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     </li>
                   ))}
                   <li>
-                    <Link
-                      href="https://buymeacoffee.com/halipunjabi"
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    >
-                      Buy me a Coffee
-                    </Link>
+                    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="HAliPunjabi" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+                    <BuyMeACoffee />
                   </li>
                 </ul>
               </dd>
