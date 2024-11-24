@@ -51,6 +51,10 @@ We can combine this technique with docker exec to schedule the request execution
 
 By utilizing this approach, you can effectively monitor your self-hosted HealthChecks.io instance using the hosted service, ensuring you stay informed about its health even if it encounters issues.
 
+## Future Improvements
+
+As [pointed out by a helpful Redditor](https://www.reddit.com/r/selfhosted/comments/1gy5eh5/comment/lypps22/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button), my current approach primarily tests the container's ability to make HTTP requests. For a more comprehensive health check, it's essential to verify the instance's core functions like accepting HTTP requests, database connectivity, and email sending capabilities. This Redditor's suggested approach provides a solid foundation for implementing such checks. I may integrate this method into my setup or explore alternative solutions. I'll be sure to share any further developments in a future post.
+
 ## References
 
 * [How to open a TCP/UDP socket in a bash shell](https://www.xmodulo.com/tcp-udp-socket-bash-shell.html)
