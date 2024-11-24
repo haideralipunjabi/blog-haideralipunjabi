@@ -2,11 +2,15 @@ import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 import BuyMeACoffee from './BuyMeACoffee'
+import { TotalViews } from 'next-goatcounter'
 
 export default function Footer() {
   return (
     <footer>
       <div className="mt-16 flex flex-col items-center">
+        <div className="mb-4 text-xl text-gray-500 dark:text-gray-400">
+          <TotalViews /> views
+        </div>
         <div className="mb-4">
           <BuyMeACoffee />
         </div>

@@ -10,6 +10,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import BuyMeACoffee from '@/components/BuyMeACoffee'
+import { ViewCount } from 'next-goatcounter'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/master/data/${path}`
 const discussXUrl = (path) =>
@@ -54,6 +55,11 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               </dl>
               <div>
                 <PageTitle>{title}</PageTitle>
+              </div>
+              <div>
+                <span className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <ViewCount /> views
+                </span>
               </div>
             </div>
           </header>
