@@ -114,6 +114,8 @@ module.exports = withSentryConfig(module.exports, {
   org: 'hackesta',
   project: 'blog-haideralipunjabi',
 
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
 
